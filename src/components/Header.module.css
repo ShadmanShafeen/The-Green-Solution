@@ -1,0 +1,29 @@
+header {
+  height: 100px;
+    /* padding: 2rem 10%; */
+    margin: 2rem 10%;
+    padding: 10rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ece1fa;
+  }
+  nav
+  {
+     padding-top: 500px;
+  }
+ nav li{
+  padding:40px;
+ }
+.list {
+    list-style: none;
+    display:inline-block;
+    max-width: 50rem;
+    margin: 1rem auto;
+    padding: 1rem 0;
+    display: grid;
+    gap: 10rem;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+}
