@@ -1,22 +1,32 @@
+import { Link } from 'react-router-dom';
 import styles from './Buttons.module.css'
-
+import { motion } from 'framer-motion'
 function Buttons() {
     
     
     return (
-        <>
-        <div >
-        <p className={styles.FontText}>Are you a/an.......?</p>
-            
-            <ul className={styles.horizontal} type="none">
-               <li><button className={styles.button1}>Agronomist</button></li>
-               <li><button className={styles.button2} >Farmer</button></li>
-            </ul>
-            
+        <div className={styles.center}>
+            <p className={styles.fontText}>Are you a/an.......?</p>
+            <p>
+                <Link to='/Login'>
+                    <motion.button 
+                    className={styles.mainButton}
+                    onClick={null}
+                    whileHover={{scale: 1.2}}
+                    whileTap={{scale: 0.9}}
+                    >Farmer</motion.button>
+                </Link>
+                
+                <Link>
+                <motion.button 
+                className={styles.mainButton}
+                onClick={null}
+                whileHover={{scale: 1.2}}
+                whileTap={{scale: 0.9}}
+                >Agronomist</motion.button>
+                </Link>
+            </p>
         </div>
-          
-            
-        </>
     );
 }
 

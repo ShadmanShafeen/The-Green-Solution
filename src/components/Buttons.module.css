@@ -1,52 +1,35 @@
-/*.button2{
-    cursor: pointer;
-    background-color: #8EE4AF;
-    padding: 25px 20px;
-    border: 25px;
-    cursor: pointer;
-    border-radius: 15px;
-    display: inline-block;
-    margin-right: 600px;
-    margin-top: 400px;
-    }
-    .button2:hover {
-        background-color: #53c02b;
-        transform: scale(1.4);
-    }
-   */
-  
-    .horizontal li {
-        display: inline-block; 
-        margin-right: 150px;
-        margin-left: 300px;
-    }
-    .horizontal li button{
-        padding: 25px 20px;
-        border: 25px;
-        cursor: pointer;
-        border-radius: 15px;
-        background-color: #8EE4AF;
-        width:120px;
-        height: 75px;
-        padding-left: auto;
-      }
-      .horizontal li button:hover{
-        background-color: #53c02b;
-        transform: scale(1.4);
+.mainButton {
+cursor: pointer;
+align-content: center;
+background-color: #8EE4AF;
+margin-left: 20px;
+margin-right: 20px;
+}
 
-      }
+.center {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    left: 35%;
+}
+
+.fontText {
+    color: #242526;
+    max-width: 1280px;
+    font-size: x-large;
+    text-align: center;
     
-
-      .FontText
-      {
-        /*margin-left:300px;*/
-        margin-right: 200px;
-        padding-left: 200px;
-        align-content:center;
-        justify-content: center;
-        font-size: xx-large;
-      }
+}
+/*
+body {
    
-    
-    
-
+    justify-content: center;
+    align-items: center;
+    margin:25px auto;
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+} */
