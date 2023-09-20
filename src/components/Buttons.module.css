@@ -1,6 +1,35 @@
-.button {
+.mainButton {
 cursor: pointer;
 align-content: center;
 background-color: #8EE4AF;
-
+margin-left: 20px;
+margin-right: 20px;
 }
+
+.center {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    left: 35%;
+}
+
+.fontText {
+    color: #242526;
+    max-width: 1280px;
+    font-size: x-large;
+    text-align: center;
+    
+}
+/*
+body {
+   
+    justify-content: center;
+    align-items: center;
+    margin:25px auto;
+    position: relative;
+    top: 50%;
+    bottom: 50%;
+} */

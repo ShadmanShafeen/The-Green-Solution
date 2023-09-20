@@ -1,29 +1,40 @@
-
+import styles from './LoginForm.module.css'
+import {motion} from 'framer-motion'
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
     return (
-    <>
-        <div class="login-box">
-            <h2>Login</h2>
-            <form>
-                <div class="user-box">
-                    <input type="text" name="" required=""/>
-                    <label>Username</label>
+        <div class={styles.container}>
+            <h2><b><b>Login</b></b></h2>
+            <form action="" method="POST">
+                <div class={styles.form_group}>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username"/>
                 </div>
-                <div class="user-box">
-                    <input type="password" name="" required=""/>
-                    <label>Password</label>
+
+
+                <div class={styles.form_group}>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" />
                 </div>
-                <a href="#">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    Submit
-                </a>
+
+                <div class={styles.form_group}>
+                    <Link to='/FarmerHomepage'>                              
+                        <motion.button 
+                        className={styles.button}
+                        onClick={null}
+                        whileHover={{scale: 1.2}}
+                        whileTap={{scale: 0.9}}
+                        >Login</motion.button>
+                    </Link>
+                </div>
             </form>
-        </div> <div id="bcl"><a style="font-size:8pt;text-decoration:none;" ></a></div>
-    </>                        
+
+            <div class={styles.register_link}>
+                <p>Don't have an account? <Link to='/AccountCreation'>Create One</Link></p>
+                
+            </div>
+        </div>                     
     )
 }
 
