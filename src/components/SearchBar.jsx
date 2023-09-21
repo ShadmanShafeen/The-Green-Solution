@@ -5,7 +5,7 @@ function SearchBar() {
     return (
         <>
             <div className={styles.search_container}>
-                     <input className={styles.searchBar} type="text" placeholder="Ask your question here..." /> 
+                     <input idName={styles.searchBar} type="text" placeholder="Ask your question here..." /> 
                       <motion.button
                       className={styles.searchButton} 
                       type="Search"
@@ -16,16 +16,19 @@ function SearchBar() {
             </div>
             <div >
                         <p>
+                            
                             <motion.button 
                             className={styles.twoButtons}
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
-                            >Add Image</motion.button>
+                            ></motion.button>
+                            
                             <motion.button 
                             className={styles.twoButtons}
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
-                            >Voice to Text</motion.button>
+                            ></motion.button>
+                            
                         </p>
             </div>
         </>
