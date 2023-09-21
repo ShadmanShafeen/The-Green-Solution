@@ -24,14 +24,22 @@
     margin-right: 20px;
     border-radius: 50px;
   }
- /* 
+ 
   input[type="text"] {
-    padding: 10px;
+    /*padding: 10px;
     border: 1px solid #353333;
+    width:500px;*/
     border-radius: 40px;
-    width:500px;
+    
   }
-  
+  input[type="password"] {
+    /*padding: 10px;
+    border: 1px solid #353333;
+    width:500px;*/
+    border-radius: 40px;
+    
+  }
+  /*
   button[type="submit"] {
     padding: auto;
     background-color: #d2d7d2;
@@ -43,5 +51,4 @@
 
 button[type="submit"]:hover {
   background-color: #5eacbd;
-}
-*/
+}*/
