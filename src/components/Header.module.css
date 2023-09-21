@@ -1,7 +1,9 @@
-header {
-    margin-top: 10px;
-    margin-bottom: 500px;
-    width: 110%;
+.main_header {
+    position: absolute;
+    top: -50px;
+    left: 150px;
+    right: 150px;
+    width: screen-fit;
     text-align: center;
     display: flex;
     justify-content: center;

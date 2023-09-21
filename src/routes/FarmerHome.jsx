@@ -4,7 +4,9 @@ import SearchBar from "../components/SearchBar"
 function FarmerHome() {
     return (
         <>
+            <Header />
             <SearchBar />
+            
         </>
     )
 }

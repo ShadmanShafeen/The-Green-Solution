@@ -2,7 +2,7 @@ import styles from './Header.module.css'
 
 function Header() {
    return ( 
-        <header className={styles.header}>
+        <div className={styles.main_header}>
                 <nav>
                 <ul className={styles.list}>
                     
@@ -12,7 +12,7 @@ function Header() {
                 </ul>
                 </nav>
                
-        </header>       
+        </div>       
    )
 }
 
