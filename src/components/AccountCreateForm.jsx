@@ -1,40 +1,40 @@
 import styles from './AccountCreateForm.module.css'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { Link , Form , redirect} from 'react-router-dom'
 
 function AccountCreateForm() {
     return (
-        <div class={styles.container}>
+        <div className={styles.container}>
             <h2><b><b>Account Creation</b></b></h2>
-            <form action="" method="POST">
+            <form method="POST" action="" >
                 
-                <div class={styles.form_group}>
-                    <label for="username">Name:</label>
-                    <input type="text" id="username" name="username"/>
+                <div className={styles.form_group}>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required/>
                 </div>
 
-                <div class={styles.form_group}>
-                    <label for="username">Contact No:</label>
-                    <input type="text" id="username" name="username"/>
+                <div className={styles.form_group}>
+                    <label for="contactno">Contact No:</label>
+                    <input type="text" id="contactno" name="contactno" required/>
                 </div>
 
-                <div class={styles.form_group}>
-                    <label for="username">National ID</label>
-                    <input type="text" id="username" name="username"/>
+                <div className={styles.form_group}>
+                    <label for="nid">National ID</label>
+                    <input type="text" id="nid" name="nid"/>
                 </div>
                 
-                <div class={styles.form_group}>
+                <div className={styles.form_group}>
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username"/>
                 </div>
 
 
-                <div class={styles.form_group}>
+                <div className={styles.form_group}>
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" />
                 </div>
 
-                <div class={styles.form_group}>
+                <div className={styles.form_group}>
                     <Link to='/FarmerHomepage'>                              
                         <motion.button 
                         className={styles.button}
@@ -46,7 +46,7 @@ function AccountCreateForm() {
                 </div>
             </form>
 
-            <div class={styles.register_link}>
+            <div className={styles.register_link}>
                 <p>Already have an account? <Link to='/Login'> Log in </Link></p>
                 
             </div>

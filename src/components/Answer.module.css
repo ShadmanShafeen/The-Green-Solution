@@ -1,0 +1,41 @@
+.answer_box {
+    background-color: #5CDB95;
+    background: #5cdb95cc;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    animation: animate-in 1s ease-out forwards;
+    
+}
+
+.answer {
+    color : #2D2D2D;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    top: 5px;
+    left: 0.5%;
+}
+
+.agronomist {
+    color : #2D2D2D;
+    white-space: pre-wrap;
+    font-size: 1.25rem;
+    margin: 0.25rem 0 0 0;
+    
+    font-style: italic;
+    position: relative;
+    left: 5%;
+}
+
+
+.uprate_button {
+    border-radius: 25px;
+    height: 10px;
+    width: min-content;
+
+}
+.downrate_button {
+    border-radius: 25px;
+    height: 10px;
+    width: min-content;
+}

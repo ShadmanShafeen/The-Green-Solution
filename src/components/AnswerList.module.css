@@ -1,0 +1,26 @@
+.top_answers {
+    color : #2D2D2D;
+    position: absolute;
+    left: 10%;
+}
+
+.all_answer_container {
+    position: absolute;
+    top:  65%;
+    left: 5%;
+    width: 50%;
+
+    font-size: larger;
+    word-wrap: break-word;
+    
+}
+
+.answer_containers {
+    list-style: none;
+    position: absolute;
+    left: 5%;
+    width: 110%;
+    height:fit-content;
+    text-align: left;
+}
+
