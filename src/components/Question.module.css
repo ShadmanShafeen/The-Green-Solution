@@ -28,7 +28,7 @@
     top: 5%;
 }
 
-.questioner {
+.farmer {
     color : #2D2D2D;
     white-space: pre-wrap;
     font-size: 1.25rem;
@@ -37,5 +37,3 @@
     position: absolute;
     bottom: 5%;
 }
-
-

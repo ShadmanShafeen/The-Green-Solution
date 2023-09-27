@@ -1,12 +1,11 @@
 import Header from "../components/Header"
 import SearchBar from "../components/SearchBar"
 
-function FarmerHome() {
+function FarmerHome({askQuestionHandler}) {
     return (
         <>
             <Header />
-            <SearchBar />
-            
+            <SearchBar askQuestionHandler={askQuestionHandler} />           
         </>
     )
 }
