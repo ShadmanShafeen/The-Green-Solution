@@ -33,7 +33,7 @@ function SearchBar({askQuestionHandler}) {
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
                             ></motion.button>
-                            
+                        </p>
                 <p>     
                     <motion.button 
                     className={styles.twoButtons}

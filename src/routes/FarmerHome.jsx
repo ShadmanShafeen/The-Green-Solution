@@ -8,13 +8,9 @@ function FarmerHome({askQuestionHandler}) {
     return (
         <>
             <Header />
-            <SearchBar />
+            <SearchBar askQuestionHandler={askQuestionHandler} />
             <PrevQuestion/>
             <ToggleButton/>
-            
-            
-            
-            <SearchBar askQuestionHandler={askQuestionHandler} />           
         </>
     )
 }
