@@ -2,6 +2,7 @@ import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Form, Link, redirect } from 'react-router-dom';
 
+
 function LoginForm() {
     return (
         <div className={styles.container}>

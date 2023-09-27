@@ -1,5 +1,10 @@
 import styles from './SearchBar.module.css'
 import { motion } from 'framer-motion'
+
+
+
+
+
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -21,6 +26,14 @@ function SearchBar({askQuestionHandler}) {
                 </Link>
             </div>
             <div >
+                        <p>
+                           
+                            <motion.button 
+                            className={styles.twoButtons1}
+                            whileHover={{scale: 1.2}}
+                            whileTap={{scale: 0.9}}
+                            ></motion.button>
+                            
                 <p>     
                     <motion.button 
                     className={styles.twoButtons}
@@ -29,10 +42,12 @@ function SearchBar({askQuestionHandler}) {
                     ></motion.button>
                             
                     <motion.button 
-                    className={styles.twoButtons}
+                    className={styles.twoButtons2}
                     whileHover={{scale: 1.2}}
                     whileTap={{scale: 0.9}}
                     ></motion.button>                        
+                           
+                            
                 </p>
             </div>
         </>
