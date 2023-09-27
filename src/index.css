@@ -13,14 +13,12 @@ button {
   padding: 0.6em 1.2em;
   font-size: 2em;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #05386B;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -29,4 +27,4 @@ button {
     color: #747bff;
     cursor: pointer;
   }
-}
+}*/

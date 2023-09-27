@@ -1,6 +1,11 @@
 import styles from './SearchBar.module.css'
 import { motion } from 'framer-motion'
 
+
+
+
+
+
 function SearchBar() {
     return (
         <>
@@ -12,22 +17,24 @@ function SearchBar() {
                       whileHover={{scale: 1.2}}
                       whileTap={{scale: 0.9}}
                             
-                      >Search</motion.button>
+                      ></motion.button>
             </div>
             <div >
                         <p>
-                            
+                           
                             <motion.button 
-                            className={styles.twoButtons}
+                            className={styles.twoButtons1}
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
                             ></motion.button>
                             
                             <motion.button 
-                            className={styles.twoButtons}
+                            className={styles.twoButtons2}
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
                             ></motion.button>
+                           
+                            
                             
                         </p>
             </div>

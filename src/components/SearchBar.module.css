@@ -4,10 +4,11 @@
     display: flex;
     justify-content: center;
     
-    width:150%;
+    width:250%;
     margin-top: 20px;
-    margin-left: -100px;
+    margin-left: -240px;
     border-radius: 50px;
+    height: fit-content;
     
 
   }
@@ -15,17 +16,33 @@
     border-radius: 50px;
     background-color: #8EE4AF;
     margin-left: 20px;
+    background-image: url(images/Search.png);
+    
   }
   #searchBar {
-    width: 50%;
+    width: 120%;
+    left: auto;
   }
-  .twoButtons {
+  .twoButtons1 {
     cursor: pointer;
-    align-content: center;
+    
     background-color: #8EE4AF;
-    margin-left: 20px;
+    left: 200px;
     margin-right: 20px;
+    border-radius: 55px;
+    height: 55px;
+    width: 55px;
+    background-image: url(images/Search.png);
+  }
+
+  .twoButtons2 {
+    cursor: pointer;
+   
+    background-color: #8EE4AF;
+  
     border-radius: 50px;
+    height: 55px;
+    width: 55px;
   }
 
   input[type="text"] {
@@ -60,3 +77,4 @@ twobutton[type="submit"]:hover {
   background-color: #5eacbd;
 }
 */
+
