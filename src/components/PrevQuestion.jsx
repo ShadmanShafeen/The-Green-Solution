@@ -1,29 +1,13 @@
 import styles from './PrevQuestion.module.css'
 
-
-
-function PrevQuestion()
-{
- return (
+function PrevQuestion({ question }) {
+    return (
         <>
-          <div className={styles.PrevQuestioBox}>
-          
-                     <p className={styles.Text}>Previous Questions you have asked</p> 
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      <div className={styles.box}></div>
-                      
-              
-          </div>
-        
-
-
+            <li className={styles.prevquestion_box}>
+                <p className={styles.prevquestion_text}>{ question }</p>
+            </li>
         </>
- )
+    )
 }
+
 export default PrevQuestion

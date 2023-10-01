@@ -5,6 +5,11 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     animation: animate-in 1s ease-out forwards;
     
+    transition: 0.4s ease-in-out;
+}
+
+.answer_box:hover {
+    transform: scale(1.1);
 }
 
 .answer {

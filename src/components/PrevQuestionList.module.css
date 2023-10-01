@@ -1,0 +1,27 @@
+/*PrevQuestionBox*/
+.prevquestion_container
+{
+    padding:auto;
+    display: inline-block;
+    margin-left: 350px;
+    position: absolute;
+    
+    width: 360px;
+    margin-top: -340px;
+    height: 590px;
+    margin-bottom:300px;
+    padding: 20px;
+    /*background-color: rgb(214, 204, 204);*/
+    border-radius: 10px;
+    opacity: 6;
+    justify-content: right;
+    border-color: black;
+    box-shadow: rgb(30, 23, 23);
+}
+
+  .prevquestion_header
+  {
+    font-size: larger;
+    font-weight: 600;
+    color: black;
+  }

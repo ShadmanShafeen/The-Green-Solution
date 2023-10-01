@@ -10,21 +10,25 @@ import { useState } from 'react'
 
 function App() {
   const [enteredQuestion , setEnteredQuestion] = useState('');
-  const [farmer , setFarmer] = useState('');
+  const [user, setUser] = useState('');
 
   function askQuestionHandler(event) {
-        setEnteredQuestion(event.target.value);
-    }
+      setEnteredQuestion(event.target.value);
+  }
+
+  function setUserHandler(event) {
+      setUser(event.target.value);
+  }
 
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/Login' element={<LoginPage />}/>
+      <Route path='/Login' element={<LoginPage setUser={setUserHandler} />}/>
       <Route path='/AccountCreation' element={<AccountCreationPage />} />     
-      <Route path='/FarmerHomepage' element={<FarmerHome askQuestionHandler={askQuestionHandler} />} />
-      <Route path='/QuestionPage' element={<QuestionAnswerPage question={enteredQuestion} />} />
+      <Route path='/FarmerHomepage' element={<FarmerHome farmer={user} question={enteredQuestion} askQuestionHandler={askQuestionHandler} />} />
+      <Route path='/QuestionPage' element={<QuestionAnswerPage farmer={user} question={enteredQuestion} />} />
     </Routes>
   )
 }
 
-export default App
+export default App;
