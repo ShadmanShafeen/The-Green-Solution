@@ -19,8 +19,8 @@
     top: -30px;
     left: 0px;
     height:160px ;
-   width: max-content;
-background-color: blanchedalmond;
+   width:max-content;
+/* background-color: blanchedalmond; */
  
     display:flex;
     justify-content: center;
@@ -36,7 +36,8 @@ background-color: blanchedalmond;
    justify-content: center;
    align-content: center;
    padding: 20px;
-   background-color: blanchedalmond;
+   /* width: 100px; */
+   /* background-color: blanchedalmond; */
    
   
   }
