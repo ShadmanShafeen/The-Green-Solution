@@ -1,6 +1,6 @@
 import styles from './Question.module.css'
 
-function Question({question , farmer}) {
+function Question({ farmer , question }) {
     return (
         <div className={styles.question_container}>
             <ul className={styles.question_elements}>

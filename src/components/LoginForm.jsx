@@ -1,18 +1,51 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
-import { Form, Link, redirect } from 'react-router-dom';
+import { Form, Link, redirect, useNavigate } from 'react-router-dom';
 
 
-function LoginForm() {
+function LoginForm({ setUser }) {
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Form submitted" , e.target);
+
+        const formData = new FormData(e.target);
+
+        const userData = {
+            username: formData.get("username"),
+            password: formData.get("password")
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/auth/login' , {
+                method: "Post",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData)
+            })
+    
+            if(response.ok) {
+                console.log('Login successful');
+                navigate('/FarmerHomepage');
+            }
+            else {
+                console.error('Login failed');
+            }
+        } catch {
+            console.error('Error occurred during login: ',error);
+        };
+    };
+
     return (
         <div className={styles.container}>
             <h2><b><b>Login</b></b></h2>
-            <form method="post" action="">
+            <form  onSubmit={handleSubmit}>
+                
                 <div className={styles.form_group}>
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required/>
+                    <input onChange={setUser} type="text" id="username" name="username" required/>
                 </div>
-
 
                 <div className={styles.form_group}>
                     <label for="password">Password:</label>

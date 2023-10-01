@@ -1,57 +1,94 @@
-import styles from './AccountCreateForm.module.css'
-import { motion } from 'framer-motion'
-import { Link , Form , redirect} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'; // Import useState if needed
+import styles from './AccountCreateForm.module.css';
+import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 
 function AccountCreateForm() {
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log("Form submitted", e.target);
+
+        const formData = new FormData(e.target);
+
+        const userData = {
+            name: formData.get("name"),
+            contact: formData.get("contact"),
+            NID: formData.get("NID"),
+            username: formData.get("username"),
+            password: formData.get("password"),
+        };
+
+        try {
+            const response = await fetch('http://localhost:5000/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(userData)
+            });
+
+            if (response.ok) {
+                console.log('Signup successful');
+                // Redirect or show a success message here
+                navigate('/Login');
+            } else {
+                console.error('Signup failed');
+                // Handle the error, e.g., show an error message to the user
+            }
+        } catch (error) {
+            console.error('Error occurred during signup:', error);
+            // Handle network errors or other exceptions
+        }
+    };
+
     return (
         <div className={styles.container}>
             <h2><b><b>Account Creation</b></b></h2>
-            <form method="POST" action="" >
+            <form onSubmit={handleSubmit}>
                 
                 <div className={styles.form_group}>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required/>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" name="name"/>
                 </div>
 
                 <div className={styles.form_group}>
-                    <label for="contactno">Contact No:</label>
-                    <input type="text" id="contactno" name="contactno" required/>
+                    <label htmlFor="contact">Contact No:</label>
+                    <input type="text" id="contact" name="contact"/>
                 </div>
 
                 <div className={styles.form_group}>
-                    <label for="nid">National ID</label>
-                    <input type="text" id="nid" name="nid"/>
+                    <label htmlFor="NID">National ID</label>
+                    <input type="text" id="NID" name="NID"/>
                 </div>
                 
                 <div className={styles.form_group}>
-                    <label for="username">Username:</label>
+                    <label htmlFor="username">Username:</label>
                     <input type="text" id="username" name="username"/>
                 </div>
 
-
                 <div className={styles.form_group}>
-                    <label for="password">Password:</label>
+                    <label htmlFor="password">Password:</label>
                     <input type="password" id="password" name="password" />
                 </div>
 
                 <div className={styles.form_group}>
-                    <Link to='/FarmerHomepage'>                              
-                        <motion.button 
+                    <motion.button 
                         className={styles.button}
-                        onClick={null}
-                        whileHover={{scale: 1.2}}
-                        whileTap={{scale: 0.9}}
-                        >Create Account</motion.button>
-                    </Link>
+                        type='submit'
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.9 }}
+                    >
+                        Create Account
+                    </motion.button>
                 </div>
             </form>
 
             <div className={styles.register_link}>
                 <p>Already have an account? <Link to='/Login'> Log in </Link></p>
-                
             </div>
         </div>  
-    )
+    );
 }
 
-export default AccountCreateForm
+export default AccountCreateForm;
