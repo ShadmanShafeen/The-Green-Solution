@@ -1,9 +1,12 @@
 import styles from './AccountCreateForm.module.css'
 import { motion } from 'framer-motion'
 import { Link , Form , redirect} from 'react-router-dom'
+import ToggleButton from "../components/ToggleButton"
 
 function AccountCreateForm() {
     return (
+        <>
+        
         <div className={styles.container}>
             <h2><b><b>Account Creation</b></b></h2>
             <form method="POST" action="" >
@@ -51,6 +54,8 @@ function AccountCreateForm() {
                 
             </div>
         </div>  
+        <ToggleButton/>
+        </>
     )
 }
 

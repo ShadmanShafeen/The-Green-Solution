@@ -1,30 +1,28 @@
 .search_container {
 
-    
-
-    
     display: flex;
     justify-content: center;
     
-    width:250%;
+    width:600px;
+    height: 50px;
     margin-top: 20px;
     margin-left: -240px;
-    border-radius: 50px;
-    height: fit-content;
+    border-radius: 40px;
+    
+    position: relative;
     
 
   }
   .searchButton {
-    border-radius: 50px;
+    border-radius: 40px;
     background-color: #8EE4AF;
     margin-left: 20px;
-    background-image: url(images/Search.png);
+    height: 50px;
+    width: 50px;
+    /*background-image: url(images/Search.png);*/
     
   }
-  #searchBar {
-    width: 120%;
-    left: auto;
-  }
+  
   .twoButtons1 {
     cursor: pointer;
     
@@ -34,7 +32,7 @@
     border-radius: 55px;
     height: 55px;
     width: 55px;
-    background-image: url(images/Search.png);
+   
   }
 
   .twoButtons2 {
@@ -53,30 +51,15 @@
     border-radius: 40px;
     /*width:500px;*/
   }
-  .twoButtons[type="submit"]:hover {
-    background-color: #a1c3ca;
+
+  .HorizontalButtons
+  {
+    display: flex;
   }
 
-  input[type="password"] {
-    /*padding: 10px;
-    border: 1px solid #353333;*/
-    border-radius: 40px;
-    /*width:500px;*/
-  }
   
-   /* 
   
-  button[type="submit"] {
-    padding: auto;
-    background-color: #d2d7d2;
-    border: 5px;
-    border: black;
-    border-radius: 45px;
-    cursor: pointer;
-}
 
-twobutton[type="submit"]:hover {
-  background-color: #5eacbd;
-}
-*/
+
+
 

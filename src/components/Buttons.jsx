@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
 import styles from './Buttons.module.css'
 import { motion } from 'framer-motion'
+import myImageBackground from './images/background.png'
 function Buttons() {
     
     
     return (
+        
+            
         <div className={styles.center}>
+        {/* <img src={myImageBackground}/> */}
             <p className={styles.fontText}>Are you a/an.......?</p>
             <p>
                 <Link to='/Login'>
@@ -17,7 +21,7 @@ function Buttons() {
                     >Farmer</motion.button>
                 </Link>
                 
-                <Link>
+                <Link to='/Login'>
                 <motion.button 
                 className={styles.mainButton}
                 onClick={null}
@@ -27,6 +31,7 @@ function Buttons() {
                 </Link>
             </p>
         </div>
+ 
     );
 }
 

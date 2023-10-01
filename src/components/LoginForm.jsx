@@ -1,10 +1,12 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Form, Link, redirect } from 'react-router-dom';
+import ToggleButton from "../components/ToggleButton"
 
 
 function LoginForm() {
-    return (
+    return (<>
+    
         <div className={styles.container}>
             <h2><b><b>Login</b></b></h2>
             <form method="post" action="">
@@ -35,7 +37,9 @@ function LoginForm() {
                 <p>Don't have an account? <Link to='/AccountCreation'>Create One</Link></p>
                 
             </div>
-        </div>                     
+        </div> 
+        <ToggleButton/> 
+        </>                   
     )
 }
 

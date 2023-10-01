@@ -4,10 +4,15 @@ function ToggleButton()
 {
     return(
         <>
-        <label className={styles.switch}>
+       
+
+       <div className={styles.Background}>
+        <label className={styles.toggle}>
                         <input type="checkbox"/>
-                        <span className={styles.slider_round}></span>
-        </label>
+                        <span className={styles.slider}></span>
+                        <span className={styles.labels} data-on="Bangla" data-off="English"></span>
+                      </label>
+        </div>
         </>
     )
 }
