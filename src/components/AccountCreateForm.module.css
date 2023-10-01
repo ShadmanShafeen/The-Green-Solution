@@ -74,3 +74,11 @@ body {
     font-size: medium;
     border-radius: 30px;
   }
+
+
+  input[type="password"] {
+    /*padding: 10px;
+    border: 1px solid #353333;*/
+    border-radius: 40px;
+    /*width:500px;*/
+  }

@@ -47,33 +47,26 @@ function SearchBar({ farmer, enteredQuestion , askQuestionHandler }) {
                         whileTap={{scale: 0.9}}
                         onClick={handleAsk}
                     >Ask</motion.button>
+
                 </Link>
             </div>
-            <div >
-                        <p>
-                           
+            <div className={styles.HorizontalButtons}>
+                <p>           
                             <motion.button 
                             className={styles.twoButtons1}
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
                             ></motion.button>
-                        </p>
-                <p>     
-                    <motion.button 
-                    className={styles.twoButtons}
-                    whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}}
-                    ></motion.button>
-                            
+                </p>
+                <p>          
                     <motion.button 
                     className={styles.twoButtons2}
                     whileHover={{scale: 1.2}}
                     whileTap={{scale: 0.9}}
-                    ></motion.button>                        
-                           
-                            
+                    ></motion.button>                             
                 </p>
             </div>
+        
         </>
     )
 }

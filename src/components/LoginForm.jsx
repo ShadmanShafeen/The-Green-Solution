@@ -1,7 +1,7 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Form, Link, redirect, useNavigate } from 'react-router-dom';
-
+import ToggleButton from "../components/ToggleButton"
 
 function LoginForm({ setUser }) {
     const navigate = useNavigate();
@@ -36,8 +36,8 @@ function LoginForm({ setUser }) {
             console.error('Error occurred during login: ',error);
         };
     };
-
     return (
+      <>
         <div className={styles.container}>
             <h2><b><b>Login</b></b></h2>
             <form  onSubmit={handleSubmit}>
@@ -68,7 +68,9 @@ function LoginForm({ setUser }) {
                 <p>Don't have an account? <Link to='/AccountCreation'>Create One</Link></p>
                 
             </div>
-        </div>                     
+        </div> 
+        <ToggleButton/> 
+        </>                   
     )
 }
 

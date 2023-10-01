@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'; // Import useState if needed
+
+import { useEffect, useState } from 'react'; // Import useState if needed
 import styles from './AccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
+import ToggleButton from "../components/ToggleButton"
 
 function AccountCreateForm() {
     const navigate = useNavigate();
@@ -43,6 +45,8 @@ function AccountCreateForm() {
     };
 
     return (
+        <>
+        
         <div className={styles.container}>
             <h2><b><b>Account Creation</b></b></h2>
             <form onSubmit={handleSubmit}>
@@ -88,6 +92,8 @@ function AccountCreateForm() {
                 <p>Already have an account? <Link to='/Login'> Log in </Link></p>
             </div>
         </div>  
+        <ToggleButton/>
+        </>
     );
 }
 
