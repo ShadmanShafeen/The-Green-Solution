@@ -2,6 +2,8 @@
     color : #2D2D2D;
     position: absolute;
     left: 10%;
+    height:fit-content;
+    
 }
 
 .all_answer_container {

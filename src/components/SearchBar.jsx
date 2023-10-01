@@ -22,10 +22,12 @@ function SearchBar({askQuestionHandler}) {
                       whileHover={{scale: 1.2}}
                       whileTap={{scale: 0.9}}
                             
-                    >Ask</motion.button>
+                    ></motion.button>
                 </Link>
             </div>
-            <div >
+            <div className={styles.HorizontalButtons}>
+
+            
                         <p>
                            
                             <motion.button 
@@ -35,12 +37,8 @@ function SearchBar({askQuestionHandler}) {
                             ></motion.button>
                         </p>
                 <p>     
-                    <motion.button 
-                    className={styles.twoButtons}
-                    whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}}
-                    ></motion.button>
-                            
+                    
+                        
                     <motion.button 
                     className={styles.twoButtons2}
                     whileHover={{scale: 1.2}}
@@ -50,6 +48,7 @@ function SearchBar({askQuestionHandler}) {
                             
                 </p>
             </div>
+        
         </>
     )
 }

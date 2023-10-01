@@ -10,9 +10,9 @@ function AnswerList () {
                     <Answer 
                     answer= "Farm like this, Farm like that"
                     agronomist= "Agri Shitol" />
-                    
+                    <br/>
                     <Answer 
-                    answer= "Farm like this, Farm like that"
+                    answer= "You are a chasha , chash na kore website chalaye ki kam? er cheye valo giye chash kor jaa.. khete giye mathay haat diye boshe thak"
                     agronomist= "Agri Shitol" />
                 </ul>
             

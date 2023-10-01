@@ -8,7 +8,7 @@
     position: absolute;
     
     width: 360px;
-    margin-top: -340px;
+    margin-top: -330px;
     height: 590px;
     margin-bottom:300px;
     padding: 20px;
@@ -28,7 +28,7 @@
     height: 45px;
     background-color: #98d996;
     border-radius: 25px;
-    border: 2px black solid;
+    border: 1px black solid;
   }
 
   .Text
