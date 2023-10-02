@@ -12,9 +12,12 @@ function LoginForm({ setUser }) {
         const formData = new FormData(e.target);
 
         const userData = {
-            username: formData.get("username"),
-            password: formData.get("password")
+            name: formData.get("name"),
+            NID: formData.get("NID")
         };
+
+        localStorage.setItem('farmer',JSON.stringify(userData.name));
+        localStorage.setItem('NID',JSON.stringify(userData.NID));
 
         try {
             const response = await fetch('http://localhost:5000/auth/login' , {
@@ -43,24 +46,22 @@ function LoginForm({ setUser }) {
             <form  onSubmit={handleSubmit}>
                 
                 <div className={styles.form_group}>
-                    <label for="username">Username:</label>
-                    <input onChange={setUser} type="text" id="username" name="username" required/>
+                    <label for="name">Name:</label>
+                    <input onChange={setUser} type="text" id="name" name="name" required/>
                 </div>
 
                 <div className={styles.form_group}>
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required/>
+                    <label for="NID">NID:</label>
+                    <input type="password" id="NID" name="NID" required/>
                 </div>
 
-                <div className={styles.form_group}>
-                    <Link to='/FarmerHomepage'>                              
-                        <motion.button 
-                        className={styles.button}
-                        onClick={null}
-                        whileHover={{scale: 1.2}}
-                        whileTap={{scale: 0.9}}
-                        >Login</motion.button>
-                    </Link>
+                <div className={styles.form_group}>                              
+                    <motion.button 
+                    className={styles.button}
+                    onClick={null}
+                    whileHover={{scale: 1.2}}
+                    whileTap={{scale: 0.9}}
+                    >Login</motion.button>
                 </div>
             </form>
 

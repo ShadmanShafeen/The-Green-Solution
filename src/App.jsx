@@ -20,6 +20,10 @@ function App() {
       setUser(event.target.value);
   }
 
+  function setNIDHandler(event) {
+      
+  }
+
   return (
     <Routes>
       <Route path='/' element={<Home />} />

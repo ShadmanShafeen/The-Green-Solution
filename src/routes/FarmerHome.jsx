@@ -4,12 +4,12 @@ import PrevQuestionList from "../components/PrevQuestionList"
 import ToggleButton from "../components/ToggleButton"
 import LogOutButton from "../components/LogOutButton"
 
-function FarmerHome({farmer , question , askQuestionHandler}) {
+function FarmerHome({farmer , NID , question , askQuestionHandler}) {
     return (
         <>
             <Header />
             <SearchBar farmer={farmer} enteredQuestion={question} askQuestionHandler={askQuestionHandler} />
-            <PrevQuestionList/>
+            <PrevQuestionList farmer={farmer} NID={NID} />
             <ToggleButton/>
             <LogOutButton/> 
         </>

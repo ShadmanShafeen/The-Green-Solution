@@ -10,15 +10,13 @@ function AccountCreateForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Form submitted", e.target);
-
+        
         const formData = new FormData(e.target);
 
         const userData = {
             name: formData.get("name"),
             contact: formData.get("contact"),
-            NID: formData.get("NID"),
-            username: formData.get("username"),
-            password: formData.get("password"),
+            NID: formData.get("NID")
         };
 
         try {
@@ -63,18 +61,9 @@ function AccountCreateForm() {
 
                 <div className={styles.form_group}>
                     <label htmlFor="NID">National ID</label>
-                    <input type="text" id="NID" name="NID"/>
+                    <input type="password" id="NID" name="NID"/>
                 </div>
                 
-                <div className={styles.form_group}>
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username"/>
-                </div>
-
-                <div className={styles.form_group}>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" />
-                </div>
 
                 <div className={styles.form_group}>
                     <motion.button 
@@ -82,8 +71,7 @@ function AccountCreateForm() {
                         type='submit'
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                    >
-                        Create Account
+                    >Create Account
                     </motion.button>
                 </div>
             </form>

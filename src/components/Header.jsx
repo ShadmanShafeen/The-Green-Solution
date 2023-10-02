@@ -16,7 +16,7 @@ function Header() {
                 <nav>
                 <ul className={styles.list}>
                 
-                    <li>Procedure</li>
+                    <li>How It Works</li>
                     <li>Home</li>
                     <li>About Us</li>
                     
