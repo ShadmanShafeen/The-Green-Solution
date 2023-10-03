@@ -3,15 +3,18 @@ import { motion } from 'framer-motion'
 
 import { Link, useNavigate } from 'react-router-dom'
 
-function SearchBar({ farmer, enteredQuestion , askQuestionHandler }) {
+function SearchBar({ enteredQuestion , askQuestionHandler }) {
     const navigate = useNavigate();
     const handleAsk = async (e) => {
         e.preventDefault();
         console.log("Question Asked", e.target);
-
+        
+        const farmer = JSON.parse(localStorage.getItem('farmer'));
+        const NID = JSON.parse(localStorage.getItem('NID'));
         const newQuestion = {
             question: enteredQuestion,
-            farmer: farmer
+            farmer: farmer,
+            NID: NID
         };
         
         try {

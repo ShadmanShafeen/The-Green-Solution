@@ -1,9 +1,9 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
-import { Form, Link, redirect, useNavigate } from 'react-router-dom';
+import { Link, redirect, useNavigate } from 'react-router-dom';
 import ToggleButton from "../components/ToggleButton"
 
-function LoginForm({ setUser }) {
+function LoginForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,7 +47,7 @@ function LoginForm({ setUser }) {
                 
                 <div className={styles.form_group}>
                     <label for="name">Name:</label>
-                    <input onChange={setUser} type="text" id="name" name="name" required/>
+                    <input type="text" id="name" name="name" required/>
                 </div>
 
                 <div className={styles.form_group}>

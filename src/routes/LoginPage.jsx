@@ -1,10 +1,10 @@
 
 import LoginForm from "../components/LoginForm";
 
-function LoginPage({setUser}) {
+function LoginPage() {
     return (
         <>
-            <LoginForm setUser={setUser} />
+            <LoginForm />
         </>
     )
 }

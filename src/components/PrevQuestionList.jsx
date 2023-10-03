@@ -3,23 +3,29 @@ import PrevQuestion from './PrevQuestion';
 import styles from './PrevQuestionList.module.css';
 import axios from 'axios';
 
-function PrevQuestionList({ farmer , NID }) {
-  const [data, setData] = useState([]);
+function PrevQuestionList() {
+  const [questions, setQuestions] = useState([]);
+  const farmer = JSON.parse(localStorage.getItem('farmer'));
+  const NID = JSON.parse(localStorage.getItem('NID'));
+
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:5000/fetchquestions?name=${farmer}`, {
+        const response = await axios.get(`http://localhost:5000/fetchquestions/${NID}`, {
           headers: {
             'Content-Type': 'application/json',
           },
         });
 
         if (response.status === 200) {
-          const questionData = response.data.question;
-          setData(questionData);
-          console.log(questionData);
-          console.log(data);
+          const questionData = response.data;
+          //const questionData = JSON.parse(JSONData);
+          setQuestions(questionData.data);
+          console.log("questionData");
+          console.log(questionData.data);
+          console.log("questions");
+          console.log(questions);
         } else {
           console.log('Fetch failed');
         }
@@ -29,15 +35,15 @@ function PrevQuestionList({ farmer , NID }) {
     }
 
     fetchData();
-  }, [farmer]); // Include 'farmer' in the dependency array to re-run the effect when it changes
-  if(data) {
+  }, [NID]); // Include 'NID' in the dependency array to re-run the effect when it changes
+  if(questions.length>0) {
     return (
       <>
         <div className={styles.prevquestion_container}>
           <p className={styles.prevquestion_header}> Previous Questions you have asked</p>
           <ul>
-            {data.map((question, index) => (
-              <PrevQuestion key={index} question={question} />
+            {questions.map((item) => (
+              <PrevQuestion key={item._id} questionID={item._id} question={item.question} />
             ))}
           </ul>
         </div>
@@ -46,10 +52,16 @@ function PrevQuestionList({ farmer , NID }) {
   }
   else{
     return (
-      <></>
+      <>
+          <div className={styles.prevquestion_container}>
+            <p className={styles.prevquestion_header}> Previous Questions you have asked</p>
+              <ul>
+                  <PrevQuestion />
+              </ul>
+          </div>
+      </>
     );
   }
-  
 }
 
 export default PrevQuestionList;

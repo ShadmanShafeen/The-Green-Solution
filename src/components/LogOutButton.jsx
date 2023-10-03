@@ -5,7 +5,7 @@ function LogOutButton ()
     return(
        
 
-       
+        
               <button className={styles.LogOutButton}>
            
          Log Out
