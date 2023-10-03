@@ -8,6 +8,7 @@ function QuestionAnswerPage({ farmer , question }) {
             <Header />
             <Question  farmer={farmer} question={question}/>
             <AnswerList />
+          
         </>
     )
 }

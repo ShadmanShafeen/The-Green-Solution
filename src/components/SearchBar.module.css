@@ -19,11 +19,13 @@
     margin-left: 20px;
     height: 50px;
     width: 50px;
+    border: black solid 0.2px;
     /*background-image: url(images/Search.png);*/
     
   }
+
   
-  .twoButtons1 {
+  /* .twoButtons1 {
     cursor: pointer;
     
     background-color: #8EE4AF;
@@ -33,9 +35,95 @@
     height: 55px;
     width: 55px;
    
+  } */
+
+  .HorizontalButtons{
+    
+    padding-right: 40px;
   }
 
-  .twoButtons2 {
+
+/*Image Insertion Code*/
+  .Ibutton {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 50px;
+    width: 60px;
+    border: none;
+    background:  #8EE4AF;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  
+  .lable {
+    line-height: 22px;
+    font-size: 17px;
+    color: #100f0f;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .Ibutton:hover {
+    background: #8EE4AF;
+  }
+  
+  .Ibutton:hover .svg-icon {
+    animation: flickering 2s linear infinite;
+   
+  }
+  
+  @keyframes flickering {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    52% {
+      opacity: 1;
+    }
+  
+    54% {
+      opacity: 0;
+    }
+  
+    56% {
+      opacity: 1;
+    }
+  
+    90% {
+      opacity: 1;
+    }
+  
+    92% {
+      opacity: 0;
+    }
+  
+    94% {
+      opacity: 1;
+    }
+  
+    96% {
+      opacity: 0;
+    }
+  
+    98% {
+      opacity: 1;
+    }
+  
+    99% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* .twoButtons2 {
     cursor: pointer;
    
     background-color: #8EE4AF;
@@ -43,7 +131,7 @@
     border-radius: 50px;
     height: 55px;
     width: 55px;
-  }
+  } */
 
   input[type="text"] {
     /*padding: 10px;
@@ -51,15 +139,126 @@
     border-radius: 40px;
     /*width:500px;*/
   }
+  .SpacingButton
+  {
+    padding-left: 5px;
+    padding-right: 20px;
+  
+  }
 
   .HorizontalButtons
   {
     display: flex;
+    padding-right: 40px;
+    padding-left: 30px;
+    position: absolute;
+    left: 35%;
   }
 
+
+  .Ibutton {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 50px;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+  }
   
+  .lable {
+    line-height: 22px;
+    font-size: 17px;
+    color: #0c0202;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+  }
   
+  .Ibutton:hover {
+    border: #0c0202 solid 2px;
+  }
+  
+  .Ibutton:hover .svg-icon {
+    animation: flickering 2s linear infinite;
+   
+  }
+  
+  @keyframes flickering {
+    0% {
+      opacity: 1;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    52% {
+      opacity: 1;
+    }
+  
+    54% {
+      opacity: 0;
+    }
+  
+    56% {
+      opacity: 1;
+    }
+  
+    90% {
+      opacity: 1;
+    }
+  
+    92% {
+      opacity: 0;
+    }
+  
+    94% {
+      opacity: 1;
+    }
+  
+    96% {
+      opacity: 0;
+    }
+  
+    98% {
+      opacity: 1;
+    }
+  
+    99% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
 
 
 
 
+
+  /*Inserting Audio*/
+
+
+  .mswitch {
+    /* position: relative; */
+    background-color: #8EE4AF;
+
+  
+    border-radius: 50px;
+    height: 55px;
+    width: 55px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+   
+   color: white;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .mswitch:hover {
+    background-color:#8EE4AF ;
+    border: #0c0202 solid 2px;
+    
+  }

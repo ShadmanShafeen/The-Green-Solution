@@ -26,10 +26,7 @@ function Header() {
               <LogOutButton/> */}
                </nav>
          </div> 
-                 
-   </>
-
-      
+        </>   
    )
 }
 
