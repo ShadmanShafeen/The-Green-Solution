@@ -22,10 +22,6 @@ function PrevQuestionList() {
           const questionData = response.data;
           //const questionData = JSON.parse(JSONData);
           setQuestions(questionData.data);
-          console.log("questionData");
-          console.log(questionData.data);
-          console.log("questions");
-          console.log(questions);
         } else {
           console.log('Fetch failed');
         }

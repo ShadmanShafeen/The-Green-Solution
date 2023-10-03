@@ -22,7 +22,7 @@ function App() {
       <Route path='/Login' element={<LoginPage />}/>
       <Route path='/AccountCreation' element={<AccountCreationPage />} />     
       <Route path='/FarmerHomepage' element={<FarmerHome question={enteredQuestion} askQuestionHandler={askQuestionHandler} />} />
-      <Route path='/QuestionPage' element={<QuestionAnswerPage question={enteredQuestion} />} />
+      <Route path='/QuestionPage' element={<QuestionAnswerPage enteredQuestion={enteredQuestion} />} />
     </Routes>
   )
 }
