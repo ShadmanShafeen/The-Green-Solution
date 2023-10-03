@@ -6,6 +6,7 @@ import LoginPage from './routes/LoginPage'
 import AccountCreationPage  from './routes/AccountCreationPage'
 import FarmerHome from './routes/FarmerHome'
 import QuestionAnswerPage from './routes/QuestionAnswerPage'
+import AgronomistHome from './routes/AgronomistHome'
 import { useState } from 'react'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Route path='/AccountCreation' element={<AccountCreationPage />} />     
       <Route path='/FarmerHomepage' element={<FarmerHome farmer={user} question={enteredQuestion} askQuestionHandler={askQuestionHandler} />} />
       <Route path='/QuestionPage' element={<QuestionAnswerPage farmer={user} question={enteredQuestion} />} />
+      <Route path='/AgronomistHomepage' element={<AgronomistHome />} />
     </Routes>
   )
 }
