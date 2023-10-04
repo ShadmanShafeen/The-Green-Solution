@@ -11,9 +11,7 @@ function LogOutButton ()
     whileTap={{scale: 0.9}}>
       Log Out
     </motion.button>   
-
         </Link>
-     
     )
 }
  

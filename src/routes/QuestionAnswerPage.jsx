@@ -2,11 +2,11 @@ import AnswerList from "../components/AnswerList";
 import Header from "../components/Header";
 import Question from "../components/Question";
 
-function QuestionAnswerPage({ farmer , question }) {
+function QuestionAnswerPage({ enteredQuestion }) {
     return (
         <>
             <Header />
-            <Question  farmer={farmer} question={question}/>
+            <Question enteredQuestion={enteredQuestion}/>
             <AnswerList />
           
         </>
