@@ -1,7 +1,7 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
-import ToggleButton from "../components/ToggleButton"
+import ToggleButton from "./ToggleButton"
 
 function LoginForm() {
     const navigate = useNavigate();
@@ -51,7 +51,7 @@ function LoginForm() {
                 </div>
 
                 <div className={styles.form_group}>
-                    <label for="NID">NID:</label>
+                    <label for="NID">National ID:</label>
                     <input type="password" id="NID" name="NID" required/>
                 </div>
 
@@ -61,6 +61,7 @@ function LoginForm() {
                     onClick={null}
                     whileHover={{scale: 1.2}}
                     whileTap={{scale: 0.9}}
+                    transition={{duration: 1.5}}
                     >Login</motion.button>
                 </div>
             </form>

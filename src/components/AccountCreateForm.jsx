@@ -63,7 +63,7 @@ function AccountCreateForm() {
                     <label htmlFor="NID">National ID</label>
                     <input type="password" id="NID" name="NID"/>
                 </div>
-                
+
 
                 <div className={styles.form_group}>
                     <motion.button 
@@ -71,6 +71,7 @@ function AccountCreateForm() {
                         type='submit'
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
+                        transition={{duration: 2}}
                     >Create Account
                     </motion.button>
                 </div>
