@@ -8,6 +8,7 @@ function QuestionAnswerPage({ enteredQuestion }) {
             <Header />
             <Question enteredQuestion={enteredQuestion}/>
             <AnswerList />
+          
         </>
     )
 }

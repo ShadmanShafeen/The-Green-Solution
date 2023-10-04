@@ -19,8 +19,8 @@
     top: -30px;
     left: 0px;
     height:160px ;
-   width: max-content;
-background-color: blanchedalmond;
+   width:max-content;
+/* background-color: blanchedalmond; */
  
     display:flex;
     justify-content: center;
@@ -35,8 +35,11 @@ background-color: blanchedalmond;
    float: center;
    justify-content: center;
    align-content: center;
-   padding: 30px;
-   background-color: blanchedalmond;
+
+   padding: 20px;
+   /* width: 100px; */
+   /* background-color: blanchedalmond; */
+   
   
   }
  nav li{
