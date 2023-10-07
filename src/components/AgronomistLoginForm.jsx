@@ -16,8 +16,8 @@ function AgronomistLoginForm() {
             password: formData.get("password")
         };
 
-        localStorage.setItem('farmer',JSON.stringify(userData.name));
-        localStorage.setItem('NID',JSON.stringify(userData.NID));
+        localStorage.setItem('agronomist',JSON.stringify(userData.username));
+        // localStorage.setItem('password',JSON.stringify(userData.NID));
 
         try {
             const response = await fetch('http://localhost:5000/auth/agronomistlogin' , {
@@ -47,7 +47,7 @@ function AgronomistLoginForm() {
                 
                 <div className={styles.form_group}>
                     <label for="username">Username:</label>
-                    <input type="text" id="name" name="name" required/>
+                    <input type="text" id="username" name="username" required/>
                 </div>
 
                 <div className={styles.form_group}>

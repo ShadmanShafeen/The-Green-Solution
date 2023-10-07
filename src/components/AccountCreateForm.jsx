@@ -20,7 +20,7 @@ function AccountCreateForm() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/auth/agronomistsignup', {
+            const response = await fetch('http://localhost:5000/auth/farmersignup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

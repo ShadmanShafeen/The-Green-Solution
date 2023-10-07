@@ -15,7 +15,9 @@ function AgronomistAccountCreateForm() {
         const userData = {
             name: formData.get("name"),
             contact: formData.get("contact"),
-            NID: formData.get("NID")
+            NID: formData.get("NID"),
+            username: formData.get("username"),
+            password: formData.get("password")
         };
 
         try {
@@ -30,7 +32,7 @@ function AgronomistAccountCreateForm() {
             if (response.ok) {
                 console.log('Signup successful');
                 // Redirect or show a success message here
-                navigate('/Login');
+                navigate('/AgronomistLogin');
             } else {
                 console.error('Signup failed');
                 // Handle the error, e.g., show an error message to the user
