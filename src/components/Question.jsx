@@ -4,7 +4,7 @@ import LogOutButton from "../components/LogOutButton"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Question({ enteredQuestion }) {
+function Question() {
     const [question , setQuestion] = useState('');
     const questionID = JSON.parse(localStorage.getItem('questionID'));
     const farmer = JSON.parse(localStorage.getItem('farmer'));

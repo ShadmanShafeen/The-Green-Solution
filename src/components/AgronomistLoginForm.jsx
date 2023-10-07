@@ -1,9 +1,9 @@
-import styles from './LoginForm.module.css'
+import styles from './AgronomistLoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import ToggleButton from "./ToggleButton"
 
-function LoginForm() {
+function AgronomistLoginForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -12,15 +12,15 @@ function LoginForm() {
         const formData = new FormData(e.target);
 
         const userData = {
-            name: formData.get("name"),
-            NID: formData.get("NID")
+            username: formData.get("username"),
+            password: formData.get("password")
         };
 
         localStorage.setItem('farmer',JSON.stringify(userData.name));
         localStorage.setItem('NID',JSON.stringify(userData.NID));
 
         try {
-            const response = await fetch('http://localhost:5000/auth/farmerlogin' , {
+            const response = await fetch('http://localhost:5000/auth/agronomistlogin' , {
                 method: "Post",
                 headers: {
                     'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ function LoginForm() {
     
             if(response.ok) {
                 console.log('Login successful');
-                navigate('/FarmerHomepage');
+                navigate('/AgronomistHomepage');
             }
             else {
                 console.error('Login failed');
@@ -42,17 +42,17 @@ function LoginForm() {
     return (
       <>
         <div className={styles.container}>
-            <h2><b><b>Farmer Login</b></b></h2>
+            <h2><b><b>Agronomist Login</b></b></h2>
             <form  onSubmit={handleSubmit}>
                 
                 <div className={styles.form_group}>
-                    <label for="name">Name:</label>
+                    <label for="username">Username:</label>
                     <input type="text" id="name" name="name" required/>
                 </div>
 
                 <div className={styles.form_group}>
-                    <label for="NID">National ID:</label>
-                    <input type="password" id="NID" name="NID" required/>
+                    <label for="password">Pasword:</label>
+                    <input type="password" id="password" name="password" required/>
                 </div>
 
                 <div className={styles.form_group}>                              
@@ -67,7 +67,7 @@ function LoginForm() {
             </form>
 
             <div className={styles.register_link}>
-                <p>Don't have an account? <Link to='/AccountCreation'>Create One</Link></p>
+                <p>Don't have an account? <Link to='/AgronomistAccountCreation'>Create One</Link></p>
                 
             </div>
         </div> 
@@ -76,4 +76,4 @@ function LoginForm() {
     )
 }
 
-export default LoginForm
+export default AgronomistLoginForm

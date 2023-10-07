@@ -4,10 +4,13 @@ align-content: center;
 background-color: #8EE4AF;
 margin-left: 20px;
 margin-right: 20px;
-height: 80px;
-width: 100px;
+height: 75px;
+width: fit-content;
 text-size-adjust: 30px;
 border-radius: 30px;
+
+font-size: x-large;
+font-weight: 500;
 }
 
 
@@ -25,7 +28,7 @@ border-radius: 30px;
 .fontText {
     color: #242526;
     max-width: 1280px;
-    font-size: x-large;
+    font-size:xx-large;
     font-weight: 200;
     
     text-align: center;

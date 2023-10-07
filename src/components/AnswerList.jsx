@@ -8,11 +8,11 @@ function AnswerList () {
             <br /> <br /> <br />
                 <ul className={styles.answer_containers}>
                     <Answer 
-                    answer= "Farm like this, Farm like that"
+                    answer= "Answer 01"
                     agronomist= "Agri Shitol" />
                     <br/>
                     <Answer 
-                    answer= "You are a chasha , chash na kore website chalaye ki kam? er cheye valo giye chash kor jaa.. khete giye mathay haat diye boshe thak"
+                    answer= "Answer 02"
                     agronomist= "Agri Shitol" />
                 </ul>
             

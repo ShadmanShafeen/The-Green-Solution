@@ -1,11 +1,10 @@
-
 import { useEffect, useState } from 'react'; // Import useState if needed
-import styles from './AccountCreateForm.module.css';
+import styles from './AgronomistAccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import ToggleButton from "../components/ToggleButton"
 
-function AccountCreateForm() {
+function AgronomistAccountCreateForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,7 +45,7 @@ function AccountCreateForm() {
         <>
         
         <div className={styles.container}>
-            <h2><b><b>Farmer Account Creation</b></b></h2>
+            <h2><b><b>Agronomist Account Creation</b></b></h2>
             <form onSubmit={handleSubmit}>
                 
                 <div className={styles.form_group}>
@@ -60,8 +59,18 @@ function AccountCreateForm() {
                 </div>
 
                 <div className={styles.form_group}>
-                    <label htmlFor="NID">National ID</label>
-                    <input type="password" id="NID" name="NID"/>
+                    <label htmlFor="NID">National ID:</label>
+                    <input type="text" id="NID" name="NID"/>
+                </div>
+
+                <div className={styles.form_group}>
+                    <label htmlFor="username">Username:</label>
+                    <input type="text" id="username" name="username"/>
+                </div>
+
+                <div className={styles.form_group}>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password"/>
                 </div>
 
 
@@ -78,7 +87,7 @@ function AccountCreateForm() {
             </form>
 
             <div className={styles.register_link}>
-                <p>Already have an account? <Link to='/Login'> Log in </Link></p>
+                <p>Already have an account? <Link to='/AgronomistLogin'> Log in </Link></p>
             </div>
         </div>  
         <ToggleButton/>
@@ -86,4 +95,4 @@ function AccountCreateForm() {
     );
 }
 
-export default AccountCreateForm;
+export default AgronomistAccountCreateForm;

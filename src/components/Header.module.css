@@ -1,6 +1,6 @@
 .HeaderBackground
 {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(22, 22, 22);
 }
 .logo
 {
@@ -19,7 +19,7 @@
     top: -30px;
     left: 0px;
     height:160px ;
-   width:max-content;
+    width:max-content;
 /* background-color: blanchedalmond; */
  
     display:flex;
@@ -64,7 +64,3 @@
     grid-template-columns: repeat(4, 25%);
     justify-content: center;
 }
-
-
-
-
