@@ -64,14 +64,14 @@ function AccountCreateForm() {
                     <input type="password" id="NID" name="NID"/>
                 </div>
 
-
+                <br />
                 <div className={styles.form_group}>
                     <motion.button 
                         className={styles.button}
                         type='submit'
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                        transition={{duration: 2}}
+                        transition={{duration: 0.75}}
                     >Create Account
                     </motion.button>
                 </div>

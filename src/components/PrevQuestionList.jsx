@@ -26,13 +26,13 @@ function PrevQuestionList() {
           console.log('Fetch failed');
         }
       } catch (error) {
-        console.log('Error occurred during search', error);
+        console.log('Error occurred during search: ', error);
       }
     }
 
     fetchData();
   }, [NID]); // Include 'NID' in the dependency array to re-run the effect when it changes
-  if(questions.length>0) {
+  if(questions.length > 0) {
     return (
       <>
         <div className={styles.prevquestion_container}>

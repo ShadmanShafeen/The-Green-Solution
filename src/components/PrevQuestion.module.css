@@ -6,10 +6,11 @@
     position: relative;
     margin-top: 20px;
     width:auto;
-    height: 45px;
+    height: auto;
     background-color: #8EE4AF;
     border-radius: 25px;
     border: 2px #2d2d2d solid;
+    overflow-x: hidden;
 
     transition: 0.4s ease-in-out;
   }
