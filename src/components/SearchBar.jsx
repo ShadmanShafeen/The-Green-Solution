@@ -4,10 +4,17 @@ import { useState , useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
-function SearchBar({ enteredQuestion , askQuestionHandler }) {
+function SearchBar() {
+    const [enteredQuestion , setEnteredQuestion] = useState('');
+
+    function enterQuestionHandler(event) {
+        setEnteredQuestion(event.target.value);
+    }
+    
     const navigate = useNavigate();
     const [questionID , setQuestionID] = useState("");
     const NID = JSON.parse(localStorage.getItem('NID'));
+    const farmer = JSON.parse(localStorage.getItem('farmer'));
     const handleAsk = async (e) => {
         e.preventDefault();
         console.log("Question Asked", e.target);
@@ -15,13 +22,13 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
             console.log("No Question entered");
         } 
         else {
-            const farmer = JSON.parse(localStorage.getItem('farmer'));
-            const NID = JSON.parse(localStorage.getItem('NID'));
             const newQuestion = {
                 question: enteredQuestion,
                 farmer: farmer,
                 NID: NID
             };
+
+            //  Enter Question into Database
             try {
                 const response = await fetch('http://localhost:5000/askquestion' , {
                     method: 'POST',
@@ -40,7 +47,7 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
                 console.error('Error occurred during asking question:',error);
             }
     
-            
+            //  Fetch Last Question Inserted into Database
             async function fetchData() {
                     try {
                         const response = await axios.get(`http://localhost:5000/fetchquestionlast/${NID}` , {
@@ -74,7 +81,7 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
         <>
             <div className={styles.search_container}>
                 <input idname={styles.searchBar} type="text" placeholder="Ask a question..." 
-                onChange={askQuestionHandler} /> 
+                onChange={enterQuestionHandler} /> 
                 <Link>
                     <motion.button
                         className={styles.searchButton} 

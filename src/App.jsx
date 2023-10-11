@@ -12,12 +12,6 @@ import AgronomistLoginPage from './routes/AgronomistLoginPage'
 import AgronomistAccountCreationPage from './routes/AgronomistAccountCreationPage'
 
 function App() {
-  const [enteredQuestion , setEnteredQuestion] = useState('');
-  //const [user, setUser] = useState('');
-
-  function askQuestionHandler(event) {
-      setEnteredQuestion(event.target.value);
-  }
 
   return (
     <Routes>
@@ -26,7 +20,7 @@ function App() {
       <Route path='/AccountCreation' element={<AccountCreationPage />} />   
       <Route path='/AgronomistLogin' element={<AgronomistLoginPage />} />
       <Route path='/AgronomistAccountCreation' element={<AgronomistAccountCreationPage />} />  
-      <Route path='/FarmerHomepage' element={<FarmerHome question={enteredQuestion} askQuestionHandler={askQuestionHandler} />} />
+      <Route path='/FarmerHomepage' element={<FarmerHome />} />
       <Route path='/QuestionPage' element={<QuestionAnswerPage />} />
       <Route path='/AgronomistHomepage' element={<AgronomistHome />} />
     </Routes>

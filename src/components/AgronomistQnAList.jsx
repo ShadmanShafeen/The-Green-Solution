@@ -40,15 +40,19 @@ function AgronomistQnAList()
          <div className={styles.AgQnAContainer}>
            <ul>
               {questions.map((item) => (
-                <AgronomistQnAItem key={item._id} question={item.question} farmer={item.farmer} questionID={item._id} />
+                <AgronomistQnAItem key={item._id} question={item.question} farmer={item.farmer} qID={item._id} />
               ))}         
            </ul>
             
          </div>
-          <li className={styles.AgProfile}>
-                   
-          </li>
-        
+         <div className={styles.AgProfile}>
+              <li className={styles.ProfileList}>Questions Answered</li> 
+                  <li className={styles.AgprofileBox}></li>
+              <li className={styles.ProfileList}>Pending Question</li>
+                  <li className={styles.AgprofileBox}></li>
+              <li className={styles.ProfileList}>Days Active</li>
+                  <li className={styles.AgprofileBox}></li>           
+          </div>
         </>
       )
     }
@@ -66,10 +70,14 @@ function AgronomistQnAList()
            </ul>
             
          </div>
-          <li className={styles.AgProfile}>
-                   
-          </li>
-        
+          <div className={styles.AgProfile}>
+              <li className={styles.ProfileList}>Question Answered</li> 
+                  <li className={styles.AgprofileBox}></li>
+              <li className={styles.ProfileList}>Pending Question</li>
+                  <li className={styles.AgprofileBox}></li>
+              <li className={styles.ProfileList}>Days Active</li>
+                  <li className={styles.AgprofileBox}></li>           
+          </div>
         </>
       )
     }
