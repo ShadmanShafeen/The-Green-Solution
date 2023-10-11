@@ -1,14 +1,10 @@
 /*Toggle*/
 
-.Background
-{
-  background-color: blanchedalmond;
-}
 
 .toggle {
   position: fixed;
-  top: 5%;
-  right: 1%;
+  top:5%;
+  right: 0.5%;
   display: inline-block;
   --width: 82px;
   --height: calc(var(--width) / 2.5);
@@ -52,7 +48,8 @@
 }
 
 .toggle input:checked+.slider {
-  background-color: #70b47c;
+  background-color: #36454F;
+  
 }
 
 .toggle input:checked+.slider::before {

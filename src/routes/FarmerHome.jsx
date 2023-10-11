@@ -7,11 +7,13 @@ import LogOutButton from "../components/LogOutButton"
 function FarmerHome() {
     return (
         <>
+           
             <Header />
             <SearchBar />
             <PrevQuestionList />
             <ToggleButton/>
             <LogOutButton/> 
+           
         </>
     )
 }

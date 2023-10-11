@@ -1,0 +1,17 @@
+.typewriter {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    white-space: nowrap; /* Prevent text from wrapping */
+   /* overflow: hidden; /* Hide overflowing text */
+    border-right: 2px solid #000; /* Create a blinking cursor effect */
+    animation: cursor 1s infinite; /* Blinking cursor animation */
+  }
+  
+  @keyframes cursor {
+    0%, 100% {
+      border-right-color: transparent;
+    }
+    50% {
+      border-right-color: #000;
+    }
+  }

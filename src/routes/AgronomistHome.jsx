@@ -3,7 +3,6 @@ import ToggleButton from "../components/ToggleButton";
 import LogOutButton from "../components/LogOutButton";
 import AgronomistQnAList from "../components/AgronomistQnAList";
 
-
 function AgronomistHome() {
     return (<>
     <Header/>
