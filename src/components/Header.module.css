@@ -62,7 +62,6 @@
     gap: 5rem;
     grid-template-columns: repeat(4, 25%);
     justify-content: center;
-    background-color: inherit;
 }
 
 .HList:hover {

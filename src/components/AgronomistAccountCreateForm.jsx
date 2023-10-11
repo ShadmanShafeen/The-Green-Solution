@@ -1,11 +1,10 @@
-
 import { useEffect, useState } from 'react'; // Import useState if needed
-import styles from './AccountCreateForm.module.css';
+import styles from './AgronomistAccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import ToggleButton from "../components/ToggleButton"
 
-function AccountCreateForm() {
+function AgronomistAccountCreateForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,11 +15,13 @@ function AccountCreateForm() {
         const userData = {
             name: formData.get("name"),
             contact: formData.get("contact"),
-            NID: formData.get("NID")
+            NID: formData.get("NID"),
+            username: formData.get("username"),
+            password: formData.get("password")
         };
 
         try {
-            const response = await fetch('http://localhost:5000/auth/farmersignup', {
+            const response = await fetch('http://localhost:5000/auth/agronomistsignup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ function AccountCreateForm() {
             if (response.ok) {
                 console.log('Signup successful');
                 // Redirect or show a success message here
-                navigate('/Login');
+                navigate('/AgronomistLogin');
             } else {
                 console.error('Signup failed');
                 // Handle the error, e.g., show an error message to the user
@@ -46,7 +47,7 @@ function AccountCreateForm() {
         <>
         
         <div className={styles.container}>
-            <h2><b><b>Farmer Account Creation</b></b></h2>
+            <h2><b><b>Agronomist Account Creation</b></b></h2>
             <form onSubmit={handleSubmit}>
                 
                 <div className={styles.form_group}>
@@ -60,25 +61,35 @@ function AccountCreateForm() {
                 </div>
 
                 <div className={styles.form_group}>
-                    <label htmlFor="NID">National ID</label>
-                    <input type="password" id="NID" name="NID"/>
+                    <label htmlFor="NID">National ID:</label>
+                    <input type="text" id="NID" name="NID"/>
                 </div>
 
-                <br />
+                <div className={styles.form_group}>
+                    <label htmlFor="username">Username:</label>
+                    <input type="text" id="username" name="username"/>
+                </div>
+
+                <div className={styles.form_group}>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password"/>
+                </div>
+
+
                 <div className={styles.form_group}>
                     <motion.button 
                         className={styles.button}
                         type='submit'
                         whileHover={{ scale: 1.2 }}
                         whileTap={{ scale: 0.9 }}
-                        transition={{duration: 0.75}}
+                        transition={{duration: 0.5}}
                     >Create Account
                     </motion.button>
                 </div>
             </form>
 
             <div className={styles.register_link}>
-                <p>Already have an account? <Link to='/Login'> Log in </Link></p>
+                <p>Already have an account? <Link to='/AgronomistLogin'> Log in </Link></p>
             </div>
         </div>  
         <ToggleButton/>
@@ -86,4 +97,4 @@ function AccountCreateForm() {
     );
 }
 
-export default AccountCreateForm;
+export default AgronomistAccountCreateForm;

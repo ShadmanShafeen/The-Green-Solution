@@ -4,62 +4,74 @@ import { useState , useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
-function SearchBar({ enteredQuestion , askQuestionHandler }) {
+function SearchBar() {
+    const [enteredQuestion , setEnteredQuestion] = useState('');
+
+    function enterQuestionHandler(event) {
+        setEnteredQuestion(event.target.value);
+    }
+    
     const navigate = useNavigate();
     const [questionID , setQuestionID] = useState("");
     const NID = JSON.parse(localStorage.getItem('NID'));
+    const farmer = JSON.parse(localStorage.getItem('farmer'));
     const handleAsk = async (e) => {
         e.preventDefault();
         console.log("Question Asked", e.target);
-        
-        const farmer = JSON.parse(localStorage.getItem('farmer'));
-        const NID = JSON.parse(localStorage.getItem('NID'));
-        const newQuestion = {
-            question: enteredQuestion,
-            farmer: farmer,
-            NID: NID
-        };
-        try {
-            const response = await fetch('http://localhost:5000/askquestion' , {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newQuestion)
-            });
-            if (response.ok) {
-                console.log('Question asked successfully');
-            }
-            else {
-                console.error('Question asking failed');
-            }
-        } catch (error) {
-            console.error('Error occurred during asking question:',error);
-        }
+        if(enteredQuestion === ''){
+            console.log("No Question entered");
+        } 
+        else {
+            const newQuestion = {
+                question: enteredQuestion,
+                farmer: farmer,
+                NID: NID
+            };
 
-        
-        async function fetchData() {
-                try {
-                    const response = await axios.get(`http://localhost:5000/fetchquestionlast/${NID}` , {
+            //  Enter Question into Database
+            try {
+                const response = await fetch('http://localhost:5000/askquestion' , {
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
-                    }
-                    });
-                    if(response.status === 200) {
-                        const fetchedData = response.data;
-                        const questionID = fetchedData.data._id
-                        setQuestionID(questionID);
-                        localStorage.setItem('questionID',JSON.stringify(questionID));
-                        navigate('/QuestionPage');
-                    }
-                    else {
-                        console.log('Fetch failed');
-                    }
-                } catch (error) {
-                    console.log('Error occurred during search' , error);
+                    },
+                    body: JSON.stringify(newQuestion)
+                });
+                if (response.ok) {
+                    console.log('Question asked successfully');
                 }
+                else {
+                    console.error('Question asking failed');
+                }
+            } catch (error) {
+                console.error('Error occurred during asking question:',error);
             }
-        fetchData();
+    
+            //  Fetch Last Question Inserted into Database
+            async function fetchData() {
+                    try {
+                        const response = await axios.get(`http://localhost:5000/fetchquestionlast/${NID}` , {
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                        });
+                        if(response.status === 200) {
+                            const fetchedData = response.data;
+                            const questionID = fetchedData.data._id
+                            setQuestionID(questionID);
+                            localStorage.setItem('questionID',JSON.stringify(questionID));
+                            navigate('/QuestionPage');
+                        }
+                        else {
+                            console.log('Fetch failed');
+                        }
+                    } catch (error) {
+                        console.log('Error occurred during search' , error);
+                    }
+                }
+            fetchData();
+        }
+       
         
     };
 
@@ -73,8 +85,7 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
             <div className={styles.search_container}>
 
                 <input idname={styles.searchBar} type="text" placeholder="Ask a question..." 
-
-                onChange={askQuestionHandler} /> 
+                onChange={enterQuestionHandler} /> 
                 <Link>
                     <motion.button
                         className={styles.searchButton} 

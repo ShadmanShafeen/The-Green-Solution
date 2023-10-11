@@ -10,8 +10,8 @@
     list-style-type: none;
     box-shadow: 4px 4px rgb(142, 140, 140);
     overflow-y: scroll;
-    
 }
+
 /*ScrollBar*/
 
 ::-webkit-scrollbar {
@@ -40,6 +40,9 @@
 /*Sroll Bar*/
 
 
+
+
+
 .AgProfile
 {   position: absolute;
     top: 290px;
@@ -52,65 +55,28 @@
     border: 1px black solid;
     box-shadow: 6px 6px rgb(174, 172, 172);
 }
-.AgQuestionBox
-{
-    position: relative;
-    height: 50px;
-    width: 1000px;
-    border-radius: 10px;
-    border: 0.2px black solid;
-    list-style-type: none;
-    background-color: beige;
-    /* padding: 15px; */
-    padding-bottom: 20px;
-    box-shadow: 3px 3px rgb(129, 125, 125);
-    display: grid;
-    
-}
- .AgAnswer
-{
-    list-style-type: none;
-   /* width: 700px; */
-   display: inline-block; 
-   padding-right: 20px;
-    
-} 
+
 ul{
     list-style-type: none;
 }
-.FixTextArea
-{
-    resize: none;
-    width: 900px;
-    height: 50px;
-    list-style-type: none;
-    border-radius: 10px;
-    box-shadow: 3px 3px rgb(129, 125, 125);
-    font-size: x-large;
-}
-.AgSubmit
-{
-    list-style-type: none; 
-    padding-top: 15px;
-    padding-left:-15px;
-}
 
-.AgAnsContainer
-{
-    display: flex;
-    padding-right:30px;
-}
+
+
 .Heading
   {
     color: black;
      padding-top: 100px;
+    /* padding-left: -840px; */
     padding-bottom: -90px;
     left: 150px;
+    /* align-items: left;
+    justify-content:left;
+    align-content: left; */
     text-align: left ;
     padding-left: 250px;
-   }
-
-.AgprofileBox
+    
+  }
+  .AgprofileBox
 {
     margin-top: 10px;
     margin-left: 20px;
@@ -126,13 +92,4 @@ ul{
 {
     margin-top: 35px;
     color: black
-}
-
-.SubmitButton
-{
-    height: 34px;
-    height: 35px;
-    border-radius: 20px;
-    border: rgb(47, 45, 45) solid 0.2px;
-  
 }

@@ -23,7 +23,7 @@ function Buttons() {
                     >Farmer</motion.button>
                 </Link>
                 
-                <Link to='/Login'>
+                <Link to='/AgronomistLogin'>
                 <motion.button 
                 className={styles.mainButton}
                 onClick={null}

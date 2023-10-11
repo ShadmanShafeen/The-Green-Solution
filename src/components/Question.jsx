@@ -4,10 +4,11 @@ import LogOutButton from "../components/LogOutButton"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-function Question({ enteredQuestion }) {
+function Question() {
     const [question , setQuestion] = useState('');
+    const [farmer , setFarmer] = useState('');
     const questionID = JSON.parse(localStorage.getItem('questionID'));
-    const farmer = JSON.parse(localStorage.getItem('farmer'));
+    // const farmer = JSON.parse(localStorage.getItem('farmer'));
     useEffect(() => {
         async function fetchData() {
             try {
@@ -19,6 +20,7 @@ function Question({ enteredQuestion }) {
                 if(response.status === 200) {
                     const questionData = response.data;
                     setQuestion(questionData.data.question);
+                    setFarmer(questionData.data.farmer);
                 }
                 else {
                     console.log('Fetch failed');

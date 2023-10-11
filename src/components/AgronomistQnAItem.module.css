@@ -1,0 +1,75 @@
+.AgQuestionBox
+{
+    position: relative;
+    height: 50px;
+    width: 1000px;
+    border-radius: 10px;
+    border: 0.2px black solid;
+    list-style-type: none;
+    background-color: beige;
+    /* padding: 15px; */
+    padding-bottom: 20px;
+    box-shadow: 3px 3px rgb(129, 125, 125);
+    display: grid;
+    
+}
+.questionText 
+{
+    color : #2D2D2D;
+    font-size: medium;
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    position: absolute;
+    left: 5px;
+    top: -10px;
+}
+.farmerText
+{
+    color : #2D2D2D;
+    font-size: medium;
+    font-style: italic;
+    position: absolute;
+    font-weight: lighter;
+    bottom:-10px;
+    right: 15px;
+}
+ .AgAnswer
+{
+    list-style-type: none;
+   /* width: 700px; */
+   display: inline-block; 
+   padding-right: 20px;
+    
+} 
+.FixTextArea
+{
+    resize: none;
+    width: 900px;
+    height: 50px;
+    list-style-type: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgb(129, 125, 125);
+    font-size: x-large;
+}
+.AgSubmit
+{
+    /* display: flex; */
+     list-style-type: none; 
+    /* left: 900px; */
+    /* margin-left: 900px; */
+    padding-top: 15px;
+    padding-left:-15px;
+
+}
+.AgAnsContainer
+{
+    display: flex;
+    padding-right:30px;
+}
+.AgSubmitButton
+{
+    height: 34px;
+    height: 35px;
+    border-radius: 20px;
+    border: rgb(47, 45, 45) solid 0.2px;
+}
