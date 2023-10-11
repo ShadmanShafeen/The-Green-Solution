@@ -9,7 +9,37 @@
     border: 1px #2d2d2d solid;
     list-style-type: none;
     box-shadow: 4px 4px rgb(142, 140, 140);
+    overflow-y: scroll;
+    
 }
+/*ScrollBar*/
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 0.2px black solid;
+    box-shadow:  2px 3px 1px 1px rgba(82, 79, 79, 0);
+  }
+
+  ::-webkit-scrollbar-track:hover {
+    background-color: #605f5f;
+    border-radius: 25px;
+  }
+
+  scrollbar-thumb {
+    background-color: #585656;
+    border-radius: 6px;
+  }
+  scrollbar-thumb:hover {
+    background-color: #605f5f;
+  }  
+
+/*Sroll Bar*/
+
+
 .AgProfile
 {   position: absolute;
     top: 290px;
@@ -60,13 +90,9 @@ ul{
 }
 .AgSubmit
 {
-    /* display: flex; */
-     list-style-type: none; 
-    /* left: 900px; */
-    /* margin-left: 900px; */
+    list-style-type: none; 
     padding-top: 15px;
     padding-left:-15px;
-
 }
 
 .AgAnsContainer
@@ -78,20 +104,35 @@ ul{
   {
     color: black;
      padding-top: 100px;
-    /* padding-left: -840px; */
     padding-bottom: -90px;
     left: 150px;
-    /* align-items: left;
-    justify-content:left;
-    align-content: left; */
     text-align: left ;
     padding-left: 250px;
+   }
+
+.AgprofileBox
+{
+    margin-top: 10px;
+    margin-left: 20px;
     
-  }
+    height: 50px;
+    width: 160px;
+    background-color: blanchedalmond;
+    border-radius: 15px;
+    box-shadow: 3px 3px rgb(129, 125, 125);
+    border: 0.2px #2d2d2d solid;
+}
+.ProfileList
+{
+    margin-top: 35px;
+    color: black
+}
+
 .SubmitButton
 {
     height: 34px;
     height: 35px;
     border-radius: 20px;
     border: rgb(47, 45, 45) solid 0.2px;
+  
 }

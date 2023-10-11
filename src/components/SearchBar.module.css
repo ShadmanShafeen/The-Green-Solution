@@ -6,7 +6,7 @@
     width:600px;
     height: 50px;
     margin-top: 20px;
-    margin-left: -240px;
+    margin-left: -180px;
     border-radius: 40px;
     
     position: relative;
@@ -16,30 +16,27 @@
   .searchButton {
     border-radius: 40px;
     background-color: #8EE4AF;
-    margin-left: 20px;
+    margin-left: 10px; 
+    padding-left: 13px;
+    padding-top:9px;
     height: 50px;
     width: 50px;
-    border: black solid 0.2px;
+    /* border: black solid 0.2px; */
     /*background-image: url(images/Search.png);*/
     
   }
-
-  
-  /* .twoButtons1 {
-    cursor: pointer;
-    
-    background-color: #8EE4AF;
-    left: 200px;
-    margin-right: 20px;
-    border-radius: 55px;
-    height: 55px;
-    width: 55px;
+  .searchButton :hover .svg-icon
+  {
+    border: #0c0202 solid 2px;
    
-  } */
+    animation: flickering 2s linear infinite;
+  }
+
 
   .HorizontalButtons{
     
-    padding-right: 40px;
+    padding-right: 50px;
+    padding-left: 30px;
   }
 
 
@@ -48,133 +45,19 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    height: 50px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
+    border-radius: 50px;
     border: none;
     background:  #8EE4AF;
-    border-radius: 40px;
     cursor: pointer;
+    position: relative;
+   
   }
-  
-  .lable {
-    line-height: 22px;
-    font-size: 17px;
-    color: #100f0f;
-    font-family: sans-serif;
-    letter-spacing: 1px;
-  }
+ 
   
   .Ibutton:hover {
     background: #8EE4AF;
-  }
-  
-  .Ibutton:hover .svg-icon {
-    animation: flickering 2s linear infinite;
-   
-  }
-  
-  @keyframes flickering {
-    0% {
-      opacity: 1;
-    }
-  
-    50% {
-      opacity: 1;
-    }
-  
-    52% {
-      opacity: 1;
-    }
-  
-    54% {
-      opacity: 0;
-    }
-  
-    56% {
-      opacity: 1;
-    }
-  
-    90% {
-      opacity: 1;
-    }
-  
-    92% {
-      opacity: 0;
-    }
-  
-    94% {
-      opacity: 1;
-    }
-  
-    96% {
-      opacity: 0;
-    }
-  
-    98% {
-      opacity: 1;
-    }
-  
-    99% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
-
-  /* .twoButtons2 {
-    cursor: pointer;
-   
-    background-color: #8EE4AF;
-  
-    border-radius: 50px;
-    height: 55px;
-    width: 55px;
-  } */
-
-  input[type="text"] {
-    /*padding: 10px;
-    border: 1px solid #353333;*/
-    border-radius: 40px;
-    /*width:500px;*/
-  }
-  .SpacingButton
-  {
-    padding-left: 5px;
-    padding-right: 20px;
-  
-  }
-
-  .HorizontalButtons
-  {
-    display: flex;
-    padding-right: 40px;
-    padding-left: 30px;
-    position: absolute;
-    left: 35%;
-  }
-
-
-  .Ibutton {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    border-radius: 50px;
-    height: 55px;
-    width: 55px;
-    cursor: pointer;
-  }
-  
-  .lable {
-    line-height: 22px;
-    font-size: 17px;
-    color: #0c0202;
-    font-family: sans-serif;
-    letter-spacing: 1px;
-  }
-  
-  .Ibutton:hover {
     border: #0c0202 solid 2px;
   }
   
@@ -235,16 +118,25 @@
 
 
 
+  input[type="text"] {
+    border-radius: 40px;
+  }
 
-
+  .HorizontalButtons
+  {
+    display: flex;
+    padding-right: 40px;
+    padding-left: 30px;
+    position: absolute;
+    left: 35%;
+  }
   /*Inserting Audio*/
 
 
   .mswitch {
     /* position: relative; */
     background-color: #8EE4AF;
-
-  
+    /* position: fixed; */
     border-radius: 50px;
     height: 55px;
     width: 55px;
@@ -262,3 +154,32 @@
     border: #0c0202 solid 2px;
     
   }
+.AIText0{
+  color: #0c0202;
+  padding-right: 50px;
+  padding-left: 5px;
+  align-items: center;
+  margin-left: -15px;
+  padding-top: 5px;
+}
+
+.AIText1
+{
+  color: #0c0202;
+  padding-right: 50px;
+  padding-left: 5px;
+  align-items: center;
+  margin-left: -23px;
+  padding-top: 5px;
+  
+}
+
+.AIText2
+{
+  color: #0c0202;
+  padding-right: 30px;
+  padding-left: 5px;
+  margin-left:-10px ;
+ 
+  
+}

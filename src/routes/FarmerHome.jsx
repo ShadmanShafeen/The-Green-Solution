@@ -7,11 +7,13 @@ import LogOutButton from "../components/LogOutButton"
 function FarmerHome({ question , askQuestionHandler}) {
     return (
         <>
+           
             <Header />
             <SearchBar enteredQuestion={question} askQuestionHandler={askQuestionHandler} />
             <PrevQuestionList />
             <ToggleButton/>
             <LogOutButton/> 
+           
         </>
     )
 }

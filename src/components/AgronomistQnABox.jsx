@@ -13,8 +13,7 @@ function AgronomistQnABox()
          <div className={styles.AgQnAContainer}>
            <ul>
                <li>
-                 
-                  <br/>
+                <br/>
                     <p>
                          <div className={styles.AgQuestionBox}>
                               
@@ -24,22 +23,23 @@ function AgronomistQnABox()
                       <p className={styles.AgAnswer}><textarea className={styles.FixTextArea} placeholder="Write your answer..."></textarea> </p>
                       <p className={styles.AgSubmit}>
                       <motion.button className={styles.SubmitButton} onClick={null}
-    whileHover={{scale: 1.2}}
-    whileTap={{scale: 0.9}}>
-     Submit
-    </motion.button>     </p>
+                        whileHover={{scale: 1.2}}
+                        whileTap={{scale: 0.9}}>
+                        Submit
+                      </motion.button>
+                      </p>
                       </div>
-                      
-               </li> 
-               
-           </ul>
-            
-         </div>
-          <li className={styles.AgProfile}>
-          
-                     
-          
-          </li>
+              </li>    
+          </ul>
+          </div>
+          <div className={styles.AgProfile}>
+         <li className={styles.ProfileList}>Question Answered</li> 
+              <li className={styles.AgprofileBox}></li>
+          <li className={styles.ProfileList}>Pending Question</li>
+              <li className={styles.AgprofileBox}></li>
+          <li className={styles.ProfileList}>Days Active</li>
+              <li className={styles.AgprofileBox}></li>
+           </div>
         
         
         

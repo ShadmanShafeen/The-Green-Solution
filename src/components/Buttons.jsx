@@ -6,11 +6,13 @@ function Buttons() {
     
     
     return (
+    <>
+    
         
             
         <div className={styles.center}>
        
-            <p className={styles.fontText}>Are you a/an.......?</p>
+            <p className={styles.fontText}><b>Are you.......?</b></p>
             <p>
                 <Link to='/Login'>
                     <motion.button 
@@ -31,6 +33,10 @@ function Buttons() {
                 </Link>
             </p>
         </div>
+
+        
+    </> 
+        
  
     );
 }

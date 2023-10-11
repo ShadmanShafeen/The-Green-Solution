@@ -67,8 +67,13 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
 
     return (
         <>
+        <div className={styles.AgBg}>
+
+        
             <div className={styles.search_container}>
+
                 <input idname={styles.searchBar} type="text" placeholder="Ask a question..." 
+
                 onChange={askQuestionHandler} /> 
                 <Link>
                     <motion.button
@@ -76,8 +81,10 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
                         type="Search"
                         whileHover={{scale: 1.2}}
                         whileTap={{scale: 0.9}}
-                        onClick={handleAsk}
-                    >Ask</motion.button>
+                        onClick={handleAsk}>
+                          
+                          <svg xmlns="http://www.w3.org/2000/svg" height="1.8em" fill= "black"viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                    <p className={styles.AIText0}>Search</p></motion.button>
 
                 </Link>
             </div>
@@ -87,18 +94,21 @@ function SearchBar({ enteredQuestion , askQuestionHandler }) {
                             className={styles.Ibutton}
                             whileHover={{scale: 1.2}}
                             whileTap={{scale: 0.9}}
-                            ><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none" class="svg-icon"><g stroke-width="2" stroke-linecap="round" stroke="#fff" fill-rule="evenodd" clip-rule="evenodd"><path d="m4 9c0-1.10457.89543-2 2-2h2l.44721-.89443c.33879-.67757 1.03131-1.10557 1.78889-1.10557h3.5278c.7576 0 1.4501.428 1.7889 1.10557l.4472.89443h2c1.1046 0 2 .89543 2 2v8c0 1.1046-.8954 2-2 2h-12c-1.10457 0-2-.8954-2-2z"></path><path d="m15 13c0 1.6569-1.3431 3-3 3s-3-1.3431-3-3 1.3431-3 3-3 3 1.3431 3 3z"></path></g></svg>
-                            <span class="lable"></span></motion.button>
-                </p>
+                             >
+                               <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><path d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg>
+                            </motion.button>
+               <p className={styles.AIText1}>Insert Image</p> </p>
                 <p>          
                     <motion.button 
                     className={styles.mswitch}
                     whileHover={{scale: 1.2}}
                     whileTap={{scale: 0.9}}
-                    >  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mic-fill" viewBox="0 0 16 16"> <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path> <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"></path> </svg>  </motion.button>                             
+                    ><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"/></svg> </motion.button>                             
+               <p className={styles.AIText2}>Speak Here</p>
                 </p>
             </div>
-        
+          
+            </div>
         </>
     )
 }

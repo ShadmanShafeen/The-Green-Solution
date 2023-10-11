@@ -3,22 +3,20 @@ import Header from "../components/Header";
 import  './Home.module.css';
 import ToggleButton from "../components/ToggleButton"
 // import myImageBackground from "../components/images/background.png"
-
+import styles from "./Home.module.css"
 
 
 function Home() {
     return (
-        <>
+        
          
-            <div className="backgroundImage">
-            <Header/>
+        <div className={styles.homeContainer}>
+             <Header/>
+            <Buttons/>
             <ToggleButton/>
-            <Buttons/>  
-          
-            </div>
-           
-           
-             </>  
+
+        
+    </div>
        
     )
 }
