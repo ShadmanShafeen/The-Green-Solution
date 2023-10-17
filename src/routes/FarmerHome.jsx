@@ -3,10 +3,11 @@ import SearchBar from "../components/SearchBar"
 import PrevQuestionList from "../components/PrevQuestionList"
 import ToggleButton from "../components/ToggleButton"
 import LogOutButton from "../components/LogOutButton"
-import { useState } from "react"
+import BackgroundStyle from "../components/BackgroundStyle"
+import AnimatedText from "../components/AnimatedText"
 
 function FarmerHome({ enteredQuestion , enterQuestionHandler }) {
-    
+
     return (
         <>
            
@@ -15,7 +16,8 @@ function FarmerHome({ enteredQuestion , enterQuestionHandler }) {
             <PrevQuestionList />
             <ToggleButton/>
             <LogOutButton/> 
-           
+            <BackgroundStyle/>
+            <AnimatedText/>
         </>
     )
 }

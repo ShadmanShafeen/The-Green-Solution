@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    position: relative;
+    /* position: relative; */
+    /* top: 40%; */
     margin-top: 20px;
     width:auto;
     height: auto;
@@ -20,7 +21,7 @@
 }
 
 .prevquestion_text {
-    color: #252525;
+    color: #000000;
     font-weight: 500;
     font-size: large;
 }

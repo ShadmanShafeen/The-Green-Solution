@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from './AgronomistQnAItem.module.css'
 import { motion } from 'framer-motion'
+
 function AgronomistQnAItem({ question  , farmer , qID }) 
 {
     const [enteredAnswer , setAnswer] = useState('');
@@ -42,7 +43,7 @@ function AgronomistQnAItem({ question  , farmer , qID })
             console.error('Error occurred during UPDATE: ' , error);
         }
     }
-    return (
+    return (<>
         <li>
             <br/>
             <p>
@@ -76,6 +77,8 @@ function AgronomistQnAItem({ question  , farmer , qID })
                     </p>
             </div>
         </li>
+    
+        </>
     )
 }
 
