@@ -1,18 +1,26 @@
 .search_container {
-
     display: flex;
     justify-content: center;
-    
-    width:600px;
+    width:650px;
     height: 50px;
-    margin-top: 20px;
-    margin-left: -180px;
+    left: 28%;
+    /* margin-top: 40px;
+    margin-left: -20px; */
     border-radius: 40px;
-    
-    position: relative;
-    
+    /* position: relative; */
+    position: fixed;
+    top: 50%;
 
+   
   }
+  
+
+  input[type="text"] {
+    border-radius: 40px;
+    outline: none;
+    width: 100%;
+  }
+
   .searchButton {
     border-radius: 40px;
     background-color: #8EE4AF;
@@ -20,25 +28,37 @@
     padding-left: 13px;
     padding-top:9px;
     height: 50px;
-    width: 50px;
-    /* border: black solid 0.2px; */
-    /*background-image: url(images/Search.png);*/
-    
+    width: 50px; 
+    border: none;
   }
-  .searchButton :hover .svg-icon
+
+ .searchButton:hover .svg-icon {
+  animation: flickering 2s linear infinite;
+
+} 
+
+
+
+.AIText0{
+  color: #0c0202;
+  padding-right: 50px;
+  padding-left: 5px;
+  margin-top: 45px;
+  align-items: center;
+  margin-left: -54px;
+  padding-top: 5px;
+  
+}
+
+  .HorizontalButtons
   {
-    border: #0c0202 solid 2px;
-   
-    animation: flickering 2s linear infinite;
-  }
-
-
-  .HorizontalButtons{
-    
-    padding-right: 50px;
+    display: flex;
+    padding-right: 40px;
     padding-left: 30px;
+    position: fixed;
+    left: 38%;
+    top: 58%;
   }
-
 
 /*Image Insertion Code*/
   .Ibutton {
@@ -55,8 +75,7 @@
    
   }
  
-  
-  .Ibutton:hover {
+   .Ibutton:hover {
     background: #8EE4AF;
     border: #0c0202 solid 2px;
   }
@@ -66,7 +85,7 @@
    
   }
   
-  @keyframes flickering {
+  /* @keyframes flickering {
     0% {
       opacity: 1;
     }
@@ -114,37 +133,26 @@
     100% {
       opacity: 1;
     }
-  }
+  } */
 
 
 
-  input[type="text"] {
-    border-radius: 40px;
-  }
-
-  .HorizontalButtons
-  {
-    display: flex;
-    padding-right: 40px;
-    padding-left: 30px;
-    position: absolute;
-    left: 35%;
-  }
   /*Inserting Audio*/
 
 
   .mswitch {
-    /* position: relative; */
+    
     background-color: #8EE4AF;
-    /* position: fixed; */
+   
     border-radius: 50px;
     height: 55px;
     width: 55px;
     display: flex; 
     justify-content: center;
     align-items: center;
-   
-   color: white;
+    color: white;
+    margin-left: 20px;
+    margin-top: 2px;
     cursor: pointer;
     transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
@@ -154,19 +162,12 @@
     border: #0c0202 solid 2px;
     
   }
-.AIText0{
-  color: #0c0202;
-  padding-right: 50px;
-  padding-left: 5px;
-  align-items: center;
-  margin-left: -15px;
-  padding-top: 5px;
-}
+
 
 .AIText1
 {
   color: #0c0202;
-  padding-right: 50px;
+  padding-right: 40px;
   padding-left: 5px;
   align-items: center;
   margin-left: -23px;
@@ -177,9 +178,8 @@
 .AIText2
 {
   color: #0c0202;
-  padding-right: 30px;
+  padding-right: 20px;
   padding-left: 5px;
-  margin-left:-10px ;
- 
-  
+  margin-left:0px ;
+  margin-top: 18px;
 }

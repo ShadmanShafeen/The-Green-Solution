@@ -7,7 +7,7 @@
     position: absolute;
     
     width: 360px;
-    margin-top: -310px;
+    margin-top: -260px;
     height: 590px;
     margin-bottom:300px;
     padding: 20px;
@@ -25,3 +25,8 @@
     font-weight: 600;
     color: black;
   }
+
+.prevQuesScroll
+{
+  
+}
