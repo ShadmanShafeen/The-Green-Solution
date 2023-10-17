@@ -3,7 +3,8 @@ import SearchBar from "../components/SearchBar"
 import PrevQuestionList from "../components/PrevQuestionList"
 import ToggleButton from "../components/ToggleButton"
 import LogOutButton from "../components/LogOutButton"
-
+import BackgroundStyle from "../components/BackgroundStyle"
+import AnimatedText from "../components/AnimatedText"
 function FarmerHome() {
     return (
         <>
@@ -13,6 +14,8 @@ function FarmerHome() {
             <PrevQuestionList />
             <ToggleButton/>
             <LogOutButton/> 
+            <BackgroundStyle/>
+            <AnimatedText/>
            
         </>
     )
