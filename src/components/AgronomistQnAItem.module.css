@@ -6,10 +6,11 @@
     border-radius: 10px;
     border: 0.2px black solid;
     list-style-type: none;
-    background-color: beige;
+    background-color: #D1E8E2;
     /* padding: 15px; */
     padding-bottom: 20px;
-    box-shadow: 3px 3px rgb(129, 125, 125);
+    /* box-shadow: 3px 3px rgb(129, 125, 125); */
+    box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
     display: grid;
     
 }
@@ -19,9 +20,9 @@
     font-size: medium;
     font-weight: bold;
     /* text-transform: uppercase; */
-    position: absolute;
-    left: 5px;
-    top: -10px;
+    text-align:start;
+    text-indent: 10px;
+
 }
 .farmerText
 {
@@ -33,24 +34,53 @@
     bottom:-10px;
     right: 15px;
 }
+
+.AgAnsContainer
+{
+    display: flex;
+    padding-right:30px;
+    transition: 0.75s ease-in-out;
+}
+.AgAnsContainer:focus
+{
+  transform: scaleX(1.25) scaleY(1.25);
+  transform-origin: left;
+}
+
  .AgAnswer
 {
     list-style-type: none;
    /* width: 700px; */
    display: inline-block; 
-   padding-right: 20px;
-    
+   padding-right: 15%;
+    transition: 0.75s;
 } 
+ 
 .FixTextArea
 {
     resize: none;
-    width: 900px;
+    width: 750px;
     height: 50px;
     list-style-type: none;
     border-radius: 10px;
-    box-shadow: 3px 3px rgb(129, 125, 125);
+    /* box-shadow: 3px 3px rgb(129, 125, 125); */
     font-size: x-large;
+    box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
+    transition: 0.75s ease-in-out;
+    /* justify-content: flex-start; */
+    /* text-align: start; */
+  }
+
+.FixTextArea:focus 
+{
+  transform: scaleX(1.1) scaleY(1.2);
+  transform-origin: left;
+} 
+::placeholder 
+{
+  text-indent: 10px;
 }
+
 .AgSubmit
 {
     /* display: flex; */
@@ -61,11 +91,6 @@
     padding-left:-15px;
 
 }
-.AgAnsContainer
-{
-    display: flex;
-    padding-right:30px;
-}
 .AgSubmitButton
 {
     height: 34px;
@@ -73,3 +98,54 @@
     border-radius: 20px;
     border: rgb(47, 45, 45) solid 0.2px;
 }
+
+.AgButton {
+    width: 90px;
+    height: 40px;
+    position: relative;
+    font-family: var(--font);
+    color: #05386B;
+    font-weight: 600;
+    background-color: #fff;
+    border: none;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    transition: all ease 100ms;
+  }
+  
+ .AgButton:hover {
+    background-color: #b6f5ce;
+  }
+  
+  .AgButton:focus {
+    background-color: #b6f5ce;
+  }
+  
+  .AgButton::before {
+    content: 'done ✅';
+    position: absolute;
+    color: #116466;
+    left: 0;
+    top: -14px;
+    right: 0;
+    transition: all ease 300ms;
+    opacity: 0%;
+  }
+  
+  .AgButton:focus::before {
+    opacity: 100%;
+    transform: translatey(26px);
+  }
+  
+  .submit_text {
+    transition: all ease 100ms;
+    opacity: 100%;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+  }
+  
+  .AgButton:focus > .submit_text {
+    opacity: 0%;
+  }

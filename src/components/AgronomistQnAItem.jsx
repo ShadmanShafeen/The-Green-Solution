@@ -47,20 +47,33 @@ function AgronomistQnAItem({ question  , farmer , qID })
         <li>
             <br/>
             <p>
-                <div className={styles.AgQuestionBox}>
+                <motion.div 
+                    className={styles.AgQuestionBox}
+                    whileHover={{scale:1.05}}    
+                    transition={{duration:0.75}}
+                >
                     <p className={styles.questionText}>{question}</p>
                     <p className={styles.farmerText}>{farmer}</p>
-                </div>
+                </motion.div>
             </p>
             <div className={styles.AgAnsContainer}>
-                    <p className={styles.AgAnswer}><textarea onChange={enterAnswerHandler} className={styles.FixTextArea} placeholder="Write your answer..."></textarea> </p>
+                    <p className={styles.AgAnswer}>
+                        <textarea
+                            onChange={enterAnswerHandler} 
+                            className={styles.FixTextArea}
+                            placeholder="Write your answer...">
+                        </textarea> 
+                    </p>
                     <p className={styles.AgSubmit}>
-                    <motion.button className={styles.AgSubmitButton} onClick={submitAnswer}
-                          whileHover={{scale: 1.2}}
-                          whileTap={{scale: 0.9}}
-                          transition={{duration: 0.5}}>
-                          Submit
-                    </motion.button>     
+                    <motion.button 
+                    className={styles.AgButton}
+                    whileHover={{scale:1.1}}
+                    whileTap={{scale:0.8}}
+                    transition={{duration:0.5}}
+                    >
+                    <p className={styles.submit_text}>Submit</p>
+
+                    </motion.button>  
                     </p>
             </div>
         </li>

@@ -4,12 +4,7 @@ import { useState , useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
-function SearchBar() {
-    const [enteredQuestion , setEnteredQuestion] = useState('');
-
-    function enterQuestionHandler(event) {
-        setEnteredQuestion(event.target.value);
-    }
+function SearchBar({ enteredQuestion , enterQuestionHandler }) {
     
     const navigate = useNavigate();
     const [questionID , setQuestionID] = useState("");
@@ -79,9 +74,6 @@ function SearchBar() {
 
     return (
         <>
-     
-
-        
             <div className={styles.search_container}>
 
                 <input idname={styles.searchBar} type="text" placeholder="Ask a question..." 
@@ -118,7 +110,6 @@ function SearchBar() {
                <p className={styles.AIText2}>Speak Here</p>
                 </p>
             </div>
-          
         </>
     )
 }

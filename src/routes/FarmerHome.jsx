@@ -5,18 +5,19 @@ import ToggleButton from "../components/ToggleButton"
 import LogOutButton from "../components/LogOutButton"
 import BackgroundStyle from "../components/BackgroundStyle"
 import AnimatedText from "../components/AnimatedText"
-function FarmerHome() {
+
+function FarmerHome({ enteredQuestion , enterQuestionHandler }) {
+
     return (
         <>
            
             <Header />
-            <SearchBar />
+            <SearchBar enteredQuestion={enteredQuestion} enterQuestionHandler={enterQuestionHandler} />
             <PrevQuestionList />
             <ToggleButton/>
             <LogOutButton/> 
             <BackgroundStyle/>
             <AnimatedText/>
-           
         </>
     )
 }

@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   border-bottom-left-radius:-50px ;
   border-bottom-right-radius:-50px ;
   opacity: 0.9;
@@ -68,13 +69,15 @@
 .HList:hover {
     transform: translateY(-5px); 
     border-radius: 15px;
+    transition: 0.5s;
     }
 
 .HList:active{
             
     /* box-shadow: black 1px 4px 1px 3px; */
-    transform: translateY(5px);
-    /* transition: 200ms; */
+
+    transform: translateY(10px);
+    transition: 0.5s;
     border-radius: 15px;
 }
 
