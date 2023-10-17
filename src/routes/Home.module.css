@@ -9,7 +9,5 @@
      margin-left: -150px;
     height: 100vh;               /* Full height of the viewport */
     width: 216vh;
-    opacity: 0.8;
-
     overflow: hidden;
 }
