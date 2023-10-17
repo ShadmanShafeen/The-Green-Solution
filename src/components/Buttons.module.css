@@ -16,9 +16,6 @@ font-family: cursive;
 
 }
 
-
-
-
 .fontText {
     color: #000000;
     max-width: 1280px;
@@ -32,11 +29,11 @@ font-family: cursive;
 
 .center {
     position: fixed;
-    top: 45%;
-    bottom: 50%;
     text-align: center;
     justify-content: center;
     align-content: center;
-    left: 40%;
+    /* left: 40%;
+    top: 45%;
+    bottom: 50%; */
     
 }

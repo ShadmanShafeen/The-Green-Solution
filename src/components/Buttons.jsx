@@ -6,10 +6,7 @@ function Buttons() {
     
     
     return (
-    <>
-    
-        
-            
+    <>    
         <div className={styles.center}>
        
             <p className={styles.fontText}><b>Are you.......?</b></p>
@@ -24,20 +21,16 @@ function Buttons() {
                 </Link>
                 
                 <Link to='/AgronomistLogin'>
-                <motion.button 
-                className={styles.mainButton}
-                onClick={null}
-                whileHover={{scale: 1.2}}
-                whileTap={{scale: 0.9}}
-                >Agronomist</motion.button>
+                    <motion.button 
+                    className={styles.mainButton}
+                    onClick={null}
+                    whileHover={{scale: 1.2}}
+                    whileTap={{scale: 0.9}}
+                    >Agronomist</motion.button>
                 </Link>
             </p>
         </div>
-
-        
     </> 
-        
- 
     );
 }
 

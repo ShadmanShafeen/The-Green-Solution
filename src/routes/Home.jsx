@@ -11,12 +11,10 @@ function Home() {
         
          
         <div className={styles.homeContainer}>
-             <Header/>
+            <Header/>
             <Buttons/>
             <ToggleButton/>
-
-        
-    </div>
+        </div>
        
     )
 }

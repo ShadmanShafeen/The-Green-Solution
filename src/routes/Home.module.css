@@ -4,11 +4,12 @@
     background-image: url('../bgag.jpg');
     background-size: cover;      /* Cover the viewport */
     background-repeat: no-repeat; /* Do not repeat the image */
-     background-position: center; /*Center the image */
-     margin-top: 100px;
-     margin-left: -100px;
-    
-    height: 90vh;               /* Full height of the viewport */
-    width: 1487px;
+    background-position: center; /*Center the image */
+     /* margin-top: 100px; */
+     margin-left: -150px;
+    height: 100vh;               /* Full height of the viewport */
+    width: 216vh;
     opacity: 0.8;
+
+    overflow: hidden;
 }

@@ -46,11 +46,11 @@ function AgronomistQnAList()
             
          </div>
          <div className={styles.AgProfile}>
-              <li className={styles.ProfileList}>Questions Answered</li> 
+              <li className={styles.AgProfileList}>Questions Answered</li> 
                   <li className={styles.AgprofileBox}></li>
-              <li className={styles.ProfileList}>Pending Question</li>
+              <li className={styles.AgProfileList}>Pending Question</li>
                   <li className={styles.AgprofileBox}></li>
-              <li className={styles.ProfileList}>Days Active</li>
+              <li className={styles.AgProfileList}>Days Active</li>
                   <li className={styles.AgprofileBox}></li>           
           </div>
         </>
@@ -71,11 +71,11 @@ function AgronomistQnAList()
             
          </div>
           <div className={styles.AgProfile}>
-              <li className={styles.ProfileList}>Question Answered</li> 
+              <li className={styles.AgProfileList}>Question Answered</li> 
                   <li className={styles.AgprofileBox}></li>
-              <li className={styles.ProfileList}>Pending Question</li>
+              <li className={styles.AgProfileList}>Pending Question</li>
                   <li className={styles.AgprofileBox}></li>
-              <li className={styles.ProfileList}>Days Active</li>
+              <li className={styles.AgProfileList}>Days Active</li>
                   <li className={styles.AgprofileBox}></li>           
           </div>
         </>
