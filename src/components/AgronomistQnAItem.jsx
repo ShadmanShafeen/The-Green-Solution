@@ -66,11 +66,12 @@ function AgronomistQnAItem({ question  , farmer , qID })
                     </p>
                     <p className={styles.AgSubmit}>
                     <motion.button 
-                    className={styles.AgButton}
-                    whileHover={{scale:1.1}}
-                    whileTap={{scale:0.8}}
-                    transition={{duration:0.5}}
-                    >
+                        className={styles.AgButton}
+                        whileHover={{scale:1.1}}
+                        whileTap={{scale:0.8}}
+                        transition={{duration:0.5}}
+                        onClick={submitAnswer}
+                        >
                     <p className={styles.submit_text}>Submit</p>
 
                     </motion.button>  

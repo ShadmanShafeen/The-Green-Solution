@@ -1,0 +1,26 @@
+.relevantQuestionList
+{
+    position: absolute;
+    bottom: -25%;
+    left: 30%;
+    list-style: none;
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 100px 0;
+    display: grid;
+    gap: 75px;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: center;
+
+    
+}
+
+.relevantQuestionHeading
+{
+    color: #1b1212;
+    position: absolute;
+    bottom: 15%;
+    left: 35%;
+    font-style: italic;
+    font-weight: 300;
+}

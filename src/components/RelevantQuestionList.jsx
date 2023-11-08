@@ -4,42 +4,27 @@ import * as USE from "@tensorflow-models/universal-sentence-encoder";
 // import Loader from "react-loader-spinner"
 import { useEffect, useState } from "react";
 import axios from "axios";
+import RelevantQuestion from './RelevantQuestion'
+import { BallTriangle } from 'react-loader-spinner'
+import styles from './RelevantQuestionList.module.css'
 
 function RelevantQuestionList({ enteredQuestion }) {
-    const [relevantQuestions, setRelevantQuestions] = useState([]);
+    
     const [dbQuestions, setDbQuestions] = useState([]);
+    const [similarityScores , setSimilarityScores] = useState([]);
     const [model , SetModel] = useState(null);
+    const [relevantQuestions , setRelevantQuestions] = useState([]);
+    const [readyState , setReadyState] = useState('Not Ready');
 
     const loadModel = async() => {
         const loadedModel = await USE.load();
         SetModel(loadedModel);
         console.log('Model Loaded');
     }
-    const embedSentences = async (sentence) => {
+    const embedSentence = async (sentence) => {
       const embedding = await model.embed(sentence);
       const data = await embedding.data();
       return Array.from(data);
-    }
-    const fetchData = async() => {
-        try {
-            const response = await axios.get(`http://localhost:5000/fetchquestions`, {
-          });
-          if (response.status === 200) {
-            const questionData = response.data;
-            const question_objects = questionData.data;
-            let questions = [];
-            question_objects.map((item) => {
-                questions.push(item.question);
-            })
-            console.log('Fetched Questions');
-            console.log(questions);
-            setDbQuestions(questions);
-          } else {
-            console.log('Fetch Failed');
-          }
-        } catch (error) {
-          console.log('Error occurred during search :' , error);
-        }
     }
     
     const dotProduct = (a , b) => {
@@ -64,30 +49,115 @@ function RelevantQuestionList({ enteredQuestion }) {
     }
 
     useEffect(() => {loadModel()} , []);
-    useEffect(() => {fetchData()} , []);
+    useEffect(() => {
+      const fetchData = async() => {
+        try {
+            const response = await axios.get(`http://localhost:5000/fetchquestions`, {
+          });
+          if (response.status === 200) {
+            const questionData = response.data;
+            const question_objects = questionData.data;
+            
+            let questions = [];
+            question_objects.map((item) => {
+                questions.push({
+                  _id : item._id,
+                  question: item.question,
+              });
+            })
+            console.log('Fetched Questions');
+            console.log(questions);
+            setDbQuestions(questions);
+          } else {
+            console.log('Fetch Failed');
+          }
+        } catch (error) {
+          console.log('Error occurred during search :' , error);
+        }
+    }
+    fetchData();
+    } , []);
 
-    const findRelevantQuestions = async() => {
-        if(model !== null){
+    
+    useEffect(() => {
+      const findRelevantQuestions = async() => {
+        
+        if(model !== null && dbQuestions.length > 0){
             console.log("Finding relevant questions");
             
-            const threshold = 0.5;
-
-            const currentQembedding = await embedSentences(enteredQuestion);
-            const previousQembeddings = await embedSentences(dbQuestions);
-
-            const similarityScores = previousQembeddings.map(embedding => calculateCosineSimilarity(currentQembedding , embedding)); 
+            setReadyState('Not Ready');
             
-            const similarSentences = dbQuestions.filter((_ , index) => similarityScores[index] >= threshold);
+            let currentQembedding = [];
+            currentQembedding = await embedSentence(enteredQuestion);
+            let scores = [];
+            
+            dbQuestions.map(async(item) => {
+                  const previousQembedding = await embedSentence(item.question)
+                  let score = calculateCosineSimilarity(currentQembedding , previousQembedding);
+                  scores.push(score);
+            })
+            setSimilarityScores(scores);
+            
+            const combinedData = dbQuestions.map((item , index) => {
+              const {_id , question} = item;
+              const similarityScore = similarityScores[index];
+             
+              return {
+                _id,
+                question,
+                similarityScore
+              }
+            })
+            combinedData.sort((a,b) => b.similarityScore - a.similarityScore);
 
-            return similarSentences;
+            const sortedQuestions = combinedData.map((data) => {
+                return {
+                  _id: data._id,
+                  question: data.question
+                }
+            });
+            console.log(dbQuestions);
+            console.log(similarityScores);
+
+            console.log(sortedQuestions.slice(0,4));      
+            setRelevantQuestions(sortedQuestions.slice(0,4));    
+            console.log(relevantQuestions);  
           } 
+    }   
+      findRelevantQuestions();
+      setReadyState('Ready');
+    },[enteredQuestion]);
+
+    if (relevantQuestions.length > 0 && readyState === 'Ready') {
+        return (
+          <>
+            <h2 className={styles.relevantQuestionHeading}>Relevant Questions to your Search</h2>
+            <ul className={styles.relevantQuestionList}>
+              {relevantQuestions.map((item) => <RelevantQuestion key={item._id} questionID={item._id} question={item.question} /> )} 
+            </ul>
+          </>
+        )
+    }
+    else if (enteredQuestion === '') {
+      return(
+          <></>
+      )
+    }
+    else {
+        return (
+          <BallTriangle
+            height={100}
+            width={100}
+            radius={5}
+            color="#5CDB95"
+            ariaLabel="ball-triangle-loading"
+            wrapperClass={{}}
+            wrapperStyle=""
+            visible={true}
+          />
+        )
     }
     
-    useEffect(async() => {
-      const similarSentences = findRelevantQuestions();
-      console.log(similarSentences);
-    }, [model , dbQuestions , enteredQuestion])
-
 }
 
 export default RelevantQuestionList

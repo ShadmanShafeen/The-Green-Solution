@@ -51,7 +51,7 @@ function AgronomistLoginForm() {
                 </div>
 
                 <div className={styles.form_group}>
-                    <label for="password">Pasword:</label>
+                    <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required/>
                 </div>
 
