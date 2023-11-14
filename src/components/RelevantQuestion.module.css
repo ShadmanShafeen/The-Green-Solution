@@ -1,8 +1,8 @@
 .question_card
 {
-    height: fit-content;
+    height: 65px;
     width: fit-content;
-    margin: 1rem 0;
+    margin: 5px 0;
     padding: 1rem;
     background-color: #8EE4AF;
     border-radius: 8px;
@@ -10,6 +10,7 @@
     animation: animate-in 1s ease-out forwards;
     opacity: 0.9;
     transition: 0.5s ease-in-out; 
+    overflow: hidden;
 }
 
 .question_card:hover
@@ -21,8 +22,9 @@
 .relevantquestion
 {
     white-space: pre-wrap;
-    font-size: 1.25rem;
-    margin: 0.25rem 0 0 0;
+    font-size:smaller;
+    font-weight: 550;
+    margin: 0 0 0 0;
     color: #1B1212;
     font-style: italic;
    

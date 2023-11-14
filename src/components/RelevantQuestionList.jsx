@@ -116,10 +116,7 @@ function RelevantQuestionList({ enteredQuestion }) {
                   question: data.question
                 }
             });
-            console.log(dbQuestions);
-            console.log(similarityScores);
-
-            console.log(sortedQuestions.slice(0,4));      
+            console.log(combinedData);      
             setRelevantQuestions(sortedQuestions.slice(0,4));    
             console.log(relevantQuestions);  
           } 

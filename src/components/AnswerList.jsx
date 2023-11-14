@@ -47,10 +47,7 @@ function AnswerList () {
             <div className={styles.all_answer_container}>
                 <h2 className={styles.top_answers}>Top Answers</h2>
                 <br /> <br /> <br />
-                    <ul className={styles.answer_containers}>
-                        <Answer />
-                        <br/>
-                    </ul>
+                <p className={styles.top_answers}>Please wait for an Agronomist to answer</p>
                 
             </div>
         )

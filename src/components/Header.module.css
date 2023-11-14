@@ -29,7 +29,7 @@
   opacity: 0.9;
   box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px,
   rgba(61, 57, 59, 0.5) 5px 10px 15px;
-
+  z-index: 1;
 
 }
 
