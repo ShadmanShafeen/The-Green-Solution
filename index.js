@@ -5,6 +5,7 @@ const Farmer = require('./models/Farmer');
 const Question = require('./models/Question');
 const Answer = require('./models/Answer');
 const Agronomist = require('./models/Agronomist');
+const Rating = require('./models/Rating');
 const app = express();
 const port = 5000;
 
@@ -29,7 +30,7 @@ app.get('/users', async (req, res) => {
   }
 });
 
-//                                   FARMER LOGIN
+//                                      FARMER LOGIN
 app.post('/auth/farmerlogin', async (req, res) => {
   const { name, NID } = req.body;
 
@@ -49,7 +50,7 @@ app.post('/auth/farmerlogin', async (req, res) => {
   }
 });
 
-//                                    FARMER SIGNUP
+//                                      FARMER SIGNUP
 app.post('/auth/farmersignup', async (req, res) => {
   const { name, contact, NID } = req.body;
 
@@ -171,7 +172,7 @@ app.post('/addanswer' , async (req , res) => {
     }
 })
 
-//                                  FETCH QUESTION
+//                         FETCH QUESTIONS ASKED BY SPECIFIC FARMER
 app.get('/fetchquestions/:NID' , async (req , res) => {
     try {
       const NID = req.params.NID
@@ -190,6 +191,7 @@ app.get('/fetchquestions/:NID' , async (req , res) => {
     }
 })
 
+//                         FETCH QUESTION BY QUESTION ID 
 app.get('/fetchquestion/:questionID' , async (req , res) => {
   try {
     const questionID = req.params.questionID
@@ -208,6 +210,26 @@ app.get('/fetchquestion/:questionID' , async (req , res) => {
   }
 })
 
+//                         FETCH QUESTION BY QUESTION STRING
+app.get('/fetchquestion/:question' , async (req,res) => {
+  try {
+      const questionString = req.params.question
+      const question = await Question.findOne({question : questionString});
+      if(question) {
+        res.status(200).send({
+          data:question
+        })
+      }
+      else{
+        res.status(404).json({message: "No question found"}) 
+      }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({error: 'Server Error'});
+  }
+})
+
+//                         FETCH LAST QUESTION ASKED BY FARMER (TRANSITION FROM SEARCH BAR TO QnA PAGE)
 app.get('/fetchquestionlast/:NID' , async (req , res) => {
   try {
     const NID = req.params.NID
@@ -226,6 +248,7 @@ app.get('/fetchquestionlast/:NID' , async (req , res) => {
   }
 })
 
+//                         FETCH QUESTIONS FOR AGRONOMIST HOMEPAGE (SORTED BY ANSWER COUNT)
 app.get('/fetchquestions' , async (req , res) => {
   try {
     const questions = await Question.find().sort({answerCount : 1});
@@ -243,11 +266,11 @@ app.get('/fetchquestions' , async (req , res) => {
   }
 })
 
-//                                FETCH ANSWER
+//                                  FETCH ANSWER
 app.get('/fetchanswers/:questionID' , async (req , res) => {
   try {
     const questionID = req.params.questionID;
-    const answers = await Answer.find({questionID : questionID});
+    const answers = await Answer.find({questionID : questionID}).sort({rating : -1});
 
     if(answers) {
       res.status(200).send({
@@ -263,8 +286,7 @@ app.get('/fetchanswers/:questionID' , async (req , res) => {
   }
 })
 
-
-//                     UPDATE ANSWER COUNT FOR A QUESTION
+//                       UPDATE ANSWER COUNT FOR A QUESTION
 app.put('/updateanswercount/:questionID' , async (req , res) => {
   try {
       const questionID = req.params.questionID;
@@ -290,6 +312,85 @@ app.put('/updateanswercount/:questionID' , async (req , res) => {
       res.status(500).json({error: "Server Error"});
   }
 })
+
+//                            UPDATE ANSWER RATING
+app.put('/upvote/:answerID/:userID/:type' , async (req , res) => {
+  try {
+      const answerID = req.params.answerID;
+      const userID = req.params.userID;
+      const type = req.params.type;
+      if (type === 'upvote') {
+        const rating = await Rating.findOne({userID: userID , answerID: answerID});
+        if (!rating) {
+          const newRating = new Rating({
+              userID,
+              answerID,
+              upvote : true
+          })
+          await newRating.save();
+  
+          const updatedAnswer = await Answer.updateOne(
+            {answerID: answerID , userID: userID},
+            {$inc: {rating : 1}}
+          )
+        } else {
+            if (rating.upvote === true) {
+                console.log('User already upvoted');
+                res.status(202).json({message: 'User has already upvoted'});
+            }
+            else {
+                const updatedAnswer = await Answer.updateOne(
+                  {answerID: answerID , userID: userID},
+                  {$inc : {rating : 1}}
+                )
+                const updatedRating = await Rating.updateOne(
+                  {userID: userID , answerID: answerID},
+                  {upvote: true},
+                  {downvote: false}
+                )
+            }
+        }
+      }
+      
+      else {
+        const rating = await Rating.findOne({userID: userID , answerID: answerID});
+        if (!rating) {
+          const newRating = new Rating({
+              userID,
+              answerID,
+              downvote : true
+          })
+          await newRating.save();
+  
+          const updatedAnswer = await Answer.updateOne(
+            {answerID: answerID , userID: userID},
+            {$inc: {rating : -1}}
+          )
+        } else {
+            if (rating.downvote === true) {
+                console.log('User already downvoted');
+                res.status(202).json({message: 'User has already downvoted'});
+            }
+            else {
+                const updatedAnswer = await Answer.updateOne(
+                  {answerID: answerID , userID: userID},
+                  {$inc : {rating : -1}}
+                )
+                const updatedRating = await Rating.updateOne(
+                  {userID: userID , answerID: answerID},
+                  {upvote: false},
+                  {downvote: true}
+                )
+            }
+        }
+      }
+
+  } catch (error) {
+      console.error("Error updating the rating");
+      res.status(500).json({error: "Internal Server Error"});
+  }
+})
+
 // Connect to the database
 dbConnect();
 
