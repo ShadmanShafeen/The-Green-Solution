@@ -6,13 +6,18 @@
     border-radius: 10px;
     border: 0.2px black solid;
     list-style-type: none;
-    background-color: #D1E8E2;
+    background-color: #e8edec;
     /* padding: 15px; */
     padding-bottom: 20px;
     /* box-shadow: 3px 3px rgb(129, 125, 125); */
     box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
     display: grid;
     
+}
+.AgronomistQnAItem
+{
+   transition: 2s ease-in-out;
+
 }
 .questionText 
 {
@@ -50,12 +55,16 @@
  .AgAnswer
 {
     list-style-type: none;
-   /* width: 700px; */
+  
    display: inline-block; 
    padding-right: 15%;
     transition: 0.75s;
 } 
- 
+.QuestionHeading
+{
+  color: black;
+ margin-left: -980px;
+}
 .FixTextArea
 {
     resize: none;
@@ -91,20 +100,20 @@
     padding-left:-15px;
 
 }
-.AgSubmitButton
+/* .AgSubmitButton
 {
     height: 34px;
     height: 35px;
     border-radius: 20px;
     border: rgb(47, 45, 45) solid 0.2px;
-}
+} */
 
 .AgButton {
     width: 90px;
     height: 40px;
     position: relative;
     font-family: var(--font);
-    color: #05386B;
+    color: #06373A;
     font-weight: 600;
     background-color: #fff;
     border: none;
@@ -115,7 +124,7 @@
   }
   
  .AgButton:hover {
-    background-color: #b6f5ce;
+    background-color: #e8f5ed;
   }
   
   .AgButton:focus {
@@ -123,9 +132,10 @@
   }
   
   .AgButton::before {
-    content: 'done ✅';
+    content: 'Done ✅';
     position: absolute;
-    color: #116466;
+    color: #050505;
+    /* color: #b6f5ce; */
     left: 0;
     top: -14px;
     right: 0;
@@ -133,6 +143,7 @@
     opacity: 0%;
   }
   
+
   .AgButton:focus::before {
     opacity: 100%;
     transform: translatey(26px);

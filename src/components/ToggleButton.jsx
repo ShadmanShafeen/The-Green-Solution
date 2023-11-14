@@ -10,7 +10,7 @@ function ToggleButton()
         <label className={styles.toggle}>
                         <input type="checkbox"/>
                         <span className={styles.slider}></span>
-                        <span className={styles.labels} data-on="Bangla" data-off="English"></span>
+                        <span className={styles.labels} data-on="বাংলা" data-off="English"></span>
                       </label>
         </div>
         </>

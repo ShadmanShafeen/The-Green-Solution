@@ -1,0 +1,16 @@
+.relevantQuestionList
+{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+    list-style: none;
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 10px 0;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: center;
+
+    
+}

@@ -78,6 +78,7 @@ function SearchBar({ enteredQuestion , enterQuestionHandler }) {
 
                 <input idname={styles.searchBar} type="text" placeholder="Ask a question..." 
                 onChange={enterQuestionHandler} /> 
+                
                 <Link>
                     <motion.button
                         className={styles.searchButton} 

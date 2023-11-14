@@ -32,8 +32,9 @@ function AnswerList () {
     if(answers.length > 0) {
         return (
             <div className={styles.all_answer_container}>
+                <br/>
                 <h2 className={styles.top_answers}>Top Answers</h2>
-                <br /> <br /> <br />
+                <br/> <br/> 
                     <ul className={styles.answer_containers}>
                        {answers.map((item) => (
                             <Answer key={item._id} answer={item.answer} agronomist={item.agronomist} />
@@ -45,14 +46,10 @@ function AnswerList () {
     else {
         return (
             <div className={styles.all_answer_container}>
-                <h2 className={styles.top_answers}>Top Answers</h2>
-                <br /> <br /> <br />
-                    <ul className={styles.answer_containers}>
-                        <Answer />
-                        <br/>
-                    </ul>
-                
-            </div>
+            <h2 className={styles.top_answers}>Top Answers</h2>
+            <br /> <br />
+            <p className={styles.top_answers}>Please wait for an Agronomist to answer</p>
+        </div>
         )
     }
 }
