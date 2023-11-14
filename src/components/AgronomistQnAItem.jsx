@@ -45,9 +45,9 @@ function AgronomistQnAItem({ question  , farmer , qID })
     }
     return (<>
         <li>
-            <br/>
-            <p>
-                <motion.div 
+           
+            <p className={styles.QuestionHeading}><b>Question:</b></p>
+              <p>  <motion.div 
                     className={styles.AgQuestionBox}
                     whileHover={{scale:1.05}}    
                     transition={{duration:0.75}}
@@ -57,6 +57,7 @@ function AgronomistQnAItem({ question  , farmer , qID })
                 </motion.div>
             </p>
             <div className={styles.AgAnsContainer}>
+               
                     <p className={styles.AgAnswer}>
                         <textarea
                             onChange={enterAnswerHandler} 
@@ -66,11 +67,12 @@ function AgronomistQnAItem({ question  , farmer , qID })
                     </p>
                     <p className={styles.AgSubmit}>
                     <motion.button 
-                    className={styles.AgButton}
-                    whileHover={{scale:1.1}}
-                    whileTap={{scale:0.8}}
-                    transition={{duration:0.5}}
-                    >
+                        className={styles.AgButton}
+                        whileHover={{scale:1.1}}
+                        whileTap={{scale:0.8}}
+                        transition={{duration:0.5}}
+                        onClick={submitAnswer}
+                        >
                     <p className={styles.submit_text}>Submit</p>
 
                     </motion.button>  

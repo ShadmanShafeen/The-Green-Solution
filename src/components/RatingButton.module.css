@@ -1,0 +1,69 @@
+.RatingButton
+{
+  position: static;
+ 
+}
+.Btn {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(#44ea76, #39fad7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position:static;
+    left: 101%;
+    bottom: 50%;
+    border: none;
+  }
+  
+  .Btn:hover .arrow {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(2px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .Btn1 {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(#44ea76, #39fad7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position:static;
+    left: 101%;
+    bottom: 5%;
+    border: none;
+  }
+  
+  .Btn1:hover .arrow1 {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(5px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  

@@ -8,7 +8,6 @@ function PrevQuestionList() {
   const farmer = JSON.parse(localStorage.getItem('farmer'));
   const NID = JSON.parse(localStorage.getItem('NID'));
 
-
   useEffect(() => {
     async function fetchData() {
       try {
