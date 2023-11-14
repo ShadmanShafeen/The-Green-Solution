@@ -15,7 +15,7 @@ function LoginForm() {
             name: formData.get("name"),
             NID: formData.get("NID")
         };
-
+        localStorage.setItem('usertype',JSON.stringify('farmer'));
         localStorage.setItem('farmer',JSON.stringify(userData.name));
         localStorage.setItem('NID',JSON.stringify(userData.NID));
 

@@ -15,7 +15,7 @@ function AgronomistLoginForm() {
             username: formData.get("username"),
             password: formData.get("password")
         };
-
+        localStorage.setItem('usertype',JSON.stringify('agronomist'));
         localStorage.setItem('agronomist',JSON.stringify(userData.username));
         // localStorage.setItem('password',JSON.stringify(userData.NID));
 

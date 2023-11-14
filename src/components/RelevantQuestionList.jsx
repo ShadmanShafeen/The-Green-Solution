@@ -116,10 +116,8 @@ function RelevantQuestionList({ enteredQuestion }) {
                   question: data.question
                 }
             });
-            console.log(dbQuestions);
-            console.log(similarityScores);
+            console.log(combinedData);      
 
-            console.log(sortedQuestions.slice(0,4));      
             setRelevantQuestions(sortedQuestions.slice(0,4));    
             console.log(relevantQuestions);  
           } 
@@ -130,9 +128,14 @@ function RelevantQuestionList({ enteredQuestion }) {
 
     if (relevantQuestions.length > 0 && readyState === 'Ready') {
         return (
-          <ul className={styles.relevantQuestionList}>
-            {relevantQuestions.map((item) => <RelevantQuestion key={item._id} questionID={item._id} question={item.question} /> )} 
-          </ul>
+
+          <>
+            <h2 className={styles.relevantQuestionHeading}>Relevant Questions to your Search</h2>
+            <ul className={styles.relevantQuestionList}>
+              {relevantQuestions.map((item) => <RelevantQuestion key={item._id} questionID={item._id} question={item.question} /> )} 
+            </ul>
+          </>
+
         )
     }
     else if (enteredQuestion === '') {
