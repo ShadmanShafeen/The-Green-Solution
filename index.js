@@ -314,7 +314,7 @@ app.put('/updateanswercount/:questionID' , async (req , res) => {
 })
 
 //                            UPDATE ANSWER RATING
-app.put('/upvote/:answerID/:userID/:type' , async (req , res) => {
+app.put('/rateanswer/:answerID/:userID/:type' , async (req , res) => {
   try {
       const answerID = req.params.answerID;
       const userID = req.params.userID;
