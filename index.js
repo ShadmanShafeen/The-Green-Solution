@@ -172,7 +172,7 @@ app.post('/addanswer' , async (req , res) => {
     }
 })
 
-//                                  FETCH QUESTION
+//                         FETCH QUESTIONS ASKED BY SPECIFIC FARMER
 app.get('/fetchquestions/:NID' , async (req , res) => {
     try {
       const NID = req.params.NID
@@ -191,6 +191,7 @@ app.get('/fetchquestions/:NID' , async (req , res) => {
     }
 })
 
+//                         FETCH QUESTION BY QUESTION ID 
 app.get('/fetchquestion/:questionID' , async (req , res) => {
   try {
     const questionID = req.params.questionID
@@ -209,6 +210,26 @@ app.get('/fetchquestion/:questionID' , async (req , res) => {
   }
 })
 
+//                         FETCH QUESTION BY QUESTION STRING
+app.get('/fetchquestion/:question' , async (req,res) => {
+  try {
+      const questionString = req.params.question
+      const question = await Question.findOne({question : questionString});
+      if(question) {
+        res.status(200).send({
+          data:question
+        })
+      }
+      else{
+        res.status(404).json({message: "No question found"}) 
+      }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({error: 'Server Error'});
+  }
+})
+
+//                         FETCH LAST QUESTION ASKED BY FARMER (TRANSITION FROM SEARCH BAR TO QnA PAGE)
 app.get('/fetchquestionlast/:NID' , async (req , res) => {
   try {
     const NID = req.params.NID
@@ -227,6 +248,7 @@ app.get('/fetchquestionlast/:NID' , async (req , res) => {
   }
 })
 
+//                         FETCH QUESTIONS FOR AGRONOMIST HOMEPAGE (SORTED BY ANSWER COUNT)
 app.get('/fetchquestions' , async (req , res) => {
   try {
     const questions = await Question.find().sort({answerCount : 1});
@@ -263,7 +285,6 @@ app.get('/fetchanswers/:questionID' , async (req , res) => {
       res.status(500).json({error: "Server Error"});
   }
 })
-
 
 //                       UPDATE ANSWER COUNT FOR A QUESTION
 app.put('/updateanswercount/:questionID' , async (req , res) => {
