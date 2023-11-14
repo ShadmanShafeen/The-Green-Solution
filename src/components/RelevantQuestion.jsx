@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+
 import styles from './RelevantQuestion.module.css'
+
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 

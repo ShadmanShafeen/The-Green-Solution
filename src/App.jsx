@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-
 import Home from './routes/Home'
 import LoginPage from './routes/LoginPage'
 import AccountCreationPage  from './routes/AccountCreationPage'
@@ -11,6 +10,9 @@ import { useState } from 'react'
 import AgronomistLoginPage from './routes/AgronomistLoginPage'
 import AgronomistAccountCreationPage from './routes/AgronomistAccountCreationPage'
 import RelevantQuestionList from './components/RelevantQuestionList'
+import AgronomistAnswerEdit from './components/AgronomistAnswerEdit'
+import AboutUs from './components/AboutUs'
+import HowItWorks from './components/HowItWorks'
 
 function App() {
   
@@ -26,6 +28,10 @@ function App() {
       <Route path='/AgronomistHomepage' element={<AgronomistHome />} />
 
       <Route path='/RelevantQuestions' element={<RelevantQuestionList enteredQuestion="Answer 01" />} />
+
+      <Route path='/AgronomistAnswerEdit' element={<AgronomistAnswerEdit/>}/>
+      <Route path='/AboutUs' element={<AboutUs/>} />
+      <Route path='/HowItWorks' element={<HowItWorks/>}/> 
 
     </Routes>
   )

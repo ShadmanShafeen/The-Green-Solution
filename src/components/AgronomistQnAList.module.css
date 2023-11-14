@@ -4,7 +4,7 @@
     left: -120px;
     width:1100px;
     height: 500px; 
-    background-color: #06373A;
+    background-color: #62a471;
     border-radius: 10px;
     border: 1px #2d2d2d solid;
     list-style-type: none;
@@ -40,11 +40,6 @@
   }  
 
 /*Scroll Bar*/
-
-
-
-
-
 .AgProfile
 {   position: absolute;
     top: 290px;
@@ -52,7 +47,7 @@
     height: 400px;
     width: 200px;
     border-radius: 10px;
-    background-color: #06373A;
+    background-color: #62a471;
     list-style-type: none;
     border: 1px black solid;
     /* box-shadow: 6px 6px rgb(174, 172, 172); */
@@ -72,9 +67,7 @@ ul{
     /* padding-left: -840px; */
     padding-bottom: -90px;
     left: 150px;
-    /* align-items: left;
-    justify-content:left;
-    align-content: left; */
+    
     text-align: left ;
     padding-left: 250px;
     
@@ -83,17 +76,27 @@ ul{
 {
     margin-top: 10px;
     margin-left: 20px;
-    
+    text-decoration: none;
     height: 50px;
     width: 160px;
-    background-color: #ddffea;
+    background-color: #fcfcfc;
     border-radius: 15px;
-    box-shadow: 3px 3px rgb(129, 125, 125);
+    box-shadow: 3px 3px rgb(71, 70, 70);
     border: 0.2px #2d2d2d solid;
+}
+.AgprofileBoxButton
+{
+  text-decoration: none;
+  color: #2d2d2d;
+  top: 5%;
 }
 .AgProfileList
 {
     margin-top: 35px;
-    color: #b6f5ce;
+    color: #000000;
     font-weight: 600;
+}
+.TextButton
+{
+  text-decoration: none;
 }

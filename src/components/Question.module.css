@@ -6,17 +6,19 @@
     width: 60%;
     height: 40%;
 
-    background-color: #5CDB95;
-    background: #8EE4AF80;
+    background-color: #8ee4af;
     border-radius: 8px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
     animation: animate-in 1s ease-out forwards;
 
     transition: 0.4s ease-in-out;
+    z-index: 7;
+    opacity: 1;
 }
 
 .question_container:hover {
     transform: scale(1.1);
+    z-index: 7;
 }
 
 .question_elements{
@@ -24,6 +26,7 @@
     text-align: start;
     background-color: rgb(172, 192, 210);
     height: fit-content;
+    z-index: 7;
 }
 .question {
     color : #2D2D2D;
@@ -32,6 +35,7 @@
     text-transform:uppercase;
     position: absolute;
     top: 5%;
+    z-index: 7;
 }
 
 .farmer {
@@ -42,4 +46,7 @@
     font-style: italic;
     position: absolute;
     bottom: 5%;
+   
+    left: 60%;
+    z-index: 10;
 }

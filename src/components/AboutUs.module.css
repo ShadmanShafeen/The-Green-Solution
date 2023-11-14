@@ -1,13 +1,13 @@
-
-  .homeContainer {
-    /* background-image: url('../382327656_850744053096406_5792379877948819232_n.jpg'); */
+.bgAboutUs {
+    
     background-image: url('../bgag1.jpg');
     background-size: cover;      /* Cover the viewport */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-position: center; /*Center the image */
-     /* margin-top: 100px; */
      margin-left: -150px;
     height: 100vh;               /* Full height of the viewport */
     width: 208vh;
     overflow: hidden;
+    overflow-y: hidden;
+    margin-top: -10px;
 }

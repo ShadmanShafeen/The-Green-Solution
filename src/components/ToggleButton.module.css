@@ -8,9 +8,12 @@
   display: inline-block;
   --width: 82px;
   --height: calc(var(--width) / 2.5);
+
+  z-index: 41;
+
   width: var(--width);
   height: var(--height);
- border:0.1px solid black;
+  border:0.1px solid black;
   border-radius: var(--height);
   cursor: pointer;
   z-index: 1;
@@ -27,7 +30,6 @@
   width: 100%;
   height: 100%;
   border-radius: var(--height);
-  /* background-color: #e8e2e2; */
   background-color: #94c6a7;
   transition: all 0.4s ease-in-out;
 }
@@ -43,7 +45,7 @@
   background-color: #fffafa;
   border-radius: 0.1x solid rgb(101, 91, 91);
   transition: all 0.4s ease-in-out;
-  /* border:0.2px solid black; */
+  
 }
 
 .toggle input:checked+.slider {

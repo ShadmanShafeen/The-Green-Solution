@@ -1,17 +1,24 @@
 .answer_box {
     background-color: #5CDB95;
-    background: #5cdb95cc;
+    width: 80%;
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     animation: animate-in 1s ease-out forwards;
-    
     transition: 0.4s ease-in-out;
+    opacity: 1;
+    z-index: 9;
+    display: inline-block;
+    overflow-x: hidden;
+    padding-right: 10px;
+    padding-left: 10px;
+  
+   
 }
-
-.answer_box:hover {
-    transform: scale(1.1);
+.AllAnswerContainer
+{
+  display: flex;
+  margin-top: 20px;
 }
-
 .answer {
     color : #2D2D2D;
     font-weight: bold;
@@ -20,27 +27,114 @@
     top: 5px;
     left: 0.5%;
 }
-
 .agronomist {
     color : #2D2D2D;
     white-space: pre-wrap;
     font-size: 1.25rem;
     margin: 0.25rem 0 0 0;
-    
     font-style: italic;
     position: relative;
-    left: 5%;
+    left: 85%;
+    bottom: -2%;
+  
+}
+.RatingButton
+{
+  position:relative;
+  left: 2%;
+  bottom: 90%;
+  display:inline-block;
+
+ 
+}
+.Disgusting
+{
+  display: flex;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  bottom: 10%;
+
 }
 
 
-.uprate_button {
-    border-radius: 25px;
-    height: 10px;
-    width: min-content;
+.RatingText
+{
+  color: #2D2D2D;
+  right: 50%;
+  bottom: 80%;
+  align-items: center;
+  justify-content: center;
+  left: 90%;
+  bottom: 50%;
+  padding-left:5px ;
+  padding-top: 10px;  
+}
 
-}
-.downrate_button {
-    border-radius: 25px;
-    height: 10px;
-    width: min-content;
-}
+
+.Btn {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(#44ea76, #39fad7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position:static;
+    left: 105%;
+    bottom: 50%;
+    border: none;
+   
+  }
+  
+  .Btn:hover .arrow {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+   
+  }
+  
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(2px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .Btn1 {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(#44ea76, #39fad7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    position:static;
+    left: 105%;
+    bottom: 5%;
+    margin-bottom: 30px;
+    border: none;
+  }
+  
+  .Btn1:hover .arrow1 {
+    animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(5px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  
+  

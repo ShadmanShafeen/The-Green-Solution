@@ -1,6 +1,7 @@
 .relevantQuestionList
 {
     position: absolute;
+
     bottom: -25%;
     left: 30%;
     list-style: none;
@@ -9,10 +10,9 @@
     padding: 100px 0;
     display: grid;
     gap: 75px;
+
     grid-template-columns: repeat(4, 20%);
     justify-content: center;
-
-    
 }
 
 .relevantQuestionHeading

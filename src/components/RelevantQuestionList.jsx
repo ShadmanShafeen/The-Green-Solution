@@ -117,6 +117,7 @@ function RelevantQuestionList({ enteredQuestion }) {
                 }
             });
             console.log(combinedData);      
+
             setRelevantQuestions(sortedQuestions.slice(0,4));    
             console.log(relevantQuestions);  
           } 
@@ -127,12 +128,14 @@ function RelevantQuestionList({ enteredQuestion }) {
 
     if (relevantQuestions.length > 0 && readyState === 'Ready') {
         return (
+
           <>
             <h2 className={styles.relevantQuestionHeading}>Relevant Questions to your Search</h2>
             <ul className={styles.relevantQuestionList}>
               {relevantQuestions.map((item) => <RelevantQuestion key={item._id} questionID={item._id} question={item.question} /> )} 
             </ul>
           </>
+
         )
     }
     else if (enteredQuestion === '') {

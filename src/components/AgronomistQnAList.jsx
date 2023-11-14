@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import AgronomistQnAItem from './AgronomistQnAItem'
 import styles from './AgronomistQnAList.module.css'
 import axios from 'axios';
+import {Link} from  'react-router-dom'
+import { motion } from 'framer-motion'
+
 
 function AgronomistQnAList()
 {   
@@ -50,8 +53,13 @@ function AgronomistQnAList()
                   <li className={styles.AgprofileBox}></li>
               <li className={styles.AgProfileList}>Pending Question</li>
                   <li className={styles.AgprofileBox}></li>
-              <li className={styles.AgProfileList}>Days Active</li>
-                  <li className={styles.AgprofileBox}></li>           
+                  <li className={styles.AgProfileList}>Edit Your Answers</li>
+             <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
+                      <motion.li   whileHover={{scale: 1.2}}
+                    whileTap={{scale: 0.9}} className={styles.AgprofileBox}><p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
+                      </motion.li>
+              </Link>
+         
           </div>
         </>
       )
@@ -75,8 +83,13 @@ function AgronomistQnAList()
                   <li className={styles.AgprofileBox}></li>
               <li className={styles.AgProfileList}>Pending Question</li>
                   <li className={styles.AgprofileBox}></li>
-              <li className={styles.AgProfileList}>Days Active</li>
-                  <li className={styles.AgprofileBox}></li>           
+              <li className={styles.AgProfileList}>Edit Your Answers</li>
+              <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
+                      <motion.li   whileHover={{scale: 1.2}}
+                    whileTap={{scale: 0.9}} className={styles.AgprofileBox}><p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
+                      </motion.li>
+              </Link>
+                 
           </div>
         </>
       )
