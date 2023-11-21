@@ -13,11 +13,14 @@ import RelevantQuestionList from './components/RelevantQuestionList'
 import AgronomistAnswerEdit from './components/AgronomistAnswerEdit'
 import AboutUs from './components/AboutUs'
 import HowItWorks from './components/HowItWorks'
+import ChangeLanguage from './components/ChangeLanguage'
 
 function App() {
   
   return (
-    <Routes>
+    <>
+    <ChangeLanguage lang="en"/>
+      <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/Login' element={<LoginPage />}/>
       <Route path='/AccountCreation' element={<AccountCreationPage />} />   
@@ -34,6 +37,7 @@ function App() {
       <Route path='/HowItWorks' element={<HowItWorks/>}/> 
 
     </Routes>
+    </>
   )
 }
 
