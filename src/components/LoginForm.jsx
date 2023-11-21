@@ -1,5 +1,6 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
+import FarmerLoginPagePicture from './FarmerLoginPagePicture';
 import { Link, redirect, useNavigate } from 'react-router-dom';
 import ToggleButton from "./ToggleButton"
 import BackgroundStyle from "./BackgroundStyle"
@@ -73,6 +74,9 @@ function LoginForm() {
         </div> 
         <ToggleButton/> 
         <BackgroundStyle/>
+        <FarmerLoginPagePicture/>
+     
+       
         </>                   
     )
 }
