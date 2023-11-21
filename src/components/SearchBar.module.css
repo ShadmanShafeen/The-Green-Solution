@@ -60,83 +60,6 @@
     top: 58%;
   }
 
-/*Image Insertion Code*/
-  .Ibutton {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    height: 55px;
-    width: 55px;
-    border-radius: 50px;
-    border: none;
-    background:  #8EE4AF;
-    cursor: pointer;
-    position: relative;
-   
-  }
- 
-   .Ibutton:hover {
-    background: #8EE4AF;
-    border: #0c0202 solid 2px;
-  }
-  
-  .Ibutton:hover .svg-icon {
-    animation: flickering 2s linear infinite;
-   
-  }
-  
-  /* @keyframes flickering {
-    0% {
-      opacity: 1;
-    }
-  
-    50% {
-      opacity: 1;
-    }
-  
-    52% {
-      opacity: 1;
-    }
-  
-    54% {
-      opacity: 0;
-    }
-  
-    56% {
-      opacity: 1;
-    }
-  
-    90% {
-      opacity: 1;
-    }
-  
-    92% {
-      opacity: 0;
-    }
-  
-    94% {
-      opacity: 1;
-    }
-  
-    96% {
-      opacity: 0;
-    }
-  
-    98% {
-      opacity: 1;
-    }
-  
-    99% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  } */
-
-
-
   /*Inserting Audio*/
 
 
@@ -151,7 +74,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    margin-left: 20px;
+    margin-left: 60px;
     margin-top: 2px;
     cursor: pointer;
     transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -164,22 +87,12 @@
   }
 
 
-.AIText1
-{
-  color: #0c0202;
-  padding-right: 40px;
-  padding-left: 5px;
-  align-items: center;
-  margin-left: -23px;
-  padding-top: 5px;
-  
-}
-
 .AIText2
 {
   color: #0c0202;
+  padding-top: -10px;
   padding-right: 20px;
   padding-left: 5px;
-  margin-left:0px ;
+  margin-left:39px ;
   margin-top: 18px;
 }
