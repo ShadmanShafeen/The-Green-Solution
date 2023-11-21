@@ -14,8 +14,6 @@ import AgronomistAnswerEdit from './components/AgronomistAnswerEdit'
 import AboutUs from './components/AboutUs'
 import HowItWorks from './components/HowItWorks'
 
-
-
 function App() {
   
   return (
@@ -30,6 +28,7 @@ function App() {
       <Route path='/AgronomistHomepage' element={<AgronomistHome />} />
 
       <Route path='/RelevantQuestions' element={<RelevantQuestionList enteredQuestion="Answer 01" />} />
+
       <Route path='/AgronomistAnswerEdit' element={<AgronomistAnswerEdit/>}/>
       <Route path='/AboutUs' element={<AboutUs/>} />
       <Route path='/HowItWorks' element={<HowItWorks/>}/> 
