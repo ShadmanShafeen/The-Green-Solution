@@ -1,7 +1,7 @@
 .question_card
 {
     height: 65px;
-    width: fit-content;
+    width: 50%;
     margin: 5px 0;
     padding: 1rem;
     background-color: #8EE4AF;
