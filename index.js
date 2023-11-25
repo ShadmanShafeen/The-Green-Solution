@@ -312,6 +312,27 @@ app.get('/fetchanswers/:questionID' , async (req , res) => {
   }
 })
 
+//         FETCH ANSWER FOR SPECIFIC QUESTION FOR SPECIFIC AGRONOMIST (by QUESTION ID)
+app.get('/fetchanswer/:questionID/:agronomist' , async (req , res) => {
+    const agronomist = req.params.agronomist;
+    const questionID = req.params.questionID;
+
+    try {
+      const answer = await Answer.findOne({questionID:questionID , agronomist: agronomist});
+      if(answer) {
+        res.status(200).send({
+          data: answer
+        })
+      }
+      else {
+        res.status(404).json({message : "No Answer found for this Question by this Agronomist"});
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({error: "Server Error"});
+    }
+})
+
 //                                  FETCH FARMER ID
 app.get('/fetchfarmerID/:NID' , async (req , res) => {
   try {
@@ -493,6 +514,35 @@ app.put('/rateanswer/:answerID/:userID/:type' , async (req , res) => {
       res.status(500).json({error: "Internal Server Error"});
   }
 })
+
+//                              UPDATE ANSWER
+app.put('/changeanswer/:answerID' , async (req , res) => {
+  try {
+    const answerID = req.params.answerID;
+    const {newanswer} = req.body;
+    const updatedAnswer = await Answer.updateOne(
+      {_id : answerID},
+      {$set : {answer: newanswer}}
+    )
+    if(updatedAnswer) {
+      res.status(200).send({
+        success: true,
+        message: "answer updated successfully",
+        data: updatedAnswer
+      })
+    }
+    else {
+      res.status(404).send({
+        success: false ,
+        message: "answer was not updated"
+      })
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({error: "Server Error"});
+  }
+})
+
 
 // Connect to the database
 dbConnect();
