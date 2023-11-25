@@ -1,16 +1,14 @@
-import Header from "../components/Header";
-import ToggleButton from "../components/ToggleButton"
-import LogOutButton from "../components/LogOutButton"
-import styles from "./AgronomistAnswerEdit.module.css"
+// import ToggleButton from "../components/ToggleButton"
+import styles from "./AgronomistAnswerEditList.module.css"
 import { motion } from 'framer-motion'
-import BackgroundStyle from "./BackgroundStyle"
-const AgronomistAnswerEdit = () => {
+const AgronomistAnswerEditList = () => {
+    
+    
+    
     return (
         <>
-         <LogOutButton/>
-         <Header/>
-         <BackgroundStyle/>
-         <ToggleButton/>
+         
+         {/* <ToggleButton/> */}
          <br/>
          <h2 className={styles.HeadingOfEdit}>
           Questions and your Answer
@@ -75,4 +73,4 @@ const AgronomistAnswerEdit = () => {
     )
 }
 
-export default AgronomistAnswerEdit
+export default AgronomistAnswerEditList

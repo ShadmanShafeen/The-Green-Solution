@@ -1,8 +1,9 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
-import ToggleButton from "./ToggleButton"
+// import ToggleButton from "./ToggleButton"
 import BackgroundStyle from "./BackgroundStyle"
+import axios from 'axios';
 function LoginForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
@@ -38,6 +39,26 @@ function LoginForm() {
         } catch {
             console.error('Error occurred during login: ',error);
         };
+
+        try { 
+            const response = await axios.get(`http://localhost:5000/fetchfarmerID/${userData.NID}` , {
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            });
+            if (response.status === 200) {
+                const fetchedData = response.data;
+                const userID = fetchedData.data._id;
+                localStorage.setItem('userID',JSON.stringify(userID));
+                console.log(userID);
+            }
+            else {
+                console.log('Farmer ID Fetch Failed')
+            }
+        } catch {
+            console.error('Error occurred during ID fetching: ' , error);
+        };
+        
     };
     return (
       <>
@@ -71,10 +92,9 @@ function LoginForm() {
                 
             </div>
         </div> 
-        <ToggleButton/> 
         <BackgroundStyle/>
         </>                   
     )
 }
 
-export default LoginForm
+export default LoginForm 

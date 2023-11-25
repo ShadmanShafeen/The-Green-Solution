@@ -1,7 +1,8 @@
 import styles from './AgronomistLoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
-import ToggleButton from "./ToggleButton"
+// import ToggleButton from "./ToggleButton"
+import axios from 'axios';
 
 function AgronomistLoginForm() {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ function AgronomistLoginForm() {
         };
         localStorage.setItem('usertype',JSON.stringify('agronomist'));
         localStorage.setItem('agronomist',JSON.stringify(userData.username));
+        
         // localStorage.setItem('password',JSON.stringify(userData.NID));
 
         try {
@@ -35,10 +37,31 @@ function AgronomistLoginForm() {
             else {
                 console.error('Login failed');
             }
-        } catch {
+        } catch (error) {
             console.error('Error occurred during login: ',error);
         };
+        
+        try { 
+            const response = await axios.get(`http://localhost:5000/fetchagronomistID/${userData.username}` , {
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            });
+            if (response.status === 200) {
+                const fetchedData = response.data;
+                const userID = fetchedData.data._id;
+                localStorage.setItem('userID',JSON.stringify(userID));
+                console.log(userID);
+            }
+            else {
+                console.log('Agronomist ID Fetch Failed')
+            }
+        } catch {
+            console.error('Error occurred during ID fetching: ' , error);
+        };
+        
     };
+    
     return (
       <>
         <div className={styles.container}>
@@ -71,7 +94,6 @@ function AgronomistLoginForm() {
                 
             </div>
         </div> 
-        <ToggleButton/> 
     
         </>                   
     )

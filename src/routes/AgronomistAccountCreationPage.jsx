@@ -4,8 +4,8 @@ import BackgroundStyle from "../components/BackgroundStyle"
 function AgronomistAccountCreationPage() {
     return (
         <>
-        <AgronomistAccountCreateForm />
-        <BackgroundStyle/>
+            <AgronomistAccountCreateForm />
+            <BackgroundStyle/>
         </>
     )
 }

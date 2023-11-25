@@ -1,5 +1,5 @@
 import styles from './Question.module.css'
-import ToggleButton from "../components/ToggleButton"
+// import ToggleButton from "../components/ToggleButton"
 import LogOutButton from "../components/LogOutButton" 
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -37,10 +37,10 @@ function Question() {
           <div className={styles.question_container}>
               <ul className={styles.question_elements}>
                   <li className={styles.question}><p>{question}</p></li>
-                  <li className={styles.farmer}><h1>{farmer}</h1></li>                
+                  <li className={styles.farmer}><p>- {farmer}</p></li>                
               </ul>
           </div>
-          <ToggleButton/>
+          {/* <ToggleButton/> */}
           <LogOutButton/>
         </>
 

@@ -5,7 +5,7 @@ function AccountCreationPage() {
     return (
         <>
             <AccountCreateForm />
-        <BackgroundStyle/>
+            <BackgroundStyle/>
         </>
     )
 }

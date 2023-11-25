@@ -4,10 +4,10 @@ import { useState , useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-function SearchBar() {
+function SearchBar({enteredQuestion , setEnteredQuestion}) {
     
     const navigate = useNavigate();
-    const [enteredQuestion, setEnteredQuestion] = useState('');
+    
     const [questionID , setQuestionID] = useState("");
     const NID = JSON.parse(localStorage.getItem('NID'));
     const farmer = JSON.parse(localStorage.getItem('farmer'));
@@ -37,7 +37,7 @@ function SearchBar() {
           console.error("SpeechRecognition not supported");
         } 
       };
-
+  
     const handleAsk = async (e) => {
         e.preventDefault();
         console.log("Question Asked", e.target);
@@ -105,11 +105,12 @@ function SearchBar() {
             <div className={styles.search_container}>
 
             <input
-            idname={styles.searchBar}
-            value={enteredQuestion}
-            type="text"
-            placeholder="Ask a question..."
-            onChange={(e)=> setEnteredQuestion(e.target.value)}
+                idname={styles.searchBar}
+                value={enteredQuestion}
+                type="text"
+                placeholder="Ask a question..."
+                onChange={(e)=> setEnteredQuestion(e.target.value)}
+                
           />
                 
                 <Link>
@@ -132,8 +133,6 @@ function SearchBar() {
                         onClick={handleSpeechRecognition}
                         whileHover={{scale: 1.2}}
                         whileTap={{scale: 0.9}}
-
-                        onClick={handleSpeechRecognition}
                         ><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"/></svg>
                     </motion.button>                             
 
