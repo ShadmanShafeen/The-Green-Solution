@@ -248,17 +248,21 @@ app.get('/fetchquestionlast/:NID' , async (req , res) => {
   }
 })
 
-//                         FETCH QUESTIONS FOR AGRONOMIST HOMEPAGE (SORTED BY ANSWER COUNT)
-app.get('/fetchquestions' , async (req , res) => {
+//          FETCH QUESTIONS FOR AGRONOMIST HOMEPAGE (SORTED BY ANSWER COUNT, THOSE THAT HAVE NOT BEEN ANSWERED BY THIS AGRONOMIST)
+app.get('/agfetchquestions/:agronomist' , async (req , res) => {
+  const agronomist = req.params.agronomist;
+
   try {
-    const questions = await Question.find().sort({answerCount : 1});
+    const answeredQuestionsObjects = await Answer.find({agronomist: agronomist} , {_id: 0, questionID: 1})
+    const answeredQuestionsArray = answeredQuestionsObjects.map(item => item.questionID)
+    const questions = await Question.find({_id : {$nin : answeredQuestionsArray}}).sort({answerCount: 1});
     if(questions) {
       res.status(200).send({
         data: questions
       });
     }
     else {
-      res.status(404).json({message : "No Questions in Database"});
+      res.status(404).json({message : "No Questions found that matched username"});
     }
   } catch (error) {
       console.error(error);
@@ -266,7 +270,29 @@ app.get('/fetchquestions' , async (req , res) => {
   }
 })
 
-//                                  FETCH ANSWER
+app.get('/agfetchansweredquestions/:agronomist' , async (req , res) => {
+  const agronomist = req.params.agronomist;
+
+  try {
+    const answeredQuestionsObjects = await Answer.find({agronomist: agronomist} , {_id: 0, questionID: 1})
+    const answeredQuestionsArray = answeredQuestionsObjects.map(item => item.questionID)
+    const questions = await Question.find({_id : {$in : answeredQuestionsArray}}).sort({answerCount: 1});
+    if(questions) {
+      res.status(200).send({
+        data: questions
+      });
+    }
+    else {
+      res.status(404).json({message : "No Questions found that matched username"});
+    }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({error: "Server Error"});
+  }
+})
+
+
+//                                  FETCH ANSWERS
 app.get('/fetchanswers/:questionID' , async (req , res) => {
   try {
     const questionID = req.params.questionID;
@@ -286,7 +312,47 @@ app.get('/fetchanswers/:questionID' , async (req , res) => {
   }
 })
 
-//                       UPDATE ANSWER COUNT FOR A QUESTION
+//                                  FETCH FARMER ID
+app.get('/fetchfarmerID/:NID' , async (req , res) => {
+  try {
+    const NID = req.params.NID;
+    const farmer = await Farmer.findOne({NID : NID});
+
+    if(farmer) {
+        res.status(200).send({
+          data : farmer
+        })
+    }
+    else {
+      res.status(404).json({message : "No farmer found for given NID"});
+    }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({error: "Server Error"});
+  }
+})
+
+//                               FETCH AGRONOMIST ID
+app.get('/fetchagronomistID/:username' , async (req,res) => {
+  try {
+    const username = req.params.username;
+    const agronomist = await Agronomist.findOne({username : username});
+
+    if(agronomist) {
+        res.status(200).send({
+          data : agronomist
+        })
+    }
+    else {
+      res.status(404).json({message : "No agronomist found for given username"});
+    }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({error: "Server Error"});
+  }
+})
+
+//                              UPDATE ANSWER COUNT FOR A QUESTION
 app.put('/updateanswercount/:questionID' , async (req , res) => {
   try {
       const questionID = req.params.questionID;
@@ -313,7 +379,7 @@ app.put('/updateanswercount/:questionID' , async (req , res) => {
   }
 })
 
-//                            UPDATE ANSWER RATING
+//                              UPDATE ANSWER RATING
 app.put('/rateanswer/:answerID/:userID/:type' , async (req , res) => {
   try {
       const answerID = req.params.answerID;
@@ -325,62 +391,99 @@ app.put('/rateanswer/:answerID/:userID/:type' , async (req , res) => {
           const newRating = new Rating({
               userID,
               answerID,
-              upvote : true
+              upvote : true,
+              downvote : false
           })
           await newRating.save();
   
           const updatedAnswer = await Answer.updateOne(
-            {answerID: answerID , userID: userID},
+            {_id: answerID},
             {$inc: {rating : 1}}
           )
+          res.status(200).send({
+            success: true,
+            message: "Rating added successfully"
+          })
         } else {
             if (rating.upvote === true) {
                 console.log('User already upvoted');
-                res.status(202).json({message: 'User has already upvoted'});
+                res.status(201).json({message: 'User has already upvoted'});
             }
-            else {
+            else {    
+              if (rating.downvote === true) {                   //to turn rating to 1 instead of 0, if rating is -1
                 const updatedAnswer = await Answer.updateOne(
-                  {answerID: answerID , userID: userID},
+                  {_id: answerID},
+                  {$inc : {rating : 2}}
+                )
+              }
+              else {
+                const updatedAnswer = await Answer.updateOne(
+                  {_id: answerID},
                   {$inc : {rating : 1}}
                 )
+              }
                 const updatedRating = await Rating.updateOne(
                   {userID: userID , answerID: answerID},
-                  {upvote: true},
-                  {downvote: false}
+                  {$set: {
+                    upvote: true,
+                    downvote: false
+                  }}
                 )
+                res.status(200).send({
+                  success: true,
+                  message: "Rating added successfully"
+                })
             }
         }
       }
       
-      else {
+      else if (type === 'downvote') {
         const rating = await Rating.findOne({userID: userID , answerID: answerID});
         if (!rating) {
           const newRating = new Rating({
               userID,
               answerID,
+              upvote: false,
               downvote : true
           })
           await newRating.save();
   
           const updatedAnswer = await Answer.updateOne(
-            {answerID: answerID , userID: userID},
+            {_id: answerID},
             {$inc: {rating : -1}}
           )
+          res.status(200).send({
+            success: true,
+            message: "Rating added successfully"
+          })
         } else {
             if (rating.downvote === true) {
                 console.log('User already downvoted');
                 res.status(202).json({message: 'User has already downvoted'});
             }
             else {
-                const updatedAnswer = await Answer.updateOne(
-                  {answerID: answerID , userID: userID},
-                  {$inc : {rating : -1}}
-                )
+                if (rating.upvote === true) {                     // to turn rating into -1 instead of 0, if rating is 1
+                  const updatedAnswer = await Answer.updateOne(
+                    {_id: answerID},
+                    {$inc : {rating : -2}}
+                  )
+                }
+                else {
+                  const updatedAnswer = await Answer.updateOne(
+                    {_id: answerID},
+                    {$inc : {rating : -1}}
+                  )
+                }
                 const updatedRating = await Rating.updateOne(
                   {userID: userID , answerID: answerID},
-                  {upvote: false},
-                  {downvote: true}
+                  {$set : {
+                    downvote: true,
+                    upvote: false}}
                 )
+                res.status(200).send({
+                  success: true,
+                  message: "Rating added successfully"
+                })
             }
         }
       }
