@@ -1,76 +1,71 @@
 // import ToggleButton from "../components/ToggleButton"
+import { useEffect, useState } from "react"
 import styles from "./AgronomistAnswerEditList.module.css"
 import { motion } from 'framer-motion'
-const AgronomistAnswerEditList = () => {
-    
-    
-    
-    return (
-        <>
-         
-         {/* <ToggleButton/> */}
-         <br/>
-         <h2 className={styles.HeadingOfEdit}>
-          Questions and your Answer
-        </h2>
-         <div className={styles.EditContainer}>
-            
-         
-           <ul>
-            
-           <li className={styles.AgronomistEditQnAItem}>
-            <p  className={styles.QuestionHeading}>
-              <b> Question:</b> 
-            </p>
-            <div>
-                <motion.div 
-                    className={styles.AgPrevQuestionBox}
-                    whileHover={{scale:1.05}}    
-                    transition={{duration:0.75}}
-                >
-                    <p className={styles.PrevquestionText}></p>
-                    <p className={styles.PrevfarmerText}></p>
-                </motion.div>
-            </div>
+import AgronomistAnswerEditItem from "./AgronomistAnswerEditItem";
+import axios from "axios";
+function AgronomistAnswerEditList(){
 
-            <p className={styles.AnswerHeading}><b>Previous Answer:</b></p>
-            <div>
-                <motion.div 
-                    className={styles.AgPrevAnswerBox}
-                    whileHover={{scale:1.05}}    
-                    transition={{duration:0.75}}
-                >
-                    <p className={styles.PrevAnswerText}></p>
-                    <p className={styles.PrevAgText}></p>
-                </motion.div>
-            </div>
-            <div className={styles.AgPrevAnsContainer}>
-                    <p className={styles.AgPrevAnswer}>
-                        <textarea
-                            className={styles.FixTextAreaAnswer}
-                            placeholder="Write your answer...">
-                        </textarea> 
-                    </p>
-                    <p className={styles.AgEdit}>
-                    <motion.button 
-                        className={styles.AgEditButton}
-                        whileHover={{scale:1.1}}
-                        whileTap={{scale:0.8}}
-                        transition={{duration:0.5}}
-                        // onClick={submitAnswer}
-                        >
-                        <p className={styles.edit_text}>Edit</p>
+    const agronomist = JSON.parse(localStorage.getItem('agronomist'));
+    const [questions , setQuestions] = useState([]);
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const response = await axios.get(`http://localhost:5000/agfetchansweredquestions/${agronomist}` , {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
 
-                    </motion.button>  
-                    </p>
-            </div>
-        </li>
-        </ul>
-            
-            </div>   
-         </>
-         
-    )
+                if (response.status === 200) {
+                    const questionData = response.data;
+                    setQuestions(questionData.data);
+                    console.log(questions);
+                } else {
+                    console.log ("Fetch Failed");
+                }
+            } catch (error) {
+                console.log('Error occurred during search: ' , error);
+            }
+        }
+        fetchData();
+    }, [])
+    if(questions.length > 0) {
+        return (
+            <>
+                <br/>
+                <h2 className={styles.HeadingOfEdit}>
+                     Your Previously Answered Questions
+                </h2>
+                <div className={styles.EditContainer}>
+                
+                <ul>
+                    {questions.map((item) => (
+                        <AgronomistAnswerEditItem key={item._id} questionID={item._id} question={item.question} />
+                    ))}
+                   
+                </ul>
+    
+                </div>   
+             </>         
+        )
+    }
+    else {
+        return(
+            <>
+                <br/>
+                <h2 className={styles.HeadingOfEdit}>
+                        Your Previously Answered Questions
+                </h2>
+                <div className={styles.EditContainer}>
+                
+                    <h2>You have not answered any questions yet</h2>
+
+                </div>   
+            </>  
+        )
+    }
+   
 }
 
 export default AgronomistAnswerEditList

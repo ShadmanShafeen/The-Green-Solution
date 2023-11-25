@@ -14,10 +14,10 @@ function AgronomistQnAList()
       async function fetchData() {
         try {
             const response = await axios.get(`http://localhost:5000/agfetchquestions/${agronomist}`, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
+              headers: {
+                 'Content-Type': 'application/json',
+              },
+            });
 
           if (response.status === 200) {
             const questionData = response.data;
@@ -56,8 +56,12 @@ function AgronomistQnAList()
                   <li className={styles.AgprofileBox}></li>
                   <li className={styles.AgProfileList}>Edit Your Answers</li>
              <Link to='/AgronomistAnswerEditPage' className={styles.TextButton}>
-                      <motion.li   whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}} className={styles.AgprofileBox}><p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
+                      <motion.li 
+                          whileHover={{scale: 1.1}}
+                          whileTap={{scale: 0.9}}
+                          transition={{duration:0.75}} 
+                          className={styles.AgprofileBox}>
+                        <p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
                       </motion.li>
               </Link>
          
@@ -86,8 +90,11 @@ function AgronomistQnAList()
                   <li className={styles.AgprofileBox}></li>
               <li className={styles.AgProfileList}>Edit Your Answers</li>
               <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
-                      <motion.li   whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}} className={styles.AgprofileBox}><p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
+                      <motion.li   
+                          whileHover={{scale: 1.1}}
+                          whileTap={{scale: 0.9}} 
+                          className={styles.AgprofileBox}>
+                        <p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
                       </motion.li>
               </Link>
                  
