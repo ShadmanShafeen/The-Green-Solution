@@ -1,12 +1,144 @@
-.bgHowItWorks{
-    /* background-image: url('../382327656_850744053096406_5792379877948819232_n.jpg'); */
-    background-image: url('../bgag1.jpg');
-    background-size: cover;      /* Cover the viewport */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-position: center; /*Center the image */
-     /* margin-top: 100px; */
-     margin-left: -150px;
-    height: 100vh;               /* Full height of the viewport */
-     width: 208vh;
+.bgFarmer{
+    
+    background-image: url('../farmer.jpg');
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center;
+     margin-top: -500px;
+     margin-left: 140px;
+    height: 60vh;
+    border-radius: 50px;        
+     width: 80vh;
     overflow: hidden;
+    box-shadow: 4px 4px 2px rgb(60, 59, 59);
+    border: black solid 2px;
 }
+.HorizontalList1
+{
+    display: flex;
+  align-items:left;
+  padding-left: -10px;
+  padding-right:600px ;
+  margin-left: -90px;
+ 
+}
+
+.Ref{
+
+ color: #06373A;
+ 
+}
+
+.HorizontalList2
+{
+    display: flex;
+  align-items: right;
+  /* left: 105%; */
+  margin-left: 620px;
+  top: 5%;
+}
+
+.HeadingHIW
+{
+    color: black;
+    font-family:cursive;
+    position: absolute;
+    top: 0%;
+    font-size: xx-large;
+    left: 45%;
+    font-weight: bolder;
+}
+.ListFA
+{
+    color: black;
+    font-family:cursive;
+    position: absolute;
+    font-size: xx-large;
+    top:10%;
+    left: 5%;
+    display: inline-flexbox;
+}
+.TextAqAv
+{
+    font-size: large;
+}
+.AlignAqAv
+{
+   text-align: left;
+   font-size:large;
+}
+.ListAgTP
+{
+  position: absolute;
+  top: 1%;
+  bottom: 50%;
+  display: inline-flexbox;
+}
+.bgAgronomist
+{
+    background-image: url('../Agronomist.jpg');
+    background-size: cover;     
+    background-repeat: no-repeat; 
+    background-position: center;
+     margin-top: 695px;
+     margin-left: -730px;
+    height: 65vh;
+    border-radius: 50px;        
+     width: 80vh;
+    overflow: hidden;
+    border: black solid 2px;
+    box-shadow: 4px 4px 2px rgb(60, 59, 59);
+    
+}
+.AgronomistText
+{
+    font-family: cursive;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: black;
+    margin-left: -30px;
+    padding-left: 10px;
+
+}
+.FarmerText
+{
+    font-size: xx-large;
+    font-weight: bolder;
+}
+.HorizontalList3
+{
+    display: flex;
+    align-items: left;
+
+}
+.HorizontalList4
+{
+    display: flex;
+    align-items: right;
+    font-family: cursive;
+    color: black;
+    margin-top: -400px;
+    margin-left: -90px;
+}
+.TextAgAAU
+{
+    font-size: large;
+}
+.AlignAAU
+{
+    text-align: left;
+    font-size:large;
+}
+.ReturnButton
+{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: #8ee4af;
+  /* position: fixed; */
+  position:fixed;
+  left: 2%;
+  top: 4%;
+  z-index: 3;
+}
+

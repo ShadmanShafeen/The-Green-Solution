@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
-import styles from './Buttons.module.css'
+import styles from './Buttons2.module.css'
 import { motion } from 'framer-motion'
 
-function Buttons() {
+function Buttons2() {
     
     
     return (
     <>    
         <div className={styles.center}>
        
-          
+         
             <p>
-                <Link to='/Login'>
+                <Link to='/AccountCreation'>
                     <motion.button 
                     className={styles.mainButton}
                     onClick={null}
@@ -20,7 +20,7 @@ function Buttons() {
                     >Farmer</motion.button>
                 </Link>
                 
-                <Link to='/AgronomistLogin'>
+                <Link to='/AgronomistAccountCreation'>
                     <motion.button 
                     className={styles.mainButton}
                     onClick={null}
@@ -34,4 +34,4 @@ function Buttons() {
     );
 }
 
-export default Buttons
+export default Buttons2

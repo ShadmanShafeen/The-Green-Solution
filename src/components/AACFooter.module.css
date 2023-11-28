@@ -1,0 +1,81 @@
+
+.Ending
+{
+  color: #8ee4af;
+  position: absolute;
+  top: 99%;
+  background-color: #141416;
+  width: 101%;
+  height: 170px;
+  left:-1%;
+  opacity: 0.9;
+}
+.CU
+{
+  font-family: cursive;
+  font-size: larger;
+  color: #8ee4af;
+  margin-top: -10px;
+  
+}
+.ETG
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top:-35px;
+  margin-left: 75px;
+  
+
+}
+.Phone
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top:-40px;
+
+
+}
+.Phonesvg
+{
+  fill: #8ee4af;
+  z-index: 3;
+  padding-right: 8px;
+  padding-top: 30px;
+}
+.Emailsvg
+{
+  fill: #8ee4af;
+  z-index: 3;
+  margin-top: 24px;
+  margin-left: -50px;
+  padding-right: 5px;
+
+
+}
+.Contactsvg
+{
+  fill: #8ee4af;
+  z-index: 3;
+  padding-right: 10px;
+  margin-top: 24px;
+  
+}
+.EmailLink
+{
+  text-decoration: none;
+  color: #8ee4af;
+
+}
+.AlignMiddle
+{
+  justify-content: center;
+  margin-left: 35%;
+}
+
+.ContactList
+{
+  display: flex;
+}
+

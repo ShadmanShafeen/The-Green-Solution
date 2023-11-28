@@ -5,14 +5,25 @@ import { motion } from 'framer-motion'
 function Sign_inButton ()
 {
     return(
-        <Link to ='/'>
+        <>
+       
+        <div className={styles.Dropdown}>
+
+     
         <motion.button className={styles.Sign_inButton} onClick={null}
             whileHover={{scale: 1.2}}
             whileTap={{scale: 0.9}}
             transition={{duration: 0.5}}
             >Sign In
-        </motion.button>   
-        </Link>
+             <div className={styles.dropdownContent}>
+                 <Link className={styles.dropdownItem1}>Agronomist</Link>
+                 <Link className={styles.dropdownItem2}>Farmer</Link>
+                </div> 
+        </motion.button>  
+                
+        </div>
+       
+        </>
     )
 }
  
