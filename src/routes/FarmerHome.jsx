@@ -14,13 +14,13 @@ function FarmerHome() {
     useEffect(() => {
         const timeout = setTimeout(()=> {
             setDelayedQuestion(enteredQuestion);
-        } , 1500);
+        } , 1000);
         return () => clearTimeout(timeout);
     }, [enteredQuestion]);
 
-    function enterQuestionHandler(event) {
-        setEnteredQuestion(event.target.value);
-    }
+    // function enterVoiceQuestionHandler(event) {
+    //     setEnteredQuestion(event.target.value);
+    // }
     return (
         <>
            

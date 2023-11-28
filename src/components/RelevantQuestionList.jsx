@@ -7,6 +7,8 @@ import axios from "axios";
 import RelevantQuestion from './RelevantQuestion'
 import { BallTriangle } from 'react-loader-spinner'
 import styles from './RelevantQuestionList.module.css'
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RelevantQuestionList({ enteredQuestion }) {
     
@@ -20,6 +22,16 @@ function RelevantQuestionList({ enteredQuestion }) {
         const loadedModel = await USE.load();
         SetModel(loadedModel);
         console.log('Model Loaded');
+        toast.success('NLP Model loaded' , {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark"
+      });
     }
     const embedSentence = async (sentence) => {
       const embedding = await model.embed(sentence);
@@ -48,11 +60,23 @@ function RelevantQuestionList({ enteredQuestion }) {
         return false;
     }
 
-    useEffect(() => {loadModel()} , []);
+    useEffect(() => {
+      toast.info('NLP Model for finding Relevant Questions is loading' , {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark"
+    });
+      loadModel();
+      } , []);
     useEffect(() => {
       const fetchData = async() => {
         try {
-            const response = await axios.get(`http://localhost:5000/fetchquestions`, {
+            const response = await axios.get(`http://localhost:5000/fetchallquestions`, {
           });
           if (response.status === 200) {
             const questionData = response.data;
@@ -128,8 +152,21 @@ function RelevantQuestionList({ enteredQuestion }) {
 
     if (relevantQuestions.length > 0 && readyState === 'Ready') {
         return (
-
+          
           <>
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={true}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+              transition={Slide}
+            />
             <h2 className={styles.relevantQuestionHeading}>Relevant Questions to your Search</h2>
             <ul className={styles.relevantQuestionList}>
               {relevantQuestions.map((item) => <RelevantQuestion key={item._id} questionID={item._id} question={item.question} /> )} 

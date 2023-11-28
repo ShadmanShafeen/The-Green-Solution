@@ -4,6 +4,9 @@ import { Link, redirect, useNavigate } from 'react-router-dom';
 // import ToggleButton from "./ToggleButton"
 import BackgroundStyle from "./BackgroundStyle"
 import axios from 'axios';
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function LoginForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
@@ -34,6 +37,16 @@ function LoginForm() {
                 navigate('/FarmerHomepage');
             }
             else {
+                toast.error('You Have Entered A Wrong Username or NID' , {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 console.error('Login failed');
             }
         } catch {
@@ -62,6 +75,19 @@ function LoginForm() {
     };
     return (
       <>
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Slide}
+        />
         <div className={styles.container}>
             <h2><b><b>Farmer Login</b></b></h2>
             <form  onSubmit={handleSubmit}>

@@ -3,6 +3,8 @@ import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
 // import ToggleButton from "./ToggleButton"
 import axios from 'axios';
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AgronomistLoginForm() {
     const navigate = useNavigate();
@@ -35,6 +37,16 @@ function AgronomistLoginForm() {
                 navigate('/AgronomistHomepage');
             }
             else {
+                toast.error('You Have Entered A Wrong Username or Password' , {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 console.error('Login failed');
             }
         } catch (error) {
@@ -64,6 +76,19 @@ function AgronomistLoginForm() {
     
     return (
       <>
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Slide}
+            />
         <div className={styles.container}>
             <h2><b><b>Agronomist Login</b></b></h2>
             <form  onSubmit={handleSubmit}>
