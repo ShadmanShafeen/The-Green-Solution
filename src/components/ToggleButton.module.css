@@ -16,7 +16,6 @@
   border:0.1px solid black;
   border-radius: var(--height);
   cursor: pointer;
-  z-index: 1;
 }
 
 .toggle input {

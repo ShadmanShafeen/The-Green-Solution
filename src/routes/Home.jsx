@@ -19,6 +19,7 @@ function Home() {
             <BackgroundStyleHome/>
             {/* <Buttons/> */}
             <GetStarted/>
+
             <AnimatedTextHome/> 
       
         </div>  
