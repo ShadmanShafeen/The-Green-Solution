@@ -25,3 +25,16 @@
     font-weight: 500;
     font-size: large;
 }
+
+.badge {
+    position: absolute;
+    top: 5px; /* Adjusted to better align with the cart icon */
+    right: -10px;
+    background-color: var(--badge-bg-color);
+    color: var(--badge-text-color);
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 2px 5px; /* Ensures the badge has a more balanced look */
+    border: 1px solid var(--badge-border-color);
+    box-shadow: var(--box-shadow); /* Add a slight shadow for depth */
+  }

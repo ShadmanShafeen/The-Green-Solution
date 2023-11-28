@@ -1,7 +1,9 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
-// import ToggleButton from "./ToggleButton"
+
+import BASE_URL from '../CONSTANT'
+
 import BackgroundStyle from "./BackgroundStyle"
 import axios from 'axios';
 import { ToastContainer , toast , Slide } from 'react-toastify';
@@ -24,7 +26,7 @@ function LoginForm() {
         localStorage.setItem('NID',JSON.stringify(userData.NID));
 
         try {
-            const response = await fetch('http://localhost:5000/auth/farmerlogin' , {
+            const response = await fetch(`${BASE_URL}/auth/farmerlogin` , {
                 method: "Post",
                 headers: {
                     'Content-Type': 'application/json',
@@ -54,7 +56,7 @@ function LoginForm() {
         };
 
         try { 
-            const response = await axios.get(`http://localhost:5000/fetchfarmerID/${userData.NID}` , {
+            const response = await axios.get(`${BASE_URL}/fetchfarmerID/${userData.NID}` , {
                 headers: {
                     'Content-Type' : 'application/json'
                 }
@@ -118,7 +120,9 @@ function LoginForm() {
                 
             </div>
         </div> 
+
         <BackgroundStyle/>
+       
         </>                   
     )
 }

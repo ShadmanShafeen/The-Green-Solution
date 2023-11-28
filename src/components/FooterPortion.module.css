@@ -1,0 +1,188 @@
+.description
+{
+  font-family: cursive;
+  font-weight:bolder;
+  font-size: medium;
+  color: black;
+}
+
+.Ending
+{
+  color: #8ee4af;
+  position: absolute;
+  bottom: -10%;
+  top: 192%;
+  background-color: #141416;
+  width: 101%;
+  height: 170px;
+  left:-1%;
+  opacity: 0.9;
+}
+.CU
+{
+  font-family: cursive;
+  font-size: larger;
+  color: #8ee4af;
+  margin-top: -10px;
+  
+}
+.ETG
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top:-35px;
+  margin-left: 75px;
+  
+
+}
+.Phone
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top:-40px;
+
+
+}
+.Phonesvg
+{
+  fill: #8ee4af;
+  z-index: 3;
+  padding-right: 8px;
+  padding-top: 30px;
+}
+.Emailsvg
+{
+  fill: #8ee4af;
+  z-index: 3;
+  margin-top: 24px;
+  margin-left: -50px;
+  padding-right: 5px;
+
+
+}
+.Contactsvg
+{
+  fill: #8ee4af;
+  z-index: 3;
+  padding-right: 10px;
+  margin-top: 24px;
+  
+}
+.EmailLink
+{
+  text-decoration: none;
+  color: #8ee4af;
+
+}
+.AlignMiddle
+{
+  justify-content: center;
+  margin-left: -50%;
+}
+.HorizontalListItem1
+{
+  display: flex;
+}
+.ContactList
+{
+  display: flex;
+}
+.FoUs
+{
+  font-family: cursive;
+  font-size: larger;
+ 
+  margin-top: 10px;
+}
+
+.HorizontalListItem1
+{
+  margin-left: 650px;
+
+}
+.FbLogo
+{
+  fill: #8ee4af;
+  z-index: 3;
+  margin-top: 60px;
+  margin-left: -200px;
+}
+.twitLogo
+{
+  fill: #8ee4af;
+  z-index: 3;
+  margin-top: 63px;
+  margin-left: -20px;
+}
+.WALogo
+{
+  fill: #8ee4af;
+  z-index: 3;
+  margin-top:60px ;
+  margin-left: -300px;
+}
+.InstaLogo
+{
+  fill: #8ee4af;
+  z-index: 3;
+  margin-top: 60px;
+  margin-left:-100px;
+
+}
+.GitLogo
+{
+  fill: #8ee4af;
+  z-index:3;
+  margin-top: 60px;
+  margin-left:15px;
+}
+.QL
+{
+  font-family: cursive;
+  font-size:larger;
+  margin-left: 645px;
+  margin-top: 10px;
+}
+.ReferenceLink
+{
+ text-decoration: none; 
+ margin-left: 1050px;
+ 
+}
+.Home
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top: -30px;
+  margin-left: 585px;
+}
+.HIW
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top: -14px;
+  margin-left: 665px;
+}
+.AbUs
+{
+  font-family: cursive;
+  font-size: medium;
+  color: #8ee4af;
+  margin-top: -20px;
+  margin-left: 618px;
+  padding-top: 5px;
+}
+.QLHAH
+{
+  margin-left: -150px;
+}
+.LinkSVG
+{
+  fill: #8ee4af;
+  z-index: 3;
+  padding-left: 5px;
+}

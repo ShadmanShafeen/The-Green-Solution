@@ -1,0 +1,27 @@
+.AlignCenter {
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    left: 45%;
+    top: 45%;
+    bottom: 50%; 
+    
+}
+
+.BoxButton
+{
+  cursor: pointer;
+align-content: center;
+background-color: #ccc6c6;
+margin-left: 20px;
+margin-right: 20px;
+height: 90px;
+width: 145px;
+text-size-adjust: 200px;
+font-size: large;
+font-weight: bolder;
+border-radius: 30px;
+font-family: comfortawesome;
+border: 2px solid black;
+}

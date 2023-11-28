@@ -3,6 +3,7 @@ import styles from './Question.module.css'
 import LogOutButton from "../components/LogOutButton" 
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import BASE_URL from '../CONSTANT'
 
 function Question() {
     const [question , setQuestion] = useState('');
@@ -12,7 +13,7 @@ function Question() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`http://localhost:5000/fetchquestion/${questionID}` , {
+                const response = await axios.get(`${BASE_URL}/fetchquestion/${questionID}` , {
                 headers: {
                     'Content-Type': 'application/json'
                 }

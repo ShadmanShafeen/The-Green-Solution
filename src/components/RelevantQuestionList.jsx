@@ -7,8 +7,12 @@ import axios from "axios";
 import RelevantQuestion from './RelevantQuestion'
 import { BallTriangle } from 'react-loader-spinner'
 import styles from './RelevantQuestionList.module.css'
+
 import { ToastContainer , toast , Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import BASE_URL from '../CONSTANT'
+
 
 function RelevantQuestionList({ enteredQuestion }) {
     
@@ -76,7 +80,9 @@ function RelevantQuestionList({ enteredQuestion }) {
     useEffect(() => {
       const fetchData = async() => {
         try {
-            const response = await axios.get(`http://localhost:5000/fetchallquestions`, {
+
+            const response = await axios.get(`${BASE_URL}/fetchallquestions`, {
+
           });
           if (response.status === 200) {
             const questionData = response.data;

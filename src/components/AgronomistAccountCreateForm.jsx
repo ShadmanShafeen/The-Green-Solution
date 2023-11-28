@@ -6,6 +6,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer , toast , Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+import BASE_URL from "../CONSTANT"
+
+
 function AgronomistAccountCreateForm() {
     const navigate = useNavigate();
 
@@ -36,7 +40,7 @@ function AgronomistAccountCreateForm() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/auth/agronomistsignup', {
+            const response = await fetch(`${BASE_URL}/auth/agronomistsignup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

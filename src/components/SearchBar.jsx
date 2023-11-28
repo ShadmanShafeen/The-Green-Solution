@@ -3,8 +3,11 @@ import { motion } from 'framer-motion'
 import { useState , useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
 import { ToastContainer , toast , Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import BASE_URL from '../CONSTANT'
 
 function SearchBar({enteredQuestion , setEnteredQuestion}) {
 
@@ -88,7 +91,7 @@ function SearchBar({enteredQuestion , setEnteredQuestion}) {
                     
         }
         try {                     //  Enter Question into Database  
-            const response = await fetch('http://localhost:5000/askquestion' , {
+            const response = await fetch(`${BASE_URL}/askquestion` , {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -108,7 +111,7 @@ function SearchBar({enteredQuestion , setEnteredQuestion}) {
         //  Fetch Last Question Inserted into Database
         async function fetchData() {
             try {
-                const response = await axios.get(`http://localhost:5000/fetchquestionlast/${NID}` , {
+                const response = await axios.get(`${BASE_URL}/fetchquestionlast/${NID}` , {
                 headers: {
                     'Content-Type': 'application/json'
                 }
