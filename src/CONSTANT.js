@@ -1,0 +1,1 @@
+export default BASE_URL = `https://the-green-solution-backend.onrender.com`

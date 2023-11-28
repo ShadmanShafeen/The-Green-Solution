@@ -4,6 +4,7 @@ import styles from './AgronomistQnAList.module.css'
 import axios from 'axios';
 import {Link} from  'react-router-dom'
 import { motion } from 'framer-motion'
+import BASE_URL from '../CONSTANT'
 
 
 function AgronomistQnAList()
@@ -12,7 +13,7 @@ function AgronomistQnAList()
     useEffect(() => {
       async function fetchData() {
         try {
-            const response = await axios.get(`http://localhost:5000/fetchquestions`, {
+            const response = await axios.get(`${BASE_URL}/fetchquestions`, {
             headers: {
               'Content-Type': 'application/json',
             },

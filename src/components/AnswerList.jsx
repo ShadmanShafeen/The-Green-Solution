@@ -2,6 +2,7 @@ import axios from 'axios'
 import Answer from './Answer'
 import styles from './AnswerList.module.css'
 import { useEffect, useState } from 'react';
+import BASE_URL from '../CONSTANT'
 
 function AnswerList () {
     const questionID = JSON.parse(localStorage.getItem('questionID'));
@@ -9,7 +10,7 @@ function AnswerList () {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`http://localhost:5000/fetchanswers/${questionID}` , {
+                const response = await axios.get(`${BASE_URL}/fetchanswers/${questionID}` , {
                     headers: {
                         'Content-Type': 'application/json',
                       }

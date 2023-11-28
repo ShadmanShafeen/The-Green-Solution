@@ -7,6 +7,7 @@ import axios from "axios";
 import RelevantQuestion from './RelevantQuestion'
 import { BallTriangle } from 'react-loader-spinner'
 import styles from './RelevantQuestionList.module.css'
+import BASE_URL from '../CONSTANT'
 
 function RelevantQuestionList({ enteredQuestion }) {
     
@@ -52,7 +53,7 @@ function RelevantQuestionList({ enteredQuestion }) {
     useEffect(() => {
       const fetchData = async() => {
         try {
-            const response = await axios.get(`http://localhost:5000/fetchquestions`, {
+            const response = await axios.get(`${BASE_URL}/fetchquestions`, {
           });
           if (response.status === 200) {
             const questionData = response.data;

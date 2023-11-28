@@ -1,7 +1,6 @@
 // import Buttons from "../components/Buttons";
 import GetStarted  from "../components/GetStarted";
 import Header from "../components/Header";
-
 import styles from "./Home.module.css"
 import BackgroundStyleHome from "../components/BackgroundStyleHome";
 import FooterPortion from "../components/FooterPortion";
@@ -21,6 +20,7 @@ function Home() {
             <GetStarted/>
 
             <AnimatedTextHome/> 
+
       
         </div>  
       <div className={styles.HomePageInfo}>
@@ -50,6 +50,7 @@ function Home() {
         
 
         </>    
+
     )
 }
 

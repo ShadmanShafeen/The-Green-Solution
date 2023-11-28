@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from './AgronomistQnAItem.module.css'
 import { motion } from 'framer-motion'
+import BASE_URL from '../CONSTANT'
 
 function AgronomistQnAItem({ question  , farmer , qID }) 
 {
@@ -20,7 +21,7 @@ function AgronomistQnAItem({ question  , farmer , qID })
         };
         //                        ADD ANSWER
         try {
-            const response = await fetch('http://localhost:5000/addanswer' , {
+            const response = await fetch(`${BASE_URL}/addanswer` , {
                 method: 'POST' , 
                 headers: {
                     'Content-Type' : 'application/json'
@@ -32,7 +33,7 @@ function AgronomistQnAItem({ question  , farmer , qID })
         }
         //             UPDATE answerCount OF THE QUESTION
         try {
-            const response = await fetch(`http://localhost:5000/updateanswercount/${qID}` , {
+            const response = await fetch(`${BASE_URL}/updateanswercount/${qID}` , {
                 method: 'PUT' 
             });
 

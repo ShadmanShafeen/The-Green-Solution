@@ -2,6 +2,8 @@ import styles from './AgronomistLoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
 
+import BASE_URL from "../CONSTANT"
+
 
 function AgronomistLoginForm() {
     const navigate = useNavigate();
@@ -20,7 +22,7 @@ function AgronomistLoginForm() {
         // localStorage.setItem('password',JSON.stringify(userData.NID));
 
         try {
-            const response = await fetch('http://localhost:5000/auth/agronomistlogin' , {
+            const response = await fetch(`${BASE_URL}/auth/agronomistlogin` , {
                 method: "Post",
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,6 +73,7 @@ function AgronomistLoginForm() {
                 
             </div>
         </div> 
+
     
         </>                   
     )

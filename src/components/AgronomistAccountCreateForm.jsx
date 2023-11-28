@@ -3,6 +3,7 @@ import styles from './AgronomistAccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import ToggleButton from "../components/ToggleButton"
+import BASE_URL from "../CONSTANT"
 
 function AgronomistAccountCreateForm() {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ function AgronomistAccountCreateForm() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/auth/agronomistsignup', {
+            const response = await fetch(`${BASE_URL}/auth/agronomistsignup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
