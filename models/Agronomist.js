@@ -11,6 +11,11 @@ const agronomistSchema = new mongoose.Schema({
         required: true,
         unique:true
     },
+    email: {
+        type: String,
+        required: true,
+        unique:true
+    },
     NID: {
         type: String,
         required: true,
@@ -24,6 +29,9 @@ const agronomistSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
+    },
+    agronomistCode: {
+        type: String
     }
 });
 

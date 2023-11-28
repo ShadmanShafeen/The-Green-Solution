@@ -102,20 +102,23 @@ app.post('/auth/agronomistlogin', async (req, res) => {
 
 //                                    AGRONOMIST SIGNUP
 app.post('/auth/agronomistsignup', async (req, res) => {
-  const { name, contact, NID , username , password } = req.body;
+  const { name, contact , email , NID , username , password , agronomistCode } = req.body;
 
   try {
       // Check if the username already exists in the database
       const existingUser = await Agronomist.findOne({ username });
-
+      const agronomistZero = await Agronomist.findOne({ username: "agronomist zero" })
       if (existingUser) {
           return res.status(400).json({ error: "Username already exists" });
       }
-
+      if (agronomistCode != agronomistZero.agronomistCode) {
+          return res.status(404).json({ error: "agronomist code does not match" });
+      }
       // Create a new user instance
       const newAgronomist = new Agronomist({
           name,
           contact,
+          email,
           NID,
           username,
           password
@@ -246,6 +249,25 @@ app.get('/fetchquestionlast/:NID' , async (req , res) => {
     console.error(error);
     res.status(500).json({error: "Server Error"});
   }
+})
+
+//                         FETCH ALL QUESTIONS
+app.get('/fetchallquestions' , async (req , res) => {
+  try {
+    
+    const questions = await Question.find().sort({answerCount: -1});
+    if(questions) {
+      res.status(200).send({
+        data: questions
+      });
+    }
+    else {
+      res.status(404).json({message : "No Questions in Database"});
+    }
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({error: "Server Error"});
+  }  
 })
 
 //          FETCH QUESTIONS FOR AGRONOMIST HOMEPAGE (SORTED BY ANSWER COUNT, THOSE THAT HAVE NOT BEEN ANSWERED BY THIS AGRONOMIST)
