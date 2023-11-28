@@ -45,7 +45,7 @@ const ChangeLanguage = (props) => {
   
   return (
     <div>
-      <div style={{position: "fixed", top: 80, right: 30, zIndex: 1000}} ref={translateDivRef}></div>
+      <div style={{position: "fixed", top: 80, right: 15, zIndex: 1000}} ref={translateDivRef}></div>
     </div>
   );
 };

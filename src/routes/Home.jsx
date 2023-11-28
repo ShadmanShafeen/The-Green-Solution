@@ -1,6 +1,6 @@
 import Buttons from "../components/Buttons";
 import Header from "../components/Header";
-import Sign_inButton from "../components/Sign_inButton";
+// import Sign_inButton from "../components/Sign_inButton";
 import  './Home.module.css';
 // import ToggleButton from "../components/ToggleButton"
 // import myImageBackground from "../components/images/background.png"
@@ -16,7 +16,7 @@ function Home() {
             <Buttons/>
             {/* <ToggleButton/> */}
             <AnimatedTextHome/> 
-            <Sign_inButton/> 
+            {/* <Sign_inButton/>  */}
         </div>      
     )
 }

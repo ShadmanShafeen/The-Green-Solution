@@ -1,7 +1,8 @@
 import styles from './LoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
-import ToggleButton from "./ToggleButton"
+import BASE_URL from '../CONSTANT'
+// import ToggleButton from "./ToggleButton"
 import BackgroundStyle from "./BackgroundStyle"
 function LoginForm() {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function LoginForm() {
         localStorage.setItem('NID',JSON.stringify(userData.NID));
 
         try {
-            const response = await fetch('http://localhost:5000/auth/farmerlogin' , {
+            const response = await fetch(`${BASE_URL}/auth/farmerlogin` , {
                 method: "Post",
                 headers: {
                     'Content-Type': 'application/json',
@@ -71,7 +72,7 @@ function LoginForm() {
                 
             </div>
         </div> 
-        <ToggleButton/> 
+        {/* <ToggleButton/>  */}
         <BackgroundStyle/>
         </>                   
     )

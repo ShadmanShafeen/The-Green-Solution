@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import PrevQuestion from './PrevQuestion';
 import styles from './PrevQuestionList.module.css';
 import axios from 'axios';
+import BASE_URL from '../CONSTANT'
 
 function PrevQuestionList() {
   const [questions, setQuestions] = useState([]);
@@ -11,7 +12,7 @@ function PrevQuestionList() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:5000/fetchquestions/${NID}`, {
+        const response = await axios.get(`${BASE_URL}/fetchquestions/${NID}`, {
           headers: {
             'Content-Type': 'application/json',
           },

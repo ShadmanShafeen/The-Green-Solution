@@ -3,6 +3,7 @@ import styles from './AccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import ToggleButton from "../components/ToggleButton"
+import BASE_URL from "../CONSTANT"
 
 function AccountCreateForm() {
     const navigate = useNavigate();
@@ -19,7 +20,7 @@ function AccountCreateForm() {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/auth/farmersignup', {
+            const response = await fetch(`${BASE_URL}/auth/farmersignup`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
