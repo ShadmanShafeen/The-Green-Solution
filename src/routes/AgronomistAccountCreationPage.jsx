@@ -6,11 +6,11 @@ import styles from "./AgronomistAccountCreationPage.module.css"
 function AgronomistAccountCreationPage() {
     return (
         <>
-        <div className={styles.BgScrolloff}>
-        <AgronomistAccountCreateForm />
-        <BackgroundStyle/>
-        <AACFooter/>
-        </div>
+          <div className={styles.BgScrolloff}>
+          <AgronomistAccountCreateForm />
+          <BackgroundStyle/>
+          <AACFooter/>
+          </div>
         </>
     )
 }

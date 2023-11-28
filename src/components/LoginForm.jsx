@@ -5,6 +5,10 @@ import { Link, redirect, useNavigate } from 'react-router-dom';
 import BASE_URL from '../CONSTANT'
 
 import BackgroundStyle from "./BackgroundStyle"
+import axios from 'axios';
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function LoginForm() {
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
@@ -35,14 +39,57 @@ function LoginForm() {
                 navigate('/FarmerHomepage');
             }
             else {
+                toast.error('You Have Entered A Wrong Username or NID' , {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 console.error('Login failed');
             }
         } catch {
             console.error('Error occurred during login: ',error);
         };
+
+        try { 
+            const response = await axios.get(`${BASE_URL}/fetchfarmerID/${userData.NID}` , {
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            });
+            if (response.status === 200) {
+                const fetchedData = response.data;
+                const userID = fetchedData.data._id;
+                localStorage.setItem('userID',JSON.stringify(userID));
+                console.log(userID);
+            }
+            else {
+                console.log('Farmer ID Fetch Failed')
+            }
+        } catch {
+            console.error('Error occurred during ID fetching: ' , error);
+        };
+        
     };
     return (
       <>
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Slide}
+        />
         <div className={styles.container}>
             <h2><b><b>Farmer Login</b></b></h2>
             <form  onSubmit={handleSubmit}>
@@ -80,4 +127,4 @@ function LoginForm() {
     )
 }
 
-export default LoginForm
+export default LoginForm 

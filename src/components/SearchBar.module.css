@@ -8,7 +8,7 @@
     margin-left: -20px; */
     border-radius: 40px;
     /* position: relative; */
-    position: fixed;
+    position: absolute;
     top: 50%;
 
    
@@ -55,8 +55,8 @@
     display: flex;
     padding-right: 40px;
     padding-left: 30px;
-    position: fixed;
-    left: 38%;
+    position: absolute;
+    left: 39%;
     top: 58%;
   }
 

@@ -2,7 +2,13 @@ import styles from './AgronomistLoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
 
+import axios from 'axios';
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import BASE_URL from "../CONSTANT"
+
 
 
 function AgronomistLoginForm() {
@@ -19,6 +25,7 @@ function AgronomistLoginForm() {
         };
         localStorage.setItem('usertype',JSON.stringify('agronomist'));
         localStorage.setItem('agronomist',JSON.stringify(userData.username));
+        
         // localStorage.setItem('password',JSON.stringify(userData.NID));
 
         try {
@@ -35,14 +42,58 @@ function AgronomistLoginForm() {
                 navigate('/AgronomistHomepage');
             }
             else {
+                toast.error('You Have Entered A Wrong Username or Password' , {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 console.error('Login failed');
             }
-        } catch {
+        } catch (error) {
             console.error('Error occurred during login: ',error);
         };
+        
+        try { 
+            const response = await axios.get(`http://localhost:5000/fetchagronomistID/${userData.username}` , {
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            });
+            if (response.status === 200) {
+                const fetchedData = response.data;
+                const userID = fetchedData.data._id;
+                localStorage.setItem('userID',JSON.stringify(userID));
+                console.log(userID);
+            }
+            else {
+                console.log('Agronomist ID Fetch Failed')
+            }
+        } catch {
+            console.error('Error occurred during ID fetching: ' , error);
+        };
+        
     };
+    
     return (
       <>
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Slide}
+            />
         <div className={styles.container}>
             <h2><b><b>Agronomist Login</b></b></h2>
             <form  onSubmit={handleSubmit}>
@@ -73,8 +124,6 @@ function AgronomistLoginForm() {
                 
             </div>
         </div> 
-
-    
         </>                   
     )
 }

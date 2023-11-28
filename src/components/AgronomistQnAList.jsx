@@ -9,11 +9,12 @@ import BASE_URL from '../CONSTANT'
 
 function AgronomistQnAList()
 {   
+    const agronomist = JSON.parse(localStorage.getItem('agronomist'));
     const [questions , setQuestions] = useState([]);
     useEffect(() => {
       async function fetchData() {
         try {
-            const response = await axios.get(`${BASE_URL}/fetchquestions`, {
+            const response = await axios.get(`${BASE_URL}/agfetchquestions/${agronomist}`, {
             headers: {
               'Content-Type': 'application/json',
             },
@@ -21,8 +22,8 @@ function AgronomistQnAList()
 
           if (response.status === 200) {
             const questionData = response.data;
-
-            setQuestions(questionData.data)
+            setQuestions(questionData.data);
+            
           } else {
             console.log('Fetch Failed');
           }
@@ -55,9 +56,13 @@ function AgronomistQnAList()
               <li className={styles.AgProfileList}>Pending Question</li>
                   <li className={styles.AgprofileBox}></li>
                   <li className={styles.AgProfileList}>Edit Your Answers</li>
-             <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
-                      <motion.li   whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}} className={styles.AgprofileBox}><p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
+             <Link to='/AgronomistAnswerEditPage' className={styles.TextButton}>
+                      <motion.li 
+                          whileHover={{scale: 1.1}}
+                          whileTap={{scale: 0.9}}
+                          transition={{duration:0.75}} 
+                          className={styles.AgprofileBox}>
+                        <p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
                       </motion.li>
               </Link>
          
@@ -86,8 +91,11 @@ function AgronomistQnAList()
                   <li className={styles.AgprofileBox}></li>
               <li className={styles.AgProfileList}>Edit Your Answers</li>
               <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
-                      <motion.li   whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}} className={styles.AgprofileBox}><p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
+                      <motion.li   
+                          whileHover={{scale: 1.1}}
+                          whileTap={{scale: 0.9}} 
+                          className={styles.AgprofileBox}>
+                        <p className={styles.AgprofileBoxButton}><b>Click Here</b></p>
                       </motion.li>
               </Link>
                  

@@ -12,25 +12,25 @@ import RelevantQuestionList from "../components/RelevantQuestionList"
 import { useEffect, useState } from "react"
 
 function FarmerHome() {
-    const [enteredQuestion , setEnteredQuestion] = useState('');
+    const [enteredQuestion, setEnteredQuestion] = useState('');
     const [delayedQuestion , setDelayedQuestion] = useState('');
     useEffect(() => {
         const timeout = setTimeout(()=> {
             setDelayedQuestion(enteredQuestion);
-        } , 2000);
+        } , 1000);
         return () => clearTimeout(timeout);
     }, [enteredQuestion]);
 
-    function enterQuestionHandler(event) {
-        setEnteredQuestion(event.target.value);
-    }
+    // function enterVoiceQuestionHandler(event) {
+    //     setEnteredQuestion(event.target.value);
+    // }
     return (
         <>
            <div className={styles.FarmerPage}>
 
          
             <Header />
-            <SearchBar enteredQuestion={enteredQuestion} enterQuestionHandler={enterQuestionHandler} />
+            <SearchBar enteredQuestion={enteredQuestion} setEnteredQuestion={setEnteredQuestion} />
             <RelevantQuestionList enteredQuestion={delayedQuestion}/>
             <PrevQuestionList />
             <LogOutButton/> 

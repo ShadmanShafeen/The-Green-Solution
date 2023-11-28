@@ -6,12 +6,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 110vh;
+    top:30%
   }
   
   .container {
     width: 500px;
-    padding: 20px;
+    height: 80%;
+    padding-top: 10px;
+    margin-top: -60px;
     background-color: #242526;
     border-radius: 5px;
     
@@ -31,10 +34,10 @@ body {
   }
   
   .form_group {
-    margin-bottom: 20px;
-    width: 100%; 
-    padding: 2px;
-    
+    margin-bottom: 5px;
+    width: 90%; 
+    padding-left: 25px;
+    padding-right: 25px;
     transition: border-color 0.3s ease;
             
   }
@@ -57,7 +60,7 @@ body {
   
   .register_link {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
   }
@@ -73,4 +76,5 @@ body {
     background-color: #8EE4AF;
     font-size: medium;
     border-radius: 30px;
+    padding-top: -5px;
   }

@@ -27,7 +27,7 @@ function AnswerList () {
             }
         }
         fetchData();
-    } , [questionID])
+    })
     
     
     if(answers.length > 0) {
@@ -38,7 +38,7 @@ function AnswerList () {
                 <br/> <br/> 
                     <ul className={styles.answer_containers}>
                        {answers.map((item) => (
-                            <Answer key={item._id} answer={item.answer} agronomist={item.agronomist} />
+                            <Answer key={item._id} answerID={item._id} answer={item.answer} agronomist={item.agronomist} rating={item.rating} />
                        ))}
                     </ul>              
             </div>

@@ -10,7 +10,7 @@ import { useState } from 'react'
 import AgronomistLoginPage from './routes/AgronomistLoginPage'
 import AgronomistAccountCreationPage from './routes/AgronomistAccountCreationPage'
 import RelevantQuestionList from './components/RelevantQuestionList'
-import AgronomistAnswerEdit from './components/AgronomistAnswerEdit'
+import AgronomistAnswerEditPage from './routes/AgronomistAnswerEditPage'
 import AboutUs from './components/AboutUs'
 import HowItWorks from './components/HowItWorks'
 
@@ -37,7 +37,7 @@ function App() {
 
       <Route path='/RelevantQuestions' element={<RelevantQuestionList enteredQuestion="Answer 01" />} />
 
-      <Route path='/AgronomistAnswerEdit' element={<AgronomistAnswerEdit/>}/>
+      <Route path='/AgronomistAnswerEditPage' element={<AgronomistAnswerEditPage />}/>
       <Route path='/AboutUs' element={<AboutUs/>} />
       <Route path='/HowItWorks' element={<HowItWorks/>}/> 
       <Route path='/LoginPageAGS' element={<LoginPageAGS/>}/>

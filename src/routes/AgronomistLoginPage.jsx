@@ -4,8 +4,8 @@ import BackgroundStyle from "../components/BackgroundStyle"
 function AgronomistLoginPage() {
     return (
         <>
-        <AgronomistLoginForm />
-        <BackgroundStyle/>
+            <AgronomistLoginForm />
+            <BackgroundStyle/>
         </>
     )
 }

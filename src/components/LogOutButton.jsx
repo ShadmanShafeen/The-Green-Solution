@@ -8,6 +8,7 @@ function LogOutButton ()
         localStorage.removeItem('farmer');
         localStorage.removeItem('agronomist');
         localStorage.removeItem('usertype');
+        localStorage.removeItem('userID');
     }
     return(
         <Link to ='/'>
