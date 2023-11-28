@@ -9,7 +9,7 @@ function Buttons() {
     <>    
         <div className={styles.center}>
        
-            <p className={styles.fontText}><b>Are you.......?</b></p>
+          
             <p>
                 <Link to='/Login'>
                     <motion.button 

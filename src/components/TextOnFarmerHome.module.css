@@ -10,6 +10,7 @@
   @keyframes cursor {
     0%, 100% {
       border-right-color: transparent;
+      
     }
     50% {
       border-right-color: #000;

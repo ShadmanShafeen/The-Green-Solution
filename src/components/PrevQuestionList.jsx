@@ -39,7 +39,12 @@ function PrevQuestionList() {
           <p className={styles.prevquestion_header}> Previous Questions you have asked</p>
           <ul className={styles.prevQuesScroll}>
             {questions.map((item) => (
-              <PrevQuestion key={item._id} questionID={item._id} question={item.question} />
+              
+              <PrevQuestion key={item._id} questionID={item._id} question={item.question}
+                  count={item.count}
+              
+              
+              />
             ))}
           </ul>
         </div>
