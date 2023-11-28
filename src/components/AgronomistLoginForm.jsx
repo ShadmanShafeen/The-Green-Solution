@@ -1,7 +1,7 @@
 import styles from './AgronomistLoginForm.module.css'
 import {motion} from 'framer-motion'
 import { Link, redirect, useNavigate } from 'react-router-dom';
-import ToggleButton from "./ToggleButton"
+
 
 function AgronomistLoginForm() {
     const navigate = useNavigate();
@@ -71,7 +71,6 @@ function AgronomistLoginForm() {
                 
             </div>
         </div> 
-        <ToggleButton/> 
     
         </>                   
     )

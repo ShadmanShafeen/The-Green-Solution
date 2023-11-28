@@ -13,6 +13,8 @@ import RelevantQuestionList from './components/RelevantQuestionList'
 import AgronomistAnswerEdit from './components/AgronomistAnswerEdit'
 import AboutUs from './components/AboutUs'
 import HowItWorks from './components/HowItWorks'
+import LoginPageAGS from './components/LoginPageAGS'
+import CreateACC from './components/CreateACC'
 
 function App() {
   
@@ -32,7 +34,8 @@ function App() {
       <Route path='/AgronomistAnswerEdit' element={<AgronomistAnswerEdit/>}/>
       <Route path='/AboutUs' element={<AboutUs/>} />
       <Route path='/HowItWorks' element={<HowItWorks/>}/> 
-
+      <Route path='/LoginPageAGS' element={<LoginPageAGS/>}/>
+      <Route path='/CreateACC' element={<CreateACC/>}/>
     </Routes>
   )
 }

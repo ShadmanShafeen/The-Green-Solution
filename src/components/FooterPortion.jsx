@@ -1,47 +1,10 @@
 import { Link } from 'react-router-dom';
+import styles from './FooterPortion.module.css'
 import { motion } from 'framer-motion'
-import BackgroundStyle from "./BackgroundStyle";
-import styles from "./AboutUs.module.css"
 
-
-function AboutUs() {
-    return (
-        <>
-        <BackgroundStyle/>
-        <Link to='/'>
-    
-    <motion.button className={styles.ReturnButton} whileHover={{scale: 1.2, border: "2px solid #0c0202"}}
-                    whileTap={{scale: 0.9}}>
-    <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-   </motion.button>
-   </Link>
-       
-        <p className={styles.OuSt}> <u>Our Story</u></p>
-        <br/><br/>
-       
-        
-        <p className={styles.ListFA}>
-            <ul>
-                <li className={styles.HorizontalList1}>
-                <p className={styles.FarmerText}>Farmers are deprived of the latest agricultural knowledge. We have striven to make this QnA web application for farmers, to ensure they get the help they need. </p><br/><br/>
-                
-                </li>
-                 <li className={styles.HorizontalList2}><div className={styles.bgFarmer}></div> </li>
-            </ul>
-        </p>
-        
-        <p className={styles.ListAgTP}>
-           <ul>
-            <li className={styles.HorizontalList3}><div className={styles.bgAgronomist}></div></li>
-            <li className={styles.HorizontalList4}>
-                <p className={styles.AgronomistText}>Our Mission:</p><br/><br/>
-                
-               
-            </li>
-            <p className={styles.description}>To ensure farmers get personalized help from experts to get solutions to their farming related problems and to bridge the gap between farmers and agronomists</p>
-           </ul>
-        </p>
-        <br/><br/><br/>
+function FooterPortion ()
+{
+    return(
         <footer className={styles.Ending}>
            <ul className={styles.ContactList}>
 
@@ -66,21 +29,15 @@ function AboutUs() {
              </li>
              
              <li className={styles.QLHAH}>
-                <p className={styles.QL}> <svg  className={styles.LinkSVG}xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>Quick Links</p>
+                <p className={styles.QL}> <svg  className={styles.LinkSVG}xmlns="http://www.w3.org/2000/svg" height="0.9em" viewBox="0 0 640 512"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> Quick Links</p>
                 <Link to ='/'className={styles.ReferenceLink}><li className={styles.Home}>Home</li>
                 </Link>
-                <Link to ='/HowItWorks' className={styles.ReferenceLink}><li className={styles.HIW}>How It Works</li></Link>
+                <Link to ='/HowItWorks' className={styles.ReferenceLink}><li className={styles.HIW}>How It Works?</li></Link>
                 <Link to='/Aboutus' className={styles.ReferenceLink}><li className={styles.AbUs}>About Us</li></Link>
              </li>
              </ul>
               </footer>
-        
-        
-        
-        </>
-         
-            
     )
 }
-
-export default AboutUs
+ 
+export default FooterPortion

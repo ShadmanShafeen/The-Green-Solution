@@ -1,130 +1,3 @@
-
-.ReturnButton
-{
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
-  background-color: #8ee4af;
-  /* position: fixed; */
-  position:fixed;
-  left: 2%;
-  top: 4%;
-  z-index: 3;
-}
-.OuSt
-{
-  font-family: cursive;
-  font-weight: bold;
-  font-size: xx-large;
-  color: black;
- position: absolute;
- top: 3%;
- 
-  left: 45%;
-
-}
-.ListFA
-{
-    color: black;
-    font-family:cursive;
-    position: absolute;
-    font-size: xx-large;
-    top:10%;
-    left: 5%;
-    display: inline-flexbox;
-}
-.HorizontalList1
-{
-    display: flex;
-  align-items:left;
-  padding-left: -10px;
-  padding-right:600px ;
-  margin-left: -90px;
-  top: 50%;
- 
-}
-.FarmerText
-{
-   margin-top: 100px;  
-  font-size: x-large;
-    font-weight:bold;
-    align-items: flex-start;
-}
-.HorizontalList2
-{
-    display: flex;
-  align-items: right;
-  margin-left: 620px;
-  top: 5%;
-}
-
-.bgFarmer{
-    
-  background-image: url('../Green.jpg');
-  background-size: cover;      
-  background-repeat: no-repeat; 
-  background-position: center;
-   margin-top: -190px;
-   margin-left: 170px;
-  height: 50vh;
-  border-radius: 50px;        
-   width: 75vh;
-  overflow: hidden;
-  box-shadow: 4px 4px 2px rgb(60, 59, 59);
-  border: black solid 2px;
-}
-
-.ListAgTP
-{
-  position: absolute;
-  top: 7%;
-  margin-top: -200px;
-  bottom: 50%;
-  display: inline-flexbox;
-}
-.HorizontalList3
-{
-    display: flex;
-    align-items: left;
-
-}
-.HorizontalList4
-{
-    display: flex;
-    align-items: right;
-    font-family: cursive;
-    color: black;
-    margin-top: -400px;
-    margin-left: -90px;
-}
-.AgronomistText
-{
-    font-family: cursive;
-    font-size: xx-large;
-    font-weight: bolder;
-    color: black;
-    margin-left: -30px;
-    padding-left: 10px;
-
-}
-.bgAgronomist
-{
-    background-image: url('../AgriAim.jpg');
-    background-size: cover;     
-    background-repeat: no-repeat; 
-    background-position: center;
-     margin-top: 695px;
-     margin-left: -730px;
-    height: 60vh;
-    border-radius: 50px;        
-     width: 82vh;
-    overflow: hidden;
-    border: black solid 2px;
-    box-shadow: 4px 4px 2px rgb(60, 59, 59);
-    
-}
-/*Footer Code*/
-/*Footer Code*/
 .description
 {
   font-family: cursive;
@@ -137,8 +10,8 @@
 {
   color: #8ee4af;
   position: absolute;
-  bottom: auto;
-  top: 150%;
+  bottom: -10%;
+  top: 192%;
   background-color: #141416;
   width: 101%;
   height: 170px;
@@ -307,16 +180,9 @@
 {
   margin-left: -150px;
 }
-
 .LinkSVG
 {
   fill: #8ee4af;
   z-index: 3;
   padding-left: 5px;
 }
-
-
-
-
-
-

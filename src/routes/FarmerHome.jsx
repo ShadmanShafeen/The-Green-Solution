@@ -1,7 +1,7 @@
 import Header from "../components/Header"
 import SearchBar from "../components/SearchBar"
 import PrevQuestionList from "../components/PrevQuestionList"
-import ToggleButton from "../components/ToggleButton"
+import styles from "./FarmerHome.module.css" 
 import LogOutButton from "../components/LogOutButton"
 import BackgroundStyle from "../components/BackgroundStyle"
 import AnimatedText from "../components/AnimatedText"
@@ -23,15 +23,18 @@ function FarmerHome() {
     }
     return (
         <>
-           
+           <div className={styles.FarmerPage}>
+
+         
             <Header />
             <SearchBar enteredQuestion={enteredQuestion} enterQuestionHandler={enterQuestionHandler} />
             <RelevantQuestionList enteredQuestion={delayedQuestion}/>
             <PrevQuestionList />
-            <ToggleButton/>
+       
             <LogOutButton/> 
             <BackgroundStyle/>
             <AnimatedText/>
+            </div>
         </>
     )
 }
