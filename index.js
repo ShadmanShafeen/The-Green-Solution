@@ -111,9 +111,9 @@ app.post('/auth/agronomistsignup', async (req, res) => {
       if (existingUser) {
           return res.status(400).json({ error: "Username already exists" });
       }
-      if (agronomistCode != agronomistZero?.agronomistCode) {
-          return res.status(404).json({ error: "agronomist code does not match" });
-      }
+      // if (agronomistCode != agronomistZero?.agronomistCode) {
+      //     return res.status(404).json({ error: "agronomist code does not match" });
+      // }
       // Create a new user instance
       const newAgronomist = new Agronomist({
           name,
