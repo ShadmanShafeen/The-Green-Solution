@@ -47,7 +47,7 @@ function Answer ({answerID , answer , agronomist , rating}) {
     }
     async function handleDownvote() {
         try {
-            const response = await fetch(`http://localhost:5000/rateanswer/${answerID}/${userID}/downvote` , {
+            const response = await fetch(`${BASE_URL}/rateanswer/${answerID}/${userID}/downvote` , {
                 method : 'PUT'
             });
             if (response.status === 200) {
