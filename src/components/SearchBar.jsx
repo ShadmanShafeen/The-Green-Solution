@@ -59,8 +59,8 @@ function SearchBar({enteredQuestion , setEnteredQuestion}) {
         e.preventDefault();
         console.log("Question Asked", e.target);
         let newQuestion;
-        if(voiceInput) {                                    // INPUT IS FROM VOICE
-            fetch(`https://api.mymemory.translated.net/get?q=${enteredQuestion}&langpair=bn-IN|en-GB`).then(res => res.json()).then(data => {
+        if(!voiceInput) {                                    // INPUT IS FROM VOICE
+            await fetch(`https://api.mymemory.translated.net/get?q=${enteredQuestion}&langpair=bn-IN|en-GB`).then(res => res.json()).then(data => {
                 console.log(data.responseData.translatedText);
                 setEnteredQuestion(data.responseData.translatedText);
                 console.log(enteredQuestion);
@@ -91,13 +91,9 @@ function SearchBar({enteredQuestion , setEnteredQuestion}) {
                     
         }
         try {                     //  Enter Question into Database  
-            const response = await fetch(`${BASE_URL}/askquestion` , {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newQuestion)
-            });
+
+            console.log("newQuestion",newQuestion)
+            const response = await axios.post(`${BASE_URL}/askquestion`, newQuestion);
             if (response.ok) {
                 console.log('Question asked successfully');
             }
