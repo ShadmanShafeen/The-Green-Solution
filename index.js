@@ -111,7 +111,7 @@ app.post('/auth/agronomistsignup', async (req, res) => {
       if (existingUser) {
           return res.status(400).json({ error: "Username already exists" });
       }
-      if (agronomistCode != agronomistZero.agronomistCode) {
+      if (agronomistCode != agronomistZero?.agronomistCode) {
           return res.status(404).json({ error: "agronomist code does not match" });
       }
       // Create a new user instance
@@ -568,7 +568,7 @@ app.put('/changeanswer/:answerID' , async (req , res) => {
 // error handleing middleware
 app.use((err , req , res , next) =>{
   console.log(err.stack);
-  
+
   res.status(500).json({error: "Internal Server Error"})
 })
 
