@@ -81,7 +81,6 @@ function AccountCreateForm() {
                 <p>Already have an account? <Link to='/Login'> Log in </Link></p>
             </div>
         </div>  
-        <ToggleButton/>
         </>
     );
 }
