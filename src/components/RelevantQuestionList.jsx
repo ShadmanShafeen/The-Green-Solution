@@ -188,16 +188,7 @@ function RelevantQuestionList({ enteredQuestion }) {
     }
     else {
         return (
-          <BallTriangle
-            height={100}
-            width={100}
-            radius={5}
-            color="#5CDB95"
-            ariaLabel="ball-triangle-loading"
-            wrapperClass={{}}
-            wrapperStyle=""
-            visible={true}
-          />
+         <></>
         )
     }
     

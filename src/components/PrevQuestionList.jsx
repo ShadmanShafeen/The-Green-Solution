@@ -55,10 +55,7 @@ function PrevQuestionList() {
     return (
       <>
           <div className={styles.prevquestion_container}>
-            <p className={styles.prevquestion_header}> Previous Questions you have asked</p>
-              <ul className={styles.prevQuesScroll}>
-                  <PrevQuestion />
-              </ul>
+            <p className={styles.prevquestion_header}>Questions You Ask Will Show Up Here</p>
           </div>
       </>
     );
