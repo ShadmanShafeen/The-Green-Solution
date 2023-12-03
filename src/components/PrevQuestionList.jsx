@@ -53,11 +53,7 @@ function PrevQuestionList() {
   }
   else{
     return (
-      <>
-          <div className={styles.prevquestion_container}>
-            <p className={styles.prevquestion_header}>Questions You Ask Will Show Up Here</p>
-          </div>
-      </>
+      <></>
     );
   }
 }

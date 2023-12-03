@@ -19,12 +19,20 @@
     box-shadow: rgb(30, 23, 23);
 }
 
-  .prevquestion_header
+.prevquestion_header
   {
     font-size: larger;
     font-weight: 600;
     color: black;
-  }
+}
+
+.prevquestion_noquestions
+{
+    font-size: larger;
+    font-weight: 600;
+    color: black;
+    background-color: #8EE4AF;
+}
 
 /* .prevQuesScroll
 {
