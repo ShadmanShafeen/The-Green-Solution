@@ -59,7 +59,7 @@ function SearchBar({enteredQuestion , setEnteredQuestion}) {
         e.preventDefault();
         console.log("Question Asked", e.target);
         let newQuestion;
-        if(!voiceInput) {                                    // INPUT IS FROM VOICE
+        if(voiceInput) {                                    // INPUT IS FROM VOICE
             await fetch(`https://api.mymemory.translated.net/get?q=${enteredQuestion}&langpair=bn-IN|en-GB`).then(res => res.json()).then(data => {
                 console.log(data.responseData.translatedText);
                 setEnteredQuestion(data.responseData.translatedText);
