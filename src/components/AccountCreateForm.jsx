@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'; // Import useState if needed
 import styles from './AccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
-import ToggleButton from "../components/ToggleButton"
+// import ToggleButton from "../components/ToggleButton"
 import BASE_URL from "../CONSTANT"
 
 function AccountCreateForm() {
@@ -81,6 +81,7 @@ function AccountCreateForm() {
                 <p>Already have an account? <Link to='/Login'> Log in </Link></p>
             </div>
         </div>  
+        
         </>
     );
 }

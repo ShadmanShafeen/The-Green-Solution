@@ -2,13 +2,14 @@ import styles from './Answer.module.css'
 import { motion } from 'framer-motion';
 import { ToastContainer , toast , Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BASE_URL from '../CONSTANT';
 
 function Answer ({answerID , answer , agronomist , rating}) {
     
     const userID = JSON.parse(localStorage.getItem('userID'));
     async function handleUpvote() {
         try {
-            const response = await fetch(`http://localhost:5000/rateanswer/${answerID}/${userID}/upvote` , {
+            const response = await fetch(`${BASE_URL}/rateanswer/${answerID}/${userID}/upvote` , {
                 method : 'PUT'
             });
             if (response.status === 200) {
@@ -46,7 +47,7 @@ function Answer ({answerID , answer , agronomist , rating}) {
     }
     async function handleDownvote() {
         try {
-            const response = await fetch(`http://localhost:5000/rateanswer/${answerID}/${userID}/downvote` , {
+            const response = await fetch(`${BASE_URL}/rateanswer/${answerID}/${userID}/downvote` , {
                 method : 'PUT'
             });
             if (response.status === 200) {

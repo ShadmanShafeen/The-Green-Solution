@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import axios from "axios"
 import { ToastContainer , toast , Slide } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import BASE_URL from '../CONSTANT'
 
 function AgronomistAnswerEditItem({questionID , question}) {
     
@@ -14,7 +15,7 @@ function AgronomistAnswerEditItem({questionID , question}) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`http://localhost:5000/fetchanswer/${questionID}/${agronomist}` , {
+                const response = await axios.get(`${BASE_URL}/fetchanswer/${questionID}/${agronomist}` , {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -36,7 +37,7 @@ function AgronomistAnswerEditItem({questionID , question}) {
     async function updateAnswer() {
         console.log("New Answer Submitted");
         try {
-            const response = await fetch(`http://localhost:5000/changeanswer/${answerID}` , {
+            const response = await fetch(`${BASE_URL}/changeanswer/${answerID}` , {
                 method: 'PUT',
                 headers: {
                     'Content-Type' : 'application/json'

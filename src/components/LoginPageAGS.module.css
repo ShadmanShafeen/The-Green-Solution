@@ -4,7 +4,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: -280px;
+    margin-top: -340px;
     margin-left: -750px;
     height:90vh;
     width: 208vh;
@@ -19,8 +19,9 @@
     color: black;
     font-size: xx-large;
     position: fixed;
-    margin-left: 50px;
-    margin-top: 40px;
+    margin-left: 115px;
+    margin-top: 70px;
+    
 }
 .NoConfirmation
 {
@@ -44,7 +45,7 @@
     border: 2px solid black;
    
     margin-left: 900px;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 .CreateACC
 {

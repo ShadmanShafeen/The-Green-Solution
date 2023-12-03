@@ -4,6 +4,7 @@ import styles from "./AgronomistAnswerEditList.module.css"
 import { motion } from 'framer-motion'
 import AgronomistAnswerEditItem from "./AgronomistAnswerEditItem";
 import axios from "axios";
+import BASE_URL from "../CONSTANT";
 function AgronomistAnswerEditList(){
 
     const agronomist = JSON.parse(localStorage.getItem('agronomist'));
@@ -11,7 +12,7 @@ function AgronomistAnswerEditList(){
     useEffect(() => {
         async function fetchData() {
             try {
-                const response = await axios.get(`http://localhost:5000/agfetchansweredquestions/${agronomist}` , {
+                const response = await axios.get(`${BASE_URL}/agfetchansweredquestions/${agronomist}` , {
                     headers: {
                         'Content-Type': 'application/json'
                     }

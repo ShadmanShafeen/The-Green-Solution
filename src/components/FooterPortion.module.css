@@ -11,12 +11,12 @@
   color: #8ee4af;
   position: absolute;
   bottom: -10%;
-  top: 192%;
+  top: 176%;
   background-color: #141416;
-  width: 101%;
+  width: 101.5%;
   height: 170px;
   left:-1%;
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 .CU
 {

@@ -4,9 +4,9 @@
     background-repeat: no-repeat; /* Do not repeat the image */
     background-position: center; 
     margin-left: -105px;
-    height: 70vh;  /* Full height of the viewport */
-    width: 205vh;
-    margin-top:465px;
+    height: 80vh;  /* Full height of the viewport */
+    width: 200vh;
+    margin-top:395px;
     overflow: hidden;
     /* z-index: -20; */
     
@@ -15,17 +15,14 @@
 
 .HomePageInfo
 {
-  /* width: 100%; */
-  /* width: fit-content; */
-  /* overflow-x: -moz-hidden; */
-
+  
  z-index: -16;
 }
 
 .InfoPage
 {
   /* background-color: #121216; */
-  width: 130%;
+  width: 95%;
   height: 500px;
   /* opacity: 0.8; */
   margin-left: -90px;
@@ -57,7 +54,7 @@
   margin-top:45px ;
   padding-right: -10px;
   width: 50%;
-  height: 210px;
+  height: 212px;
   border-radius: 40px;
   border: 2px solid black;
   
@@ -65,8 +62,8 @@
 .FirstHorizontalList
 {
   display: flex;
-  margin-left: -10px;
-  margin-right: 100px;
+  margin-left: 35px;
+  /* margin-right: 100px; */
   margin-top: -20px;
   /* width: 200vh; */
   background-color: radial-gradient( #b6f5ce, #b6f5ce);
@@ -76,7 +73,7 @@
 {
   display: flex;
   /* width: 200vh; */
-  margin-left: -5px;
+  margin-left: 45px;
   margin-top: -20px;
   z-index: -20;
   background-color: radial-gradient(#b6f5ce, #b6f5ce);
@@ -116,7 +113,7 @@
 {
   
   display: flex;
-  margin-left: -10px;
+  margin-left: 50px;
   margin-top: -45px;
   margin-bottom: -45px;
   background-color: radial-gradient( #b6f5ce, #b6f5ce);
