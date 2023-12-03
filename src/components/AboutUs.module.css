@@ -8,7 +8,7 @@
   /* position: fixed; */
   position:fixed;
   left: 2%;
-  top: 4%;
+  top: 6%;
   z-index: 3;
 }
 .OuSt
@@ -138,9 +138,9 @@
   color: #8ee4af;
   position: absolute;
   bottom: auto;
-  top: 150%;
+  top: 130%;
   background-color: #141416;
-  width: 101%;
+  width: 101.5%;
   height: 170px;
   left:-1%;
   opacity: 0.9;
