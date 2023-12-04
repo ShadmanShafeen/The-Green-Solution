@@ -13,10 +13,8 @@ import RelevantQuestionList from './components/RelevantQuestionList'
 import AgronomistAnswerEditPage from './routes/AgronomistAnswerEditPage'
 import AboutUs from './components/AboutUs'
 import HowItWorks from './components/HowItWorks'
-
 import LoginPageAGS from './components/LoginPageAGS'
 import CreateACC from './components/CreateACC'
-
 import ChangeLanguage from './components/ChangeLanguage'
 
 

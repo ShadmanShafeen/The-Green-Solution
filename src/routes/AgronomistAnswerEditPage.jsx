@@ -7,7 +7,7 @@ function AgronomistAnswerEditPage() {
     return (
         <>
       <div className={styles.LoginPlaceholderAg}>
-        <p className={styles.AgProfile}> Logged in as: <p className={styles.AgName}>Shitol</p> </p>
+        <p className={styles.AgProfile}> Logged in as: </p> <p className={styles.AgName}>Shitol</p>
     </div>
             <LogOutButton/>
             <Header/>

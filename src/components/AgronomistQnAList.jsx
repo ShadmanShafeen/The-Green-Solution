@@ -100,7 +100,7 @@ function AgronomistQnAList()
               <li className={styles.AgProfileList}>Pending Question</li>
                   <li className={styles.AgprofileBox}><p className={styles.PendingQues}> { unansweredQuestionsCount}</p></li>
               <li className={styles.AgProfileList}>Edit Your Answers</li>
-              <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
+              <Link to='/AgronomistAnswerEditPage' className={styles.TextButton}>
                       <motion.li   
                           whileHover={{scale: 1.1}}
                           whileTap={{scale: 0.9}} 
