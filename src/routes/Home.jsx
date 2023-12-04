@@ -1,4 +1,3 @@
-// import Buttons from "../components/Buttons";
 import GetStarted  from "../components/GetStarted";
 import Header from "../components/Header";
 import styles from "./Home.module.css"
@@ -16,9 +15,7 @@ function Home() {
             <Header/>
             <FooterPortion/>
             <BackgroundStyleHome/>
-            {/* <Buttons/> */}
             <GetStarted/>
-
             <AnimatedTextHome/> 
 
       
