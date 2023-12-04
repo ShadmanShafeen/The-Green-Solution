@@ -12,6 +12,7 @@
     rgba(61, 57, 59, 0.5) 5px 10px 15px;
     /* opacity: 0.8; */
     overflow-y: scroll;
+    font-family: serif;
 }
 
 /*ScrollBar*/

@@ -11,13 +11,14 @@
     overflow-x: hidden;
     padding-right: 10px;
     padding-left: 10px;
-  
+    font-family: serif;
    transition: 0.5s ease-in-out;
 }
 .AllAnswerContainer
 {
   display: flex;
   margin-top: 20px;
+
 }
 .answer {
     color : #2D2D2D;
@@ -44,6 +45,7 @@
   position: relative;
   left: 85%;
   bottom: -5%;
+  font-family: serif;
 }
 
 .RatingButton
@@ -52,6 +54,7 @@
   left: 2%;
   bottom: 90%;
   display:inline-block;
+  font-family: serif;
 
  
 }
@@ -76,6 +79,7 @@
   bottom: 50%;
   padding-left:5px ;
   padding-top: 10px;  
+  font-family: serif;
 }
 
 

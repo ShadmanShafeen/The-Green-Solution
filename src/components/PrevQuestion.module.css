@@ -12,7 +12,7 @@
     border-radius: 25px;
     border: 2px #2d2d2d solid;
     overflow-x: hidden;
-
+    font-family: serif;
     transition: 0.4s ease-in-out;
   }
 
@@ -24,6 +24,7 @@
     color: #000000;
     font-weight: 500;
     font-size: large;
+    font-family: serif;
 }
 
 .badge {

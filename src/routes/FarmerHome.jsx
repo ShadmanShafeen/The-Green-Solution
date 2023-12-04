@@ -28,7 +28,10 @@ function FarmerHome() {
         <>
            <div className={styles.FarmerPage}>
 
-         
+         <div className={styles.LoginPlaceholder}>
+<p className={styles.FProfile}> Logged in as: <p className={styles.FName}>Shadman Shafeen</p> </p>
+
+         </div>
             <Header />
             <SearchBar enteredQuestion={enteredQuestion} setEnteredQuestion={setEnteredQuestion} />
             <RelevantQuestionList enteredQuestion={delayedQuestion}/>

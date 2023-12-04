@@ -60,7 +60,7 @@ function AgronomistAnswerEditList(){
                 </h2>
                 <div className={styles.EditContainer}>
                 
-                    <h2>You have not answered any questions yet</h2>
+                    <p className={styles.NoEditAns}>You have not answered any questions yet</p>
 
                 </div>   
             </>  
