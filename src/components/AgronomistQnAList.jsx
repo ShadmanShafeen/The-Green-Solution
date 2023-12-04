@@ -62,9 +62,9 @@ function AgronomistQnAList()
          </div>
          <div className={styles.AgProfile}>
               <li className={styles.AgProfileList}>Questions Answered</li> 
-                  <li className={styles.AgprofileBox}>{answeredQuestionsNo}</li>
+                  <li className={styles.AgprofileBox}><p className={styles.AnsQues}>{answeredQuestionsNo}</p></li>
               <li className={styles.AgProfileList}>Pending Question</li>
-                  <li className={styles.AgprofileBox}>{ unansweredQuestionsCount}</li>
+                  <li className={styles.AgprofileBox}><p className={styles.PendingQues}>{unansweredQuestionsCount}</p></li>
                   <li className={styles.AgProfileList}>Edit Your Answers</li>
              <Link to='/AgronomistAnswerEditPage' className={styles.TextButton}>
                       <motion.li 
@@ -96,9 +96,9 @@ function AgronomistQnAList()
          </div>
           <div className={styles.AgProfile}>
               <li className={styles.AgProfileList}>Question Answered</li> 
-                  <li className={styles.AgprofileBox}>{answeredQuestionsNo}</li>
+                  <li className={styles.AgprofileBox}><p className={styles.AnsQues}>{answeredQuestionsNo}</p></li>
               <li className={styles.AgProfileList}>Pending Question</li>
-                  <li className={styles.AgprofileBox}>{ unansweredQuestionsCount}</li>
+                  <li className={styles.AgprofileBox}><p className={styles.PendingQues}> { unansweredQuestionsCount}</p></li>
               <li className={styles.AgProfileList}>Edit Your Answers</li>
               <Link to='/AgronomistAnswerEdit' className={styles.TextButton}>
                       <motion.li   
