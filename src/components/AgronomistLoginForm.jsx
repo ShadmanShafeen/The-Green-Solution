@@ -67,8 +67,10 @@ function AgronomistLoginForm() {
             if (response.status === 200) {
                 const fetchedData = response.data;
                 const userID = fetchedData.data._id;
+                const answeredQuestionsNo = fetchedData.data.answeredQuestionsNo;
                 localStorage.setItem('userID',JSON.stringify(userID));
-                console.log(userID);
+                localStorage.setItem('answeredQuestionsNo',JSON.stringify(answeredQuestionsNo));
+                console.log(fetchedData.data);
             }
             else {
                 console.log('Agronomist ID Fetch Failed')

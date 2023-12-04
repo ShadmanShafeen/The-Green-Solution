@@ -10,7 +10,10 @@ import BASE_URL from '../CONSTANT'
 function AgronomistQnAList()
 {   
     const agronomist = JSON.parse(localStorage.getItem('agronomist'));
+    const answeredQuestionsNo = JSON.parse(localStorage.getItem('answeredQuestionsNo'));
     const [questions , setQuestions] = useState([]);
+    //        unansweredQuestionsCount  &   answeredQuestionsNo
+    let unansweredQuestionsCount = 0;
     useEffect(() => {
       async function fetchData() {
         try {
@@ -34,6 +37,13 @@ function AgronomistQnAList()
       fetchData();
     })
     
+    questions.forEach((item) => {
+      if(item.answerCount === 0) {
+        unansweredQuestionsCount += 1;
+      }
+    });
+    console.log("Number of Unanswered Questions = " , unansweredQuestionsCount);
+
     if(questions.length > 0) {
       return(
         <>
@@ -52,9 +62,9 @@ function AgronomistQnAList()
          </div>
          <div className={styles.AgProfile}>
               <li className={styles.AgProfileList}>Questions Answered</li> 
-                  <li className={styles.AgprofileBox}></li>
+                  <li className={styles.AgprofileBox}>{}</li>
               <li className={styles.AgProfileList}>Pending Question</li>
-                  <li className={styles.AgprofileBox}></li>
+                  <li className={styles.AgprofileBox}>{}</li>
                   <li className={styles.AgProfileList}>Edit Your Answers</li>
              <Link to='/AgronomistAnswerEditPage' className={styles.TextButton}>
                       <motion.li 
