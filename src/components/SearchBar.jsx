@@ -94,7 +94,7 @@ function SearchBar({enteredQuestion , setEnteredQuestion}) {
 
             console.log("newQuestion",newQuestion)
             const response = await axios.post(`${BASE_URL}/askquestion`, newQuestion);
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('Question asked successfully');
             }
             else {
