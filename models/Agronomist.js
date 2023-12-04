@@ -32,6 +32,10 @@ const agronomistSchema = new mongoose.Schema({
     },
     agronomistCode: {
         type: String
+    },
+    answeredQuestionsNo: {
+        type: Number, 
+        default: 0
     }
 });
 

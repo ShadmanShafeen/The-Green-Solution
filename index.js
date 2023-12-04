@@ -111,9 +111,9 @@ app.post('/auth/agronomistsignup', async (req, res) => {
       if (existingUser) {
           return res.status(400).json({ error: "Username already exists" });
       }
-      if (agronomistCode != agronomistZero.agronomistCode) {
-          return res.status(404).json({ error: "agronomist code does not match" });
-      }
+      // if (agronomistCode != agronomistZero.agronomistCode) {
+      //     return res.status(404).json({ error: "agronomist code does not match" });
+      // }
       // Create a new user instance
       const newAgronomist = new Agronomist({
           name,
@@ -148,7 +148,7 @@ app.post('/askquestion' , async (req , res) => {
         // Add question to database
         await newQuestion.save();
 
-        res.status(205).json({message: "Question added to database successfully"});
+        res.status(200).json({message: "Question added to database successfully"});
     } catch (error) {
         console.error("Error occurred during asking question:", error);
         res.status(500).json({ error: "Internal server error" });
@@ -165,8 +165,13 @@ app.post('/addanswer' , async (req , res) => {
         questionID,
         agronomist
       });
-
       await newAnswer.save();
+
+      const updatedAgronomist = await  Agronomist.updateOne(
+        {username: agronomist} , 
+        {$inc : {answeredQuestionsNo : 1}}
+      );
+      console.log("Answer added to Database and Updated Agronomist answeredQuestionsNo");
       res.status(205).json({message: "Answer added to database successfully"});
 
     } catch (error) {
@@ -376,7 +381,7 @@ app.get('/fetchfarmerID/:NID' , async (req , res) => {
 })
 
 //                               FETCH AGRONOMIST ID
-app.get('/fetchagronomistID/:username' , async (req,res) => {
+app.get('/fetchagronomistID/:username' , async (req , res) => {
   try {
     const username = req.params.username;
     const agronomist = await Agronomist.findOne({username : username});

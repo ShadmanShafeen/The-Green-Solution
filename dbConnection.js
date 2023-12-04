@@ -5,9 +5,9 @@ mongoose.set("strictQuery",true);
 async function dbConnect (){
     //console.log("=>")
     try{
-        await mongoose.connect('mongodb://127.0.0.1:27017/theGreenSolution',{
+        await mongoose.connect('mongodb+srv://hasanmuntasir257:UVMxQhXoMv7Fs1y6@cluster0.dgsghck.mongodb.net/theGreenSolution',{
             useNewUrlParser : true,
-            useUnifiedTopology:true ,
+            useUnifiedTopology: true ,
         });
         console.log("db connection successful");
     } catch(error){
