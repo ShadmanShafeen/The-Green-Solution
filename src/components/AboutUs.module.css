@@ -1,4 +1,3 @@
-
 .ReturnButton
 {
   height: 50px;
@@ -65,7 +64,7 @@
   background-repeat: no-repeat; 
   background-position: center;
    margin-top: -190px;
-   margin-left: 170px;
+   margin-left: 190px;
   height: 50vh;
   border-radius: 50px;        
    width: 75vh;
@@ -284,7 +283,7 @@
   font-size: medium;
   color: #8ee4af;
   margin-top: -30px;
-  margin-left: 585px;
+  margin-left: 592px;
 }
 .HIW
 {
@@ -292,7 +291,7 @@
   font-size: medium;
   color: #8ee4af;
   margin-top: -14px;
-  margin-left: 665px;
+  margin-left: 663px;
 }
 .AbUs
 {
@@ -300,7 +299,7 @@
   font-size: medium;
   color: #8ee4af;
   margin-top: -20px;
-  margin-left: 618px;
+  margin-left: 625px;
   padding-top: 5px;
 }
 .QLHAH

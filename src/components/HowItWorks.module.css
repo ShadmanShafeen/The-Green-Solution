@@ -4,8 +4,8 @@
     background-size: cover;      
     background-repeat: no-repeat; 
     background-position: center;
-     margin-top: -500px;
-     margin-left: 140px;
+     margin-top: -470px;
+     margin-left: 190px;
     height: 60vh;
     border-radius: 50px;        
      width: 80vh;
@@ -23,11 +23,7 @@
  
 }
 
-.Ref{
 
- color: #06373A;
- 
-}
 
 .HorizontalList2
 {
@@ -80,7 +76,7 @@
     background-size: cover;     
     background-repeat: no-repeat; 
     background-position: center;
-     margin-top: 695px;
+     margin-top: 745px;
      margin-left: -730px;
     height: 65vh;
     border-radius: 50px;        
@@ -117,7 +113,7 @@
     align-items: right;
     font-family: cursive;
     color: black;
-    margin-top: -400px;
+    margin-top: -480px;
     margin-left: -90px;
 }
 .TextAgAAU

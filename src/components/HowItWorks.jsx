@@ -42,7 +42,7 @@ function HowItWorks() {
                 <p className={styles.AgronomistText}>Agronomist: </p><br/><br/>
                 <p className={styles.TextAgAAU}><br/>
                     <ul className={styles.AlignAAU}>
-                        <li><b>Account Creation & login: </b>If Agronomists can create account and log in to their own account to see the questions asked by the farmers and answer those.If you don't have an account, collect your agronomist code from us (the contact info is in our <Link to = '/AboutUs'  className={styles.Ref}>About Us</Link> page) and fill in the form. If you have an account, login with your username and password.Your username must be unique.</li><br/>
+                        <li><b>Account Creation & login: </b>If Agronomists can create account and log in to their own account to see the questions asked by the farmers and answer those.If you don't have an account, collect your agronomist code from us   and fill in the form. If you have an account, login with your username and password.Your username must be unique.</li><br/>
                         <li><b>Answering & Sorting Questions:</b> Agronomists can sort the questions based on the answered one. They can answer the questions. For example,if there is any unanswered  question that will be displayed on the top whereas if it is answered it will automatically be sorted and displayed on the last of the listed pending question. </li><br/>
                         <li><b>Updating Answer:  </b>Agronomists can update the questions but the previous answer will also be showed as well as the updated one.</li><br/>
                     </ul>

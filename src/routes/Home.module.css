@@ -3,9 +3,9 @@
     background-size: cover;      /* Cover the viewport */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-position: center; 
-    margin-left: -105px;
+    margin-left: -121.8px;
     height: 80vh;  /* Full height of the viewport */
-    width: 200vh;
+    width: 208.8vh;
     margin-top:395px;
     overflow: hidden;
     /* z-index: -20; */
@@ -95,7 +95,7 @@
 }
 .Picture2
 {
-  background-image: url('../shorisha.jpg');
+  background-image: url('../shorishabri.jpeg');
   background-size: cover;      
     background-repeat: no-repeat; 
     background-position: center; 

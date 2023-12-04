@@ -5,10 +5,10 @@
     background-repeat: no-repeat;
     background-position: center;
     margin-top: -340px;
-    margin-left: -750px;
-    height:90vh;
-    width: 208vh;
-    opacity: 0.9;
+    margin-left: -763px;
+    height:92vh;
+    width: 208.9vh;
+    /* opacity: 0.9; */
     overflow:-moz-hidden-unscrollable;
     position: fixed;
 }
@@ -20,7 +20,7 @@
     font-size: xx-large;
     position: fixed;
     margin-left: 65px;
-    margin-top: 60px;
+    margin-top: 65px;
 }
 .NoAccConfirmation
 {
@@ -43,7 +43,7 @@
     border-radius: 40px;
     border: 2px solid black;
    
-    margin-left: 900px;
+    margin-left: 950px;
     margin-top: 150px;
 }
 .AcCreateACC
