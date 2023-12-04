@@ -84,6 +84,7 @@
 .HorizontalListItem1
 {
   display: flex;
+  margin-left: 700px;
 }
 .ContactList
 {
@@ -97,11 +98,6 @@
   margin-top: 10px;
 }
 
-.HorizontalListItem1
-{
-  margin-left: 650px;
-
-}
 .FbLogo
 {
   fill: #8ee4af;
@@ -178,7 +174,7 @@
 }
 .QLHAH
 {
-  margin-left: -150px;
+  margin-left: -90px;
 }
 .LinkSVG
 {

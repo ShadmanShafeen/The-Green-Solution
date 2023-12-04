@@ -8,14 +8,10 @@
     width: 208.8vh;
     margin-top:395px;
     overflow: hidden;
-    /* z-index: -20; */
     
 }
-
-
 .HomePageInfo
 {
-  
  z-index: -16;
 }
 
