@@ -51,6 +51,7 @@
     list-style-type: none;
     border: 1px black solid;
     /* box-shadow: 6px 6px rgb(174, 172, 172); */
+    font-family: serif;
     box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
 }
 
@@ -67,7 +68,7 @@ ul{
     /* padding-left: -840px; */
     padding-bottom: -90px;
     left: 150px;
-    
+    font-family: serif;
     text-align: left ;
     padding-left: 250px;
     
@@ -79,6 +80,7 @@ ul{
     text-decoration: none;
     height: 50px;
     width: 160px;
+    font-family: serif;
     background-color: #fcfcfc;
     border-radius: 15px;
     box-shadow: 3px 3px rgb(71, 70, 70);
@@ -89,24 +91,31 @@ ul{
   text-decoration: none;
   color: #2d2d2d;
   top: 5%;
+  font-family: serif;
 }
 .AgProfileList
 {
     margin-top: 35px;
     color: #000000;
     font-weight: 600;
+    font-family: serif;
 }
 .TextButton
 {
   text-decoration: none;
+  font-family: serif;
 }
 .AnsQues
 {
   top: 5%;
   color: #2d2d2d;
+  font-family: serif;
+  font-weight: bold;
 }
 .PendingQues
 {
   top: 5%;
   color: #2d2d2d;
+  font-family: serif;
+  font-weight: bold;
 }
