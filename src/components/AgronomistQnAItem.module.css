@@ -9,8 +9,9 @@
     background-color: #e8edec;
     /* padding: 15px; */
     padding-bottom: 20px;
+    box-shadow: 3px 3px rgb(71, 70, 70);
     /* box-shadow: 3px 3px rgb(129, 125, 125); */
-    box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
+    /* box-shadow: inset 2px 3px 10px rgb(5, 5, 5); */
     display: grid;
     
 }
