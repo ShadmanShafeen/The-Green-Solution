@@ -570,6 +570,13 @@ app.put('/changeanswer/:answerID' , async (req , res) => {
   }
 })
 
+// error handleing middleware
+app.use((err , req , res , next) =>{
+  console.log(err.stack);
+
+  res.status(500).json({error: "Internal Server Error"})
+})
+
 
 // Connect to the database
 dbConnect();
