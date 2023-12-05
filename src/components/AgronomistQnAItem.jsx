@@ -31,6 +31,12 @@ function AgronomistQnAItem({ question  , farmer , qID })
                     },
                     body:JSON.stringify(newAnswer)
                 });
+                if (response.status === 205) {
+                    console.log('Answer added to Database and Updated Agronomist answeredQuestionsNo');
+                }
+                else {
+                    console.log('Answer Post and Agronomist Update Failed');
+                }
             } catch (error) {
                 console.error('Error occurred during POSTING answer: ' , error);
             }
