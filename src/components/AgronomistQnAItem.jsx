@@ -19,34 +19,61 @@ function AgronomistQnAItem({ question  , farmer , qID })
             questionID: qID,
             agronomist: agronomist
         };
-        //                        ADD ANSWER
-        try {
-            const response = await fetch(`${BASE_URL}/addanswer` , {
-                method: 'POST' , 
-                headers: {
-                    'Content-Type' : 'application/json'
-                },
-                body:JSON.stringify(newAnswer)
-            });
-        } catch (error) {
-            console.error('Error occurred during POSTING answer: ' , error);
-        }
-        //             UPDATE answerCount OF THE QUESTION
-        try {
-            const response = await fetch(`${BASE_URL}/updateanswercount/${qID}` , {
-                method: 'PUT' 
-            });
-
-            if (response.ok) {
-                console.log("answerCount Updated successfully");
+        if (enteredAnswer !== '') {
+            //                        ADD ANSWER
+            try {
+                const response = await fetch(`${BASE_URL}/addanswer` , {
+                    method: 'POST' , 
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },
+                    body:JSON.stringify(newAnswer)
+                });
+            } catch (error) {
+                console.error('Error occurred during POSTING answer: ' , error);
             }
-        } catch (error) {
-            console.error('Error occurred during UPDATE: ' , error);
+            //             UPDATE answerCount OF THE QUESTION
+            try {
+                const response = await fetch(`${BASE_URL}/updateanswercount/${qID}` , {
+                    method: 'PUT' 
+                });
+
+                if (response.ok) {
+                    console.log("answerCount Updated successfully");
+                }
+            } catch (error) {
+                console.error('Error occurred during UPDATE: ' , error);
+            }
+        }
+        else {
+            toast.error('Please Enter An Answer Before Submitting' , {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         }
     }
-    return (<>
-        <li>
-           
+    return (
+        <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Slide}
+            />
+            <li>
             <p className={styles.QuestionHeading}><b>Question:</b></p>
               <p>  <motion.div 
                     className={styles.AgQuestionBox}
@@ -75,12 +102,10 @@ function AgronomistQnAItem({ question  , farmer , qID })
                         onClick={submitAnswer}
                         >
                     <p className={styles.submit_text}>Submit</p>
-
                     </motion.button>  
                     </p>
             </div>
         </li>
-    
         </>
     )
 }

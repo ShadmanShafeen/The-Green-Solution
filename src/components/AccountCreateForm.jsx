@@ -3,6 +3,8 @@ import styles from './AccountCreateForm.module.css';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 // import ToggleButton from "../components/ToggleButton"
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import BASE_URL from "../CONSTANT"
 
 function AccountCreateForm() {
@@ -28,10 +30,22 @@ function AccountCreateForm() {
                 body: JSON.stringify(userData)
             });
 
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('Signup successful');
                 // Redirect or show a success message here
                 navigate('/Login');
+            }
+            else if (response.status === 400) {
+                toast.error('A User With Same NID Already Exists' , {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
             } else {
                 console.error('Signup failed');
                 // Handle the error, e.g., show an error message to the user
@@ -44,7 +58,19 @@ function AccountCreateForm() {
 
     return (
         <>
-        
+        <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+                transition={Slide}
+        />
         <div className={styles.container}>
             <h2><b><b>Farmer Account Creation</b></b></h2>
             <form onSubmit={handleSubmit}>

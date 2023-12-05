@@ -13,7 +13,7 @@ function AgronomistQnAList()
     const answeredQuestionsNo = JSON.parse(localStorage.getItem('answeredQuestionsNo'));
     const [questions , setQuestions] = useState([]);
     //        unansweredQuestionsCount  &   answeredQuestionsNo
-    let unansweredQuestionsCount = 0;
+    let unansweredQuestionsCount;
     useEffect(() => {
       async function fetchData() {
         try {
@@ -37,11 +37,7 @@ function AgronomistQnAList()
       fetchData();
     })
     
-    questions.forEach((item) => {
-      if(item.answerCount === 0) {
-        unansweredQuestionsCount += 1;
-      }
-    });
+    unansweredQuestionsCount = questions.length;
     console.log("Number of Unanswered Questions = " , unansweredQuestionsCount);
 
     if(questions.length > 0) {
@@ -89,10 +85,9 @@ function AgronomistQnAList()
         </h2>
              
          <div className={styles.AgQnAContainer}>
-           <ul>
-               <AgronomistQnAItem />             
-           </ul>
-            
+                
+                <p className={styles.NoEditAns}>No Pending Questions. Please Come Back Later!</p>
+    
          </div>
           <div className={styles.AgProfile}>
               <li className={styles.AgProfileList}>Question Answered</li> 

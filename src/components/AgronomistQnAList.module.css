@@ -120,3 +120,13 @@ ul{
   font-family: serif;
   font-weight: bold;
 }
+
+.NoEditAns
+  {
+    font-family: serif;
+    font-weight: bolder;
+    font-size: xx-large;
+    left: 35%;
+    color: #2d2d2d;
+    margin-top: 200px;
+  }

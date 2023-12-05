@@ -24,13 +24,15 @@ function FarmerHome() {
     // function enterVoiceQuestionHandler(event) {
     //     setEnteredQuestion(event.target.value);
     // }
+    const farmer = JSON.parse(localStorage.getItem('farmer'));
+
     return (
         <>
            <div className={styles.FarmerPage}>
 
-         <div className={styles.LoginPlaceholder}>
-<p className={styles.FProfile}> Logged in as: <p className={styles.FName}>Shadman Shafeen</p> </p>
- </div>
+            <div className={styles.LoginPlaceholder}>
+                <p className={styles.FProfile}> Logged in as: <i>{farmer}</i> </p>
+            </div>
             <Header />
             <SearchBar enteredQuestion={enteredQuestion} setEnteredQuestion={setEnteredQuestion} />
             <RelevantQuestionList enteredQuestion={delayedQuestion}/>

@@ -48,11 +48,23 @@ function AgronomistAccountCreateForm() {
                 body: JSON.stringify(userData)
             });
 
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('Signup successful');
                 // Redirect or show a success message here
                 navigate('/AgronomistLogin');
             } 
+            else if (response.status === 400) {
+                toast.error('Username Already Exists' , {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
+            }
             else if (response.status === 404) {
                 toast.error('You Have Entered A Wrong Agronomist Code' , {
                     position: "top-right",
@@ -101,7 +113,7 @@ function AgronomistAccountCreateForm() {
                 pauseOnHover
                 theme="dark"
                 transition={Slide}
-            />
+        />
         <div className={styles.container}>
             <h2><b><b>Agronomist Account Creation</b></b></h2>
             <form onSubmit={handleSubmit}>
