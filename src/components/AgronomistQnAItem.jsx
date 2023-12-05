@@ -2,6 +2,8 @@ import { useState } from 'react'
 import styles from './AgronomistQnAItem.module.css'
 import { motion } from 'framer-motion'
 import BASE_URL from '../CONSTANT'
+import { ToastContainer , toast , Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AgronomistQnAItem({ question  , farmer , qID }) 
 {
