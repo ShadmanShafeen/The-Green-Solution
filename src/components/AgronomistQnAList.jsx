@@ -47,6 +47,10 @@ function AgronomistQnAList()
           });
           if (response.status === 200) {
             answeredQuestionsNo = response.data.data.answeredQuestionsNo;
+            console.log("Dashboard Info");
+            console.log(answeredQuestionsNo);
+            console.log(response);
+            console.log(response.data);
           } else {
             console.log('Fetch Failed');
           }
