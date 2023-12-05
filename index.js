@@ -72,7 +72,7 @@ app.post('/auth/farmersignup', async (req, res) => {
       // Save the new user to the database
       await newFarmer.save();
 
-      res.status(201).json({ message: "User created successfully" });
+      res.status(200).json({ message: "User created successfully" });
   } catch (error) {
       console.error("Error occurred during signup:", error);
       res.status(500).json({ error: "Internal server error" });
@@ -107,13 +107,13 @@ app.post('/auth/agronomistsignup', async (req, res) => {
   try {
       // Check if the username already exists in the database
       const existingUser = await Agronomist.findOne({ username });
-      const agronomistZero = await Agronomist.findOne({ username: "agronomist zero" })
+      // const agronomistZero = await Agronomist.findOne({ username: "agronomist zero" })
       if (existingUser) {
           return res.status(400).json({ error: "Username already exists" });
       }
-      // if (agronomistCode != agronomistZero.agronomistCode) {
-      //     return res.status(404).json({ error: "agronomist code does not match" });
-      // }
+      if (agronomistCode !== 'a1b2c3d4') {
+           return res.status(404).json({ error: "agronomist code does not match" });
+      }
       // Create a new user instance
       const newAgronomist = new Agronomist({
           name,
@@ -127,7 +127,7 @@ app.post('/auth/agronomistsignup', async (req, res) => {
       // Save the new user to the database
       await newAgronomist.save();
 
-      res.status(201).json({ message: "User created successfully" });
+      res.status(200).json({ message: "User created successfully" });
   } catch (error) {
       console.error("Error occurred during signup:", error);
       res.status(500).json({ error: "Internal server error" });
@@ -155,7 +155,7 @@ app.post('/askquestion' , async (req , res) => {
     }
 });
 
-//                                    ADD ANSWER
+//                        ADD ANSWER & UPDATE ANSWEREDQUESTIONSNO OF AGRONOMIST
 app.post('/addanswer' , async (req , res) => {
     try {
       const {answer , questionID , agronomist} = req.body;
@@ -167,7 +167,7 @@ app.post('/addanswer' , async (req , res) => {
       });
       await newAnswer.save();
 
-      const updatedAgronomist = await  Agronomist.updateOne(
+      const updatedAgronomist = await Agronomist.updateOne(
         {username: agronomist} , 
         {$inc : {answeredQuestionsNo : 1}}
       );
