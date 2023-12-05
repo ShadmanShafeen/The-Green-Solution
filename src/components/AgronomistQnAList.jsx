@@ -10,10 +10,10 @@ import BASE_URL from '../CONSTANT'
 function AgronomistQnAList()
 {   
     const agronomist = JSON.parse(localStorage.getItem('agronomist'));
-    const answeredQuestionsNo = JSON.parse(localStorage.getItem('answeredQuestionsNo'));
     const [questions , setQuestions] = useState([]);
+    const [answeredQuestionsNo , setAnsweredQuestionsNo] = useState(0);
     //        unansweredQuestionsCount  &   answeredQuestionsNo
-    let unansweredQuestionsCount = 0;
+    let unansweredQuestionsCount;
     useEffect(() => {
       async function fetchData() {
         try {
@@ -37,11 +37,31 @@ function AgronomistQnAList()
       fetchData();
     })
     
-    questions.forEach((item) => {
-      if(item.answerCount === 0) {
-        unansweredQuestionsCount += 1;
+    useEffect(() => {
+      async function fetchAgronomistData() {
+        try {
+            const response = await axios.get(`${BASE_URL}/fetchagronomistID/${agronomist}`, {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          if (response.status === 200) {
+            setAnsweredQuestionsNo(response.data.data.answeredQuestionsNo);
+            console.log("Dashboard Info");
+            console.log(answeredQuestionsNo);
+            console.log(response);
+            console.log(response.data);
+          } else {
+            console.log('Fetch Failed');
+          }
+        } catch (error) {
+          console.log('Error occurred during fetch :' , error);
+        }
       }
-    });
+      fetchAgronomistData();
+    })
+
+    unansweredQuestionsCount = questions.length;
     console.log("Number of Unanswered Questions = " , unansweredQuestionsCount);
 
     if(questions.length > 0) {
@@ -89,10 +109,9 @@ function AgronomistQnAList()
         </h2>
              
          <div className={styles.AgQnAContainer}>
-           <ul>
-               <AgronomistQnAItem />             
-           </ul>
-            
+                
+                <p className={styles.NoEditAns}>No Pending Questions. Please Come Back Later!</p>
+    
          </div>
           <div className={styles.AgProfile}>
               <li className={styles.AgProfileList}>Question Answered</li> 

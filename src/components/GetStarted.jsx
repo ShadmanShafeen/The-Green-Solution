@@ -6,22 +6,17 @@ import styles from './GetStarted.module.css'
 function GetStarted() { 
 return(
        <>
-    
-
-<div className={styles.AlignCenter} >
-<Link to='/LoginPageAGS'>
+       <div className={styles.AlignCenter} >
+              <Link to='/LoginPageAGS'>
                     <motion.button 
-                    className={styles.BoxButton}
-                    onClick={null}
-                    whileHover={{scale: 1.2}}
-                    whileTap={{scale: 0.9}}
+                            className={styles.BoxButton}
+                            onClick={null}
+                            whileHover={{scale: 1.1}}
+                            whileTap={{scale: 0.9}}
+                            transition={{duration: 0.35}}
                     >Get Started</motion.button>
                 </Link>
-</div>
-
-
-
-
+       </div>
        </>
 );
 
