@@ -10,8 +10,8 @@ import BASE_URL from '../CONSTANT'
 function AgronomistQnAList()
 {   
     const agronomist = JSON.parse(localStorage.getItem('agronomist'));
-    const answeredQuestionsNo = JSON.parse(localStorage.getItem('answeredQuestionsNo'));
     const [questions , setQuestions] = useState([]);
+    let answeredQuestionsNo;
     //        unansweredQuestionsCount  &   answeredQuestionsNo
     let unansweredQuestionsCount;
     useEffect(() => {
@@ -37,6 +37,26 @@ function AgronomistQnAList()
       fetchData();
     })
     
+    useEffect(() => {
+      async function fetchAgronomistData() {
+        try {
+            const response = await axios.get(`${BASE_URL}/fetchagronomistID/${agronomist}`, {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+          if (response.status === 200) {
+            answeredQuestionsNo = response.data.data.answeredQuestionsNo;
+          } else {
+            console.log('Fetch Failed');
+          }
+        } catch (error) {
+          console.log('Error occurred during fetch :' , error);
+        }
+      }
+      fetchAgronomistData();
+    })
+
     unansweredQuestionsCount = questions.length;
     console.log("Number of Unanswered Questions = " , unansweredQuestionsCount);
 
