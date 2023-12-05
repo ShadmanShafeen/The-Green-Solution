@@ -11,7 +11,7 @@ function AgronomistQnAList()
 {   
     const agronomist = JSON.parse(localStorage.getItem('agronomist'));
     const [questions , setQuestions] = useState([]);
-    let answeredQuestionsNo;
+    const [answeredQuestionsNo , setAnsweredQuestionsNo] = useState(0);
     //        unansweredQuestionsCount  &   answeredQuestionsNo
     let unansweredQuestionsCount;
     useEffect(() => {
@@ -46,7 +46,7 @@ function AgronomistQnAList()
             },
           });
           if (response.status === 200) {
-            answeredQuestionsNo = response.data.data.answeredQuestionsNo;
+            setAnsweredQuestionsNo(response.data.data.answeredQuestionsNo);
             console.log("Dashboard Info");
             console.log(answeredQuestionsNo);
             console.log(response);
