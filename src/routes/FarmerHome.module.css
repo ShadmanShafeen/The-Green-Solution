@@ -1,14 +1,14 @@
-.FarmerPage
-{
-    background-image: radial-gradient(ellipse at top left, #FAF9F6, #b6f5ce);
-    z-index: 3;
-}
 .LoginPlaceholder
 {
-    position: fixed;
+    position: absolute;
     color: black;
     left: 80%;
-   margin-top: -280px;
+    margin-top: -260px;
+    background-color: #5cdb95;
+    opacity: 0.9;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }
 .FProfile
 {
@@ -16,17 +16,5 @@
     font-size: large;
     font-weight: bold;
     font-style: inherit;
-}
-.FName
-{
-    font-family: serif;
-    font-size: large;
-    font-weight: bold;
-    font-style: inherit;
-    color: #2d3430;
-    position: fixed;
     
-    left: 87%;
-    margin-top: -20px;
-   
 }

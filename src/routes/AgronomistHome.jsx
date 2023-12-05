@@ -8,7 +8,7 @@ function AgronomistHome() {
     return (<>
   
     <div className={styles.LoginPlaceholderAg}>
-        <p className={styles.AgProfile}> Logged in as: <p className={styles.AgName}>Shitol</p> </p>
+        <p className={styles.AgProfile}> Logged in as: <i>Shitol</i> </p>
     </div>
     <Header/>
        {/* <ToggleButton/> */}

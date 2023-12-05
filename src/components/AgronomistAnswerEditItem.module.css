@@ -7,9 +7,7 @@
     border: 0.2px black solid;
     list-style-type: none;
     background-color: #e8edec;
-    /* padding: 15px; */
     padding-bottom: 20px;
-    /* box-shadow: 3px 3px rgb(129, 125, 125); */
     box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
     display: grid;
     
@@ -28,7 +26,7 @@
   /* box-shadow: 3px 3px rgb(129, 125, 125); */
   box-shadow: inset 2px 3px 10px rgb(5, 5, 5);
   display: grid;
-
+  overflow-y: scroll;
 }
 .AgronomistEditQnAItem
 {
@@ -85,7 +83,9 @@
     /* width: auto; */
     width: 1000px;
     /* left: -800%;
+    
     right: 100%; */
+    overflow-y: scroll;
     margin-left: -50px;
 }
 .AgPrevAnsContainer:focus
@@ -100,6 +100,7 @@
    width: 1300px;
    display: inline-block; 
    padding-right: 5%;
+   overflow-y: scroll;
    transition: 0.75s;
    
 } 
@@ -117,6 +118,7 @@
     transition: 0.75s ease-in-out;
     /* justify-content: flex-start; */
     /* text-align: start; */
+    
   }
 
 .FixTextAreaAnswer:focus 

@@ -1,10 +1,16 @@
 .LoginPlaceholderAg
 {
     position: fixed;
-    left: 85%;
-    margin-top: 100px;
     color: black;
- 
+    left: 85%;
+    margin-top: 90px;
+    background-color: #5cdb95;
+    opacity: 0.8;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+
+
 }
 .AgProfile
 {
@@ -12,18 +18,5 @@
     font-size: large;
     font-weight: bold;
     font-style: inherit;   
-}
-.AgName
-{
     
-    font-family: serif;
-    font-size: large;
-    font-weight: bold;
-    font-style: inherit;
-    color: #2d3430;
-    position: fixed;
-    
-    left: 92%;
-    margin-top: -37px;
-
 }

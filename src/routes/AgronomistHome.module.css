@@ -4,6 +4,11 @@
     left: 85%;
     margin-top: 100px;
     color: black;
+    background-color: #5cdb95;
+    opacity: 0.8;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
  
 }
 .AgProfile
@@ -12,6 +17,9 @@
     font-size: large;
     font-weight: bold;
     font-style: inherit;   
+   
+    
+
 }
 .AgName
 {

@@ -26,11 +26,11 @@ function FarmerHome() {
     // }
     return (
         <>
-           <div className={styles.FarmerPage}>
+           {/* <div className={styles.FarmerPage}> */}
 
-         <div className={styles.LoginPlaceholder}>
-<p className={styles.FProfile}> Logged in as: <p className={styles.FName}>Shadman Shafeen</p> </p>
- </div>
+            <div className={styles.LoginPlaceholder}>
+                <p className={styles.FProfile}> Logged in as: <i>Shadman</i></p>
+            </div>
             <Header />
             <SearchBar enteredQuestion={enteredQuestion} setEnteredQuestion={setEnteredQuestion} />
             <RelevantQuestionList enteredQuestion={delayedQuestion}/>
@@ -38,7 +38,7 @@ function FarmerHome() {
             <LogOutButton/> 
             <BackgroundStyle/>
             <AnimatedText/>
-            </div>
+            {/* </div> */}
         </>
     )
 }
