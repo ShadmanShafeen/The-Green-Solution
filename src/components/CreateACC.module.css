@@ -1,6 +1,6 @@
 .BGCreateACCAGS
 {
-    background-image: url('../shorisha.jpg');
+    background-image: url('../water.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -42,8 +42,7 @@
     position: fixed;
     border-radius: 40px;
     border: 2px solid black;
-   
-    margin-left: 950px;
+    margin-left: 350px;
     margin-top: 150px;
 }
 .AcCreateACC

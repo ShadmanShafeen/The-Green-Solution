@@ -1,6 +1,6 @@
 .BGLoginPageAGS 
 {
-    background-image: url('../shorisha.jpg');
+    background-image: url('../water.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -25,7 +25,7 @@
 }
 .NoConfirmation
 {
-    color: black;
+    color:  black;
     font-size: xx-large;
     position: fixed;
     font-family: comfortawesome;
@@ -42,16 +42,16 @@
     width: 450px;
     position: fixed;
     border-radius: 40px;
-    border: 2px solid black;
+    border: 2px solid  black;
    
-    margin-left: 950px;
+    margin-left: 350px;
     margin-top: 150px;
 }
 .CreateACC
 {
     font-family: comfortawesome;
     font-size: xx-large;
-    color: black;
+    color:  black;
     position: fixed;
     font-weight: bold;
     margin-top:350px;
