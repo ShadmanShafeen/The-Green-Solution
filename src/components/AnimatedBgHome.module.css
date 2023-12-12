@@ -1,0 +1,27 @@
+.BgPicContainer
+{
+    background-image: url('../bgag1.jpg');
+    background-size: cover;      /* Cover the viewport */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center; 
+    margin-left: -121.8px;
+    height: 80vh;  /* Full height of the viewport */
+    width: 208.8vh;
+    margin-top:395px;
+    animation: changeBackground 25s infinite;
+    overflow: hidden;
+}
+@keyframes changeBackground {
+    0%, 100% {
+      background-image: url('../bgag11.jpg');
+    }
+    25% {
+      background-image: url('../bgag22.jpg');
+    }
+    50% {
+      background-image: url('../bgag33.jpg');
+    }
+    75% {
+      background-image: url('../bgag44.jpg');
+    }
+  }

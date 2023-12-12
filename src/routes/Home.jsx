@@ -3,23 +3,22 @@ import Header from "../components/Header";
 import styles from "./Home.module.css"
 import BackgroundStyleHome from "../components/BackgroundStyleHome";
 import FooterPortion from "../components/FooterPortion";
-import AnimatedTextHome  from "../components/AnimatedTextHome"
+import AnimatedTextHome  from "../components/AnimatedTextHome";
+import AnimatedBgHome  from "../components/AnimatedBgHome";
 import { Link } from "react-router-dom";
 
 function Home() {
     return (
         
          <>
-    
-         <div className={styles.homeContainer}>
-            <Header/>
+         <AnimatedBgHome/>
+        <Header/>
             <FooterPortion/>
             <BackgroundStyleHome/>
             <GetStarted/>
             <AnimatedTextHome/> 
-
-      
-        </div>  
+         {/* <div className={styles.homeContainer}>      
+        </div>   */}
       <div className={styles.HomePageInfo}>
       
             <p className={styles.InfoPage}>
