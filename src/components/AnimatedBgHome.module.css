@@ -8,6 +8,7 @@
     height: 80vh;  /* Full height of the viewport */
     width: 208.8vh;
     margin-top:395px;
+    border-bottom: 2px solid black;
     animation: changeBackground 25s infinite;
     overflow: hidden;
 }
