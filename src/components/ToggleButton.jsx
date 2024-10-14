@@ -4,8 +4,6 @@ function ToggleButton()
 {
     return(
         <>
-       
-
        <div className={styles.Background}>
         <label className={styles.toggle}>
                         <input type="checkbox"/>
